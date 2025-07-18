@@ -352,7 +352,7 @@ class KnowledgeManager:
                 "name": label,
                 "description": f"Standard P&ID Symbol für '{label}'.",
                 "source": source_name,
-                "visual_embedding": new_visual_embedding, # Das visuelle Embedding speichern
+                "visual_embedding": new_visual_embedding, # <- KORRIGIERT: Hier das Embedding speichern
                 "image_path": symbol_image_relative_path, # Nur der Pfad wird gespeichert
                 "timestamp": datetime.datetime.now().isoformat()
             }
