@@ -564,7 +564,12 @@ class GraphSynthesizer:
             # --- NEU: Sammle und dedupliziere alle Ports aus der Gruppe ---
             all_ports_in_group: List[Port] = []
             for el in group:
-                all_ports_in_group.extend(el.get('ports', []))
+                # Filter out invalid ports before extending the list
+                # Sicherstellen, dass nur gültige Port-Objekte (mit 'bbox') hinzugefügt werden
+                valid_ports_from_element = [
+                    cast(Port, p) for p in el.get('ports', []) if self._is_valid_port(p)
+                ]
+                all_ports_in_group.extend(valid_ports_from_element)
             
             unique_ports = self._deduplicate_ports(all_ports_in_group)
             # -----------------------------------------------------------
@@ -582,7 +587,7 @@ class GraphSynthesizer:
             
             for original_element in group:
                 if original_id := original_element.get('id'):
-                    self._canonical_id_map[original_id] = original_id # Map old ID to itself initially
+                    self._canonical_id_map[original_id] = canonical_id # Map old ID to new canonical ID
                     # Map all ports of this original element to the new canonical element ID
                     for port in original_element.get('ports', []):
                         if port_id := port.get('id'):
