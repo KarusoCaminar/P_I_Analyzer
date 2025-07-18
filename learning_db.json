@@ -1,0 +1,398 @@
+{
+    "knowledge_extensions": {
+        "type_aliases": {
+            "Valve": [
+                "Ventil",
+                "Control Valve",
+                "Check Valve",
+                "BlockValve",
+                "2 Way Valve",
+                "3 Way Valve",
+                "Butterfly Valve",
+                "Vent Valve",
+                "2 Way Valve incl. electric actuator",
+                "3 Way Valve incl. Electric Actuator",
+                "Motorized Valve (filled)",
+                "Motorized Valve (open)",
+                "Manual Valve/Damper",
+                "Motor Operated Valve"
+            ],
+            "Sensor": [
+                "Transmitter",
+                "Flow Transmitter",
+                "Instrument",
+                "Pressure Indicator",
+                "Pressure Sensor"
+            ],
+            "Temperature Sensor": [
+                "T-VL",
+                "T-RL",
+                "T_PU Ext."
+            ],
+            "Volume Flow Sensor": [
+                "V-RL",
+                "Flow Meter",
+                "Flow"
+            ],
+            "Heat Meter": [],
+            "Source": [
+                "Process Connection",
+                "Pump Source",
+                "Utility Supply",
+                "UtilityConnection",
+                "ProcessConnection",
+                "Supply Machine",
+                "Warm"
+            ],
+            "Sink": [
+                "To Reactor R-102",
+                "ProcessConnection",
+                "Return",
+                "Cold"
+            ],
+            "Pump": [
+                "Pumpe",
+                "Transfer Pump"
+            ],
+            "Tank": [
+                "Sump Tank",
+                "Vessel/Tank"
+            ],
+            "Expansion Vessel": [
+                "Ausdehnungsgefäß",
+                "Vessel"
+            ],
+            "Storage": [
+                "Buffer Storage",
+                "VSI Storage",
+                "Tank"
+            ],
+            "Mixer": [
+                "Mischer"
+            ],
+            "Sample Point": [
+                "S",
+                "SamplingPoint"
+            ],
+            "Reactor": [
+                "Reaktor",
+                "Oven (Waste Heat Recovery)",
+                "Condensing Boiler",
+                "Equipment",
+                "Process Unit"
+            ],
+            "Combined Heat and Power One Temperature Level (CHP)": [
+                "CHP1",
+                "CHP2"
+            ],
+            "Consumer": [
+                "Ventilation",
+                "Static Heating"
+            ],
+            "Heat Exchanger": [
+                "HEX1 (HNLT)",
+                "LUVO",
+                "Heater/Cooler"
+            ],
+            "Network Node": [
+                "Junction"
+            ],
+            "Compressor": [
+                "Blower",
+                "Gas Compressor"
+            ],
+            "Controller": [
+                "PID Controller",
+                "Regler",
+                "Control Element"
+            ],
+            "Indicator": [
+                "Level Indicator",
+                "Flow Indicator",
+                "Pressure Gauge"
+            ],
+            "Alarm": [
+                "High Pressure Alarm",
+                "Low Level Alarm"
+            ],
+            "Actuator": [
+                "Electric Actuator",
+                "Pneumatic Actuator",
+                "Hydraulic Actuator"
+            ],
+            "Filter": [
+                "Strainer",
+                "Separator",
+                "Demister"
+            ],
+            "Valve Positioner": [
+                "Positioner"
+            ],
+            "Utility Connection": [
+                "Steam Supply",
+                "Cooling Water",
+                "Compressed Air"
+            ],
+            "Boundary": [
+                "System Boundary",
+                "Legend",
+                "Frame"
+            ],
+            "Process Port": [
+                "ProcessConnection",
+                "Connection Point",
+                "Interface"
+            ],
+            "Relief Valve": [
+                "Safety Valve",
+                "Pressure Relief Valve",
+                "PSV"
+            ],
+            "Drain/Vent": [
+                "Drain Valve",
+                "Vent Valve",
+                "Bleed Valve"
+            ],
+            "Gauge": [
+                "Manometer",
+                "Thermometer",
+                "Dial Indicator"
+            ],
+            "Motor": [
+                "Electric Motor",
+                "Hydraulic Motor"
+            ],
+            "Drive": [
+                "Coupling",
+                "Gear Drive"
+            ],
+            "Switch": [
+                "Limit Switch",
+                "Pressure Switch",
+                "Temperature Switch",
+                "Level Switch"
+            ],
+            "Transducer": [
+                "Signal Converter",
+                "Current Transducer"
+            ],
+            "Scrubber": [
+                "Gas Washer",
+                "Column"
+            ],
+            "Separator": [
+                "Phase Separator",
+                "Oil-Water Separator"
+            ],
+            "Decanter": [
+                "Decanter Centrifuge"
+            ],
+            "Cyclone": [
+                "Cyclone Separator"
+            ],
+            "Legend": [
+                "Legend Box",
+                "Drawing Key"
+            ],
+            "Note": [
+                "Text Note",
+                "Annotation"
+            ],
+            "Insulation": [
+                "Trace Heating",
+                "Heat Tracing"
+            ],
+            "PLC/DCS": [
+                "PLC",
+                "DCS Module",
+                "Control System"
+            ]
+        }
+    },
+    "successful_patterns": {
+        "page_2_original.png": {
+            "image_name": "page_2_original.png",
+            "quality_score": 95,
+            "elements_found": 45,
+            "connections_found": 43,
+            "timestamp": "2025-06-26T19:39:37.286527"
+        },
+        "page_3_original.png": {
+            "image_name": "page_3_original.png",
+            "quality_score": 90,
+            "elements_found": 31,
+            "connections_found": 27,
+            "timestamp": "2025-06-26T19:39:51.370890"
+        },
+        "Einfaches P&I.png": {
+            "timestamp": "2025-07-09T11:57:54.749196",
+            "final_ai_data": {
+                "elements": [
+                    {
+                        "id": "P-201",
+                        "type": "Source",
+                        "label": "From Transfer Pump P-201",
+                        "bbox": {
+                            "x": 0.155,
+                            "y": 0.393,
+                            "width": 0.175,
+                            "height": 0.18
+                        }
+                    },
+                    {
+                        "id": "Fv-3-3040",
+                        "type": "Valve",
+                        "label": "Fv-3-3040",
+                        "bbox": {
+                            "x": 0.392,
+                            "y": 0.377,
+                            "width": 0.124,
+                            "height": 0.082
+                        }
+                    },
+                    {
+                        "id": "ISA-Supply",
+                        "type": "Source",
+                        "label": "ISA (Instrument Air Supply)",
+                        "bbox": {
+                            "x": 0.454,
+                            "y": 0.148,
+                            "width": 0.134,
+                            "height": 0.049
+                        }
+                    },
+                    {
+                        "id": "FT-10",
+                        "type": "Sensor",
+                        "label": "FT-10",
+                        "bbox": {
+                            "x": 0.639,
+                            "y": 0.393,
+                            "width": 0.051,
+                            "height": 0.082
+                        }
+                    },
+                    {
+                        "id": "M-08",
+                        "type": "Mixer",
+                        "label": "Mixer M-08",
+                        "bbox": {
+                            "x": 0.753,
+                            "y": 0.393,
+                            "width": 0.113,
+                            "height": 0.082
+                        }
+                    },
+                    {
+                        "id": "P-504",
+                        "type": "Source",
+                        "label": "From Transfer Pump P-504",
+                        "bbox": {
+                            "x": 0.155,
+                            "y": 0.82,
+                            "width": 0.175,
+                            "height": 0.18
+                        }
+                    },
+                    {
+                        "id": "Fv-3-3041",
+                        "type": "Valve",
+                        "label": "Fv-3-3041",
+                        "bbox": {
+                            "x": 0.392,
+                            "y": 0.787,
+                            "width": 0.124,
+                            "height": 0.098
+                        }
+                    },
+                    {
+                        "id": "FT-11",
+                        "type": "Sensor",
+                        "label": "FT-11",
+                        "bbox": {
+                            "x": 0.639,
+                            "y": 0.836,
+                            "width": 0.051,
+                            "height": 0.082
+                        }
+                    },
+                    {
+                        "id": "R-102",
+                        "type": "Sink",
+                        "label": "To Reactor R-102",
+                        "bbox": {
+                            "x": 0.918,
+                            "y": 0.393,
+                            "width": 0.093,
+                            "height": 0.18
+                        }
+                    },
+                    {
+                        "id": "Sample-Point",
+                        "type": "Sample Point",
+                        "label": "Sample Point",
+                        "bbox": {
+                            "x": 0.804,
+                            "y": 0.721,
+                            "width": 0.093,
+                            "height": 0.115
+                        }
+                    }
+                ],
+                "connections": [
+                    {
+                        "from_id": "P-201",
+                        "to_id": "Fv-3-3040"
+                    },
+                    {
+                        "from_id": "Fv-3-3040",
+                        "to_id": "FT-10"
+                    },
+                    {
+                        "from_id": "FT-10",
+                        "to_id": "M-08"
+                    },
+                    {
+                        "from_id": "P-504",
+                        "to_id": "Fv-3-3041"
+                    },
+                    {
+                        "from_id": "Fv-3-3041",
+                        "to_id": "FT-11"
+                    },
+                    {
+                        "from_id": "FT-11",
+                        "to_id": "M-08"
+                    },
+                    {
+                        "from_id": "M-08",
+                        "to_id": "R-102"
+                    },
+                    {
+                        "from_id": "M-08",
+                        "to_id": "Sample-Point"
+                    },
+                    {
+                        "from_id": "ISA-Supply",
+                        "to_id": "Fv-3-3040"
+                    },
+                    {
+                        "from_id": "ISA-Supply",
+                        "to_id": "Fv-3-3041"
+                    }
+                ]
+            }
+        }
+    },
+    "error_stats": {},
+    "learned_solutions": {},
+    "symbol_library": {
+        "sym_9cb6cf4b7e89": {
+            "name": "Flow",
+            "description": "Standard P&ID Symbol für 'Flow'.",
+            "source": "page_2_original_symbols.png",
+            "embedding": []
+        }
+    },
+    "learned_visual_corrections": {}
+}

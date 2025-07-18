@@ -1,0 +1,62 @@
+{
+  "elements": [
+    { "id": "P-201", "type": "Source", "label": "From Transfer Pump P-201" },
+    { "id": "Fv-3-3040", "type": "Valve", "label": "Fv-3-3040" },
+    { "id": "FT-10", "type": "Volume Flow Sensor", "label": "FT 10" },
+    { "id": "P-504", "type": "Source", "label": "From Transfer Pump P-504" },
+    { "id": "Fv-3-3041", "type": "Valve", "label": "Fv-3-3041" },
+    { "id": "FT-11", "type": "Volume Flow Sensor", "label": "FT 11" },
+    { "id": "M-08", "type": "Mixer", "label": "Mixer M-08" },
+    { "id": "SamplePoint-S", "type": "Sample Point", "label": "S Sample Point" },
+    { "id": "R-102", "type": "Sink", "label": "To Reactor R-102" },
+    { "id": "ISA-Supply", "type": "Source", "label": "ISA Instrument Air Supply" }
+  ],
+  "connections": [
+    {
+      "name": "Conn_P201_to_Fv3040",
+      "from_converter_ports": [{"unit_name": "P-201", "port": "Out"}],
+      "to_converter_ports": [{"unit_name": "Fv-3-3040", "port": "In"}]
+    },
+    {
+      "name": "Conn_Fv3040_to_FT10",
+      "from_converter_ports": [{"unit_name": "Fv-3-3040", "port": "Out"}],
+      "to_converter_ports": [{"unit_name": "FT-10", "port": "In"}]
+    },
+    {
+      "name": "Conn_P504_to_Fv3041",
+      "from_converter_ports": [{"unit_name": "P-504", "port": "Out"}],
+      "to_converter_ports": [{"unit_name": "Fv-3-3041", "port": "In"}]
+    },
+    {
+      "name": "Conn_Fv3041_to_FT11",
+      "from_converter_ports": [{"unit_name": "Fv-3-3041", "port": "Out"}],
+      "to_converter_ports": [{"unit_name": "FT-11", "port": "In"}]
+    },
+    {
+      "name": "Node_Merge_before_Mixer",
+      "from_converter_ports": [
+        {"unit_name": "FT-10", "port": "Out"},
+        {"unit_name": "FT-11", "port": "Out"}
+      ],
+      "to_converter_ports": [{"unit_name": "M-08", "port": "In"}]
+    },
+    {
+      "name": "Node_Split_after_Mixer",
+      "from_converter_ports": [{"unit_name": "M-08", "port": "Out"}],
+      "to_converter_ports": [
+        {"unit_name": "SamplePoint-S", "port": "In"},
+        {"unit_name": "R-102", "port": "In"}
+      ]
+    },
+    {
+      "name": "Supply_ISA_to_Fv3040",
+      "from_converter_ports": [{"unit_name": "ISA-Supply", "port": "Out"}],
+      "to_converter_ports": [{"unit_name": "Fv-3-3040", "port": "Control"}]
+    },
+    {
+      "name": "Supply_ISA_to_Fv3041",
+      "from_converter_ports": [{"unit_name": "ISA-Supply", "port": "Out"}],
+      "to_converter_ports": [{"unit_name": "Fv-3-3041", "port": "Control"}]
+    }
+  ]
+}

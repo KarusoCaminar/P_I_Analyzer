@@ -1,0 +1,29 @@
+# Datenanalyse & ML
+numpy
+pandas
+scikit-learn
+
+# Bildverarbeitung & Visualisierung
+Pillow
+opencv-python
+matplotlib
+PyMuPDF
+
+# GUI
+tk  # wird bei Python auf Windows meist mitinstalliert – ggf. weglassen, wenn Fehler
+
+# Ähnlichkeitsvergleiche
+python-Levenshtein
+
+# Konfiguration & Terminaltools
+pyyaml
+tqdm
+python-dotenv
+
+# Cache & Locking
+diskcache
+filelock
+
+# Google Cloud / Vertex AI
+google-cloud-aiplatform
+vertexai

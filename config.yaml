@@ -1,0 +1,493 @@
+# config.yaml - Die zentrale Konfigurations-Wahrheit für das gesamte Projekt
+
+# Pfade zu den Wissensbasis-Dateien
+paths:
+  element_type_list: "element_type_list.json"
+  learning_db: "learning_db.json"
+  temp_symbol_dir: "temp_symbols_for_embeddings"
+  # NEU: Verzeichnis für den LLM-Disk-Cache. Wird relativ zum Projekt-Root interpretiert.
+  llm_cache_dir: ".pni_analyzer_cache"
+  learned_symbols_images_dir: "learned_symbols_images"
+
+# Definition aller verfügbaren Modelle, die von der GUI und dem CLI genutzt werden
+# Definition aller verfügbaren Modelle, die von der GUI und dem CLI genutzt werden
+models:
+  "Google Gemini 2.5 Pro":
+    id: "gemini-2.5-pro"
+    access_method: "gemini"
+    location: "us-central1"
+    description: "Googles Top-Modell für höchste Genauigkeit bei komplexen Diagrammen."
+    generation_config:
+      temperature: 0
+      top_p: 0.95
+      top_k: 40
+      max_output_tokens: 8192
+  "Google Gemini 2.5 Flash":
+    id: "gemini-2.5-flash"
+    access_method: "gemini"
+    location: "us-central1"
+    description: "Guter Kompromiss aus Geschwindigkeit und Qualität für Standardanalysen."
+    generation_config:
+      temperature: 0
+      top_p: 0.95
+      top_k: 40
+      max_output_tokens: 8192 
+  "Google Gemini 2.0 Flash":
+    id: "gemini-2.0-flash"
+    access_method: "gemini"
+    location: "us-central1"
+    description: "Ein schnelles und kostengünstiges Modell der 2.0-Generation."
+    generation_config:
+      temperature: 0
+      top_p: 0.95
+      top_k: 40
+      max_output_tokens: 8192 
+  "Google Gemini 2.0 Flash-Lite":
+    id: "gemini-2.0-flash-lite"
+    access_method: "gemini"
+    location: "us-central1"
+    description: "Kosteneffizientes Modell mit großem Kontextfenster."
+    generation_config:
+      temperature: 0
+      top_p: 0.95
+      top_k: 40
+      max_output_tokens: 8192 
+  "Google Gemini 2.5 Flash-Lite (Preview)":
+    id: "gemini-2.5-flash-lite-preview-06-17"
+    access_method: "gemini"
+    location: "us-central1"
+    description: "Neuestes, extrem schnelles Preview-Modell, ideal für schnelle Iterationen."
+    generation_config:
+      temperature: 0
+      top_p: 0.95
+      top_k: 40
+      max_output_tokens: 8192 
+  "MultiModal Embedding (Image)":
+      # Dies ist das dedizierte MultiModal Embedding Model von Vertex AI.
+      # Es hat KEINE "generation_config" im klassischen Sinne, da es Embeddings und nicht Text generiert.
+      id: "multimodalembedding@001" # Dies ist die korrekte ID für direkte Bild-Embeddings
+      access_method: "vertex_ai_multimodal_embedding" # Expliziter Access Method für dieses Modell
+      location: "us-central1" # Standort für das Embedding-Modell
+      description: "Vertex AI's dediziertes MultiModal Embedding Model für direkte Bild-Embeddings."
+
+# Definition verschiedener Analyse-Strategien für den CLI-Runner (Möglichkeit für Mischstrategien mit verschiedenen Modellen)
+strategies:
+  default_flash:
+    meta_model: "Google Gemini 2.5 Flash"
+    hotspot_model: "Google Gemini 2.5 Flash"
+    detail_model: "Google Gemini 2.5 Flash"
+    coarse_model: "Google Gemini 2.5 Flash"
+    correction_model: "Google Gemini 2.5 Flash"
+    code_gen_model: "Google Gemini 2.5 Flash" # <- HINZUGEFÜGT
+  high_accuracy:
+    meta_model: "Google Gemini 2.5 Pro"
+    hotspot_model: "Google Gemini 2.5 Flash"
+    detail_model: "Google Gemini 2.5 Pro"
+    correction_model: "Google Gemini 2.5 Pro"
+    code_gen_model: "Google Gemini 2.5 Pro" # <- HINZUGEFÜGT
+
+# Globale Logik-Parameter und Schwellenwerte
+logic_parameters:
+  # LLM Handler Parameter
+  llm_max_retries: 3                  # Maximale Wiederholungsversuche für LLM-Aufrufe
+  llm_initial_wait_time: 2            # Initiale Wartezeit (Sekunden) bei LLM-Retries
+  llm_default_timeout: 120            # Standard-Timeout (Sekunden) für LLM-Antworten
+  llm_max_timeout_on_retry: 300       # Maximaler Timeout bei Wiederholungsversuchen (Sekunden)
+  llm_disk_cache_size_gb: 2           # Größe des LLM-Disk-Caches in GB
+  llm_timeout_executor_workers: 1     # Anzahl der Worker für LLM-Timeouts (meist 1 für Seriosität)
+  auto_clear_llm_cache_on_start: True # NEU: Wenn True, wird der LLM-Cache bei jedem Start automatisch geleert
+
+  # BBox-Verfeinerung Parameter (für _iteratively_refine_llm_output_bboxes in core_processor.py)
+  max_bbox_refinement_iterations: 3   # Max. Iterationen für die BBox-Verfeinerung
+  min_quality_to_keep_bbox: 0.5       # Mindestqualität für eine BBox, um nicht verworfen zu werden (beim Filtern)
+  bbox_min_pixel_dim: 10              # Mindestpixelgröße (Breite/Höhe) für eine gültige BBox (zuvor 5px)
+  bbox_max_area_ratio: 0.8            # Max. Flächenanteil des Bildes, den eine BBox einnehmen darf
+  bbox_aspect_ratio_range: [0.1, 10.0] # Akzeptabler Bereich für Breite/Höhe Verhältnis [min, max]
+  bbox_min_edge_density: 0.005        # Mindest-Kantendichte in einer BBox für guten Score (0.005 = 0.5% Kantenpixel)
+  bbox_adjust_content_padding_px: 5   # Puffer in Pixeln für _adjust_bbox_to_content
+  bbox_refine_contour_padding_px: 2   # Puffer in Pixeln für _refine_bbox_with_contours
+
+  # Knowledge Manager & Few-Shot Learning Parameter
+  symbol_similarity_threshold: 0.90   # Text-Ähnlichkeitsschwelle für Symbol-Deduplizierung
+  visual_symbol_similarity_threshold: 0.75 # NEU: Visuelle Ähnlichkeitsschwelle für Symbol-Deduplizierung
+  min_score_for_few_shot_pattern: 85  # Mindest-Score, um ein Muster als Few-Shot Beispiel zu speichern
+  min_problem_solution_similarity: 0.75 # Mindest-Ähnlichkeit für eine gelernte Problemlösung
+  db_file_lock_timeout: 15            # Timeout für den FileLock der Lern-Datenbank (Sekunden)
+  pretraining_executor_max_workers: 15 # Max. Worker für Symbol-Extraktion im Vortraining
+
+  # Graph Synthesizer Parameter (in utils.py)
+  iou_match_threshold: 0.5            # IoU-Schwelle für Element-Deduplizierung
+  border_coords_tolerance_factor_x: 0.015 # X-Toleranz für Stitching an Rändern (relativ zur Bildbreite)
+  border_coords_tolerance_factor_y: 0.015 # Y-Toleranz für Stitching an Rändern (relativ zur Bildhöhe)
+
+  # Graph Completion Parameter (in utils.py)
+  graph_completion_distance_threshold: 0.05 # Abstandsschwelle für das Hinzufügen fehlender Verbindungen
+  graph_completion_isolated_node_distance: 0.05 # Distanz für isolierte Knoten (predict_and_complete_graph)
+
+  # KPI-Berechnung Parameter (evaluate_kpis.py)
+  kpi_subgraph_penalty: 25.0          # Strafe pro Subgraph (außer dem größten)
+  kpi_isolated_penalty: 15.0          # Strafe pro isoliertem Element
+  kpi_dangling_penalty: 5.0           # Strafe pro Knoten in "dangling" Komponenten (nicht im größten Subgraphen)
+  kpi_unidentified_type_penalty: 2.0  # Strafe pro nicht identifiziertem Typ (pro Element)
+  kpi_low_element_count_threshold: 10 # Unter dieser Anzahl an Elementen gibt es eine hohe Zusatzstrafe
+  kpi_low_element_count_penalty_per_missing: 5.0 # Strafe pro "fehlendem" Element unter dem Schwellenwert
+  kpi_plot_min_score: 0               # Mindest-X-Limit für KPI-Plots
+  kpi_plot_max_score: 105             # Maximales X-Limit für KPI-Plots
+  kpi_plot_title_size: 22             # Schriftgröße des Plot-Titels
+  kpi_plot_subtitle_size: 10          # Schriftgröße des Plot-Untertitel
+  kpi_plot_label_font_size: 9         # Schriftgröße für Achsen-Labels
+  cgm_plot_node_size: 2000            # Knoten-Größe im CGM-Plot
+  cgm_plot_font_size: 8               # Schriftgröße für Knoten-Labels im CGM-Plot
+  cgm_plot_edge_width: 1.5            # Kantenbreite im CGM-Plot
+  cgm_plot_arrow_size: 20             # Pfeilgröße im CGM-Plot
+  cgm_plot_layout_k: 0.6              # 'k' Parameter für Spring-Layout
+  cgm_plot_layout_iterations: 50      # Iterationen für Spring-Layout
+  cgm_plot_dpi: 300                   # DPI für den exportierten CGM-Plot <--- DIESE ZEILE HINZUFÜGEN
+
+  # Visual Debugger Image Parameter (export_full_analysis_debug_image in utils.py)
+  debug_image_dpi: 150                # DPI für die exportierten Debug-Bilder
+  debug_image_title_size: 22          # Schriftgröße des Titels
+  debug_image_label_font_base_size: 9 # Basis-Schriftgröße für Element-Labels (reduziert bei vielen Elementen)
+  debug_image_label_reduce_factor: 20 # Reduziert Label-Größe pro X Elementen
+  debug_image_arrow_mutation_scale: 20 # Größe der Pfeilspitze
+  debug_image_arrow_shrink_px: 15     # Pixel, um die Pfeile von Boxen wegschrumpfen
+
+  # Core Processor Parameter (allgemein)
+  min_elements_for_global_success: 4  # Mindestanzahl Elemente für erfolgreiche Grobanalyse
+  fine_grained_strips_count: 7        # Anzahl der vertikalen Streifen für die Feinanalyse
+  correction_context_margin: 0.15     # Rand für Bildausschnitt bei der Korrektur (relativ zur BBox)
+
+  # Visuelle Typverifizierung (in core_processor.py)
+  min_visual_match_score: 0.70        # Mindest-Score für einen visuellen Match, um Typ zu korrigieren
+
+  # Adaptive Re-Analyse (Phase 3.5)
+  adaptive_reanalysis_score_threshold: 65.0 # Score, unter dem eine adaptive Re-Analyse ausgelöst wird
+  adaptive_reanalysis_tile_size: 768      # Kleinere Kachelgröße für fokussierte Re-Analyse
+  adaptive_reanalysis_overlap: 96         # Überlappung für die Re-Analyse-Kacheln
+
+prompts:
+  # Allgemeine System-Prompts
+  general_system_prompt: |
+    You are a highly specialized and systematic P&ID analysis engine. Your main purpose is to provide structured JSON output adhering precisely to the specified format for each task. Your Golden Rule: Always provide ONLY the JSON object. Do not under any circumstances include any other text, explanations, or markdown formatting before or after the JSON.
+
+  # Prompt für den JSON-Fixer
+  json_fixer_user_prompt: |
+    **TASK:** The following text contains a malformed JSON-like structure. Your ONLY job is to correct all syntax errors and return a single, perfectly valid JSON object or JSON array.
+    **CRITICAL RULES:**
+    1.  **DO NOT CHANGE DATA:** Do not alter, add, or remove any keys or values from the original text.
+    2.  **ONLY FIX SYNTAX:** Your only task is to fix syntax errors like missing commas, brackets, or incorrect quotes.
+    3.  **WRAP ARRAYS:** If the text is a list of objects, ensure it is correctly wrapped in square brackets `[ ... ]`.
+    4.  **JSON ONLY:** Your entire response MUST be ONLY the valid JSON. Do not add any text, explanations, or markdown.
+
+    **MALFORMED TEXT TO FIX:**
+    {malformed_text}
+
+  # Phase 3: Korrektur
+  correction_system_prompt: |
+    You are a highly specialized and precise P&ID error-correction AI. Your task is to analyze a zoomed-in image snippet and a problem description, then propose concrete, structured JSON actions to fix the issue based on visual evidence. CRITICAL RULE: Output ONLY the JSON response for corrections, strictly following the `POSSIBLE ACTIONS` format. Do not provide any additional text or commentary.
+
+  correction_user_prompt_template: |
+    **ROLE:** You are a highly specialized and precise P&ID error-correction AI. Your task is to analyze the provided image snippet (zoomed in on a problem area) and a problem description. Propose concrete, structured JSON actions to fix the issue based on visual evidence.
+
+    **PROBLEM DESCRIPTION:**
+    - {problem_description}
+
+    **CURRENT CONNECTIVITY CONTEXT:**
+    {context_snippet}
+
+    **CRITICAL OUTPUT FORMAT:** Return ONLY a valid JSON object with a single key "corrections".
+
+    **RULES:**
+    - The "corrections" key MUST contain a list of action objects.
+    - Each action object MUST have an "action" key and its required parameters.
+    - If no correction is possible or needed, return an empty list: {{"corrections": []}}.
+    - ENSURE valid JSON syntax: check all commas, brackets, and quotes.
+
+    **POSSIBLE ACTIONS (FOLLOW EXACTLY):**
+    1. {{"action": "ADD_CONNECTION", "from_id": "source_element_id", "to_id": "target_element_id", "from_port": "optional_port_name", "to_port": "optional_port_name"}}
+    2. {{"action": "CHANGE_TYPE", "element_id": "element_to_change_id", "new_type": "the_correct_type"}}
+    3. {{"action": "DELETE_ELEMENT", "element_id": "element_to_delete_id"}}
+    4. {{"action": "CHANGE_LABEL", "element_id": "element_to_change_id", "new_label": "the_correct_label"}}
+
+  bbox_refinement_user_prompt: |
+    **ROLE:** You are a high-precision visual analysis tool.
+    **TASK:** Analyze ONLY the provided image snippet. It contains what a previous AI identified as a single P&ID component.
+    
+    **YOUR TWO JOBS:**
+    1.  **VALIDATE:** Is there EXACTLY ONE primary P&ID component visible in this snippet?
+    2.  **REFINE:** If yes, provide a new, extremely precise bounding box that fits tightly around ONLY that single component.
+    
+    **CRITICAL OUTPUT FORMAT:**
+    - If EXACTLY ONE component is visible, return a JSON object:
+      `{{"is_single_component": true, "refined_bbox": {{"x": ..., "y": ..., "width": ..., "height": ...}}}}`
+    - If MORE THAN ONE component is visible, or if it's ambiguous, return:
+      `{{"is_single_component": false, "refined_bbox": null}}`
+    
+    **RULES:**
+    - Bounding box coordinates MUST be normalized relative to THIS SNIPPET.
+    - Provide ONLY the JSON object. No other text.
+
+  # Phase 1: Metadaten und Legende
+  metadata_extraction_user_prompt: |
+    **TASK:** Extract P&ID METADATA from the TITLE BLOCK.
+    **CRITICAL OUTPUT FORMAT:** Your entire response MUST be a single, valid JSON object.
+    Strictly adhere to this exact structure, including ALL specified keys.
+    -   `"project"`: (string) Project name.
+    -   `"title"`: (string) Drawing main title.
+    -   `"version"`: (string) Drawing version.
+    -   `"date"`: (string) Drawing date (e.g., DD.MM.YYYY).
+    -   `"metadata_bbox"`: (JSON object) Bounding box of the entire title block {x, y, width, height}, all floats 0-1.
+
+    **RULES:**
+    - If a value is not found, use an empty string ("") or null for objects/arrays.
+    - Provide ONLY the JSON object. NO additional text, comments, markdown, or apologies.
+    - ENSURE valid JSON syntax: check all commas, brackets, and quotes.
+
+    **EXAMPLE STRUCTURE (FOLLOW EXACTLY):**
+    ```json
+    {
+      "project": "My Great Project",
+      "title": "Main Process Flow",
+      "version": "Rev 2.1",
+      "date": "2025-07-13",
+      "metadata_bbox": {"x": 0.8, "y": 0.9, "width": 0.15, "height": 0.08}
+    }
+    ```
+  legend_extraction_user_prompt: |
+    **TASK:** Extract ALL information from the LEGEND AREA: symbols, line styles, and colors.
+    **CRITICAL OUTPUT FORMAT:** Your entire response MUST be a single, valid JSON object.
+    Strictly adhere to this exact structure.
+
+    1.  `"symbol_map"`: JSON object mapping the symbol's text description to its standardized P&ID type.
+    2.  `"line_map"`: JSON object mapping the line's text description (e.g., "Return", "Cold Water") to its visual properties. Each value MUST be an object with `"color"` and `"style"` keys.
+    3.  `"legend_bbox"`: A single bounding box for the entire legend area.
+
+    **RULES:**
+    - Provide ONLY the JSON object. NO additional text or markdown.
+    - For colors, use simple names (e.g., "red", "blue", "green").
+    - For styles, use "solid", "dashed", or "dotted".
+
+    **EXAMPLE STRUCTURE (FOLLOW EXACTLY):**
+    ```json
+    {
+      "symbol_map": {
+        "Pump": "Pump",
+        "Flow": "Flow Meter"
+      },
+      "line_map": {
+        "Return": { "color": "blue", "style": "solid" },
+        "Cold Water (HNLT - HVFA)": { "color": "blue", "style": "dotted" },
+        "Warm": { "color": "red", "style": "solid" }
+      },
+      "legend_bbox": {"x": 0.01, "y": 0.02, "width": 0.15, "height": 0.25}
+    }
+    ```
+
+  # Phase 2: Kern-Analyse
+  symbol_detection_user_prompt: |
+    **TASK:** Identify ALL distinct graphical P&ID symbols AND their associated, exact text labels (if present) in this image segment. For each identified symbol-label pair, provide a single, encompassing bounding box.
+    **CRITICAL OUTPUT FORMAT:** Your entire response MUST be a single, valid JSON object with ONE top-level key: "symbols". This key MUST contain a list of symbol objects.
+
+    **RULES:**
+    1.  **ONLY JSON:** Your entire output MUST be ONLY the valid JSON object. No extra text, no markdown fences (```json), no comments, no apologies.
+    2.  **MANDATORY STRUCTURE:** Each object in the "symbols" list MUST contain exactly two keys: "label" and "bbox".
+    3.  **LABEL CONTENT (CRITICAL):** The "label" MUST be the exact, human-readable TEXT string as it appears next to the symbol (e.g., "Flow", "Pump", "Temperature Sensor", "3 Way Valve incl. Electric Actuator"). It MUST NOT be a number, a JSON string, a generic term like "symbol", "text", "element", "component", "object", "item", or any other non-descriptive string. If the text is multi-line, represent it as a single line. If NO explicit text label is visible for a graphical symbol, infer a concise, descriptive P&ID type name (e.g., "Heat Exchanger", "Tank").
+    4.  **BBOX FORMAT (CRITICAL):** The "bbox" MUST be a JSON object with four keys: "x", "y", "width", "height". All values MUST be floats between 0.0 and 1.0, relative to the size of THIS image segment. This bounding box MUST **COMPLETELY ENCOMPASS BOTH THE GRAPHICAL SYMBOL AND ITS ENTIRE ASSOCIATED TEXT LABEL.** It must be a tight fit around both.
+    5.  **PRIORITIZE SPECIFICITY:** When identifying symbols, choose the MOST SPECIFIC P&ID type from your knowledge. Do NOT use generic terms if a more precise type is evident (e.g., "Centrifugal Pump" over "Pump", "Gate Valve" over "Valve").
+    6.  **IGNORE NON-SYMBOLS:** Strictly ignore connecting lines, arrows, pure text elements that are NOT direct labels for a P&ID symbol (e.g., drawing numbers, titles, general notes), and any non-P&ID graphical elements. Each entry MUST represent a P&ID symbol with its specific, encompassing bounding box.
+    7.  **SYNTAX:** Ensure every comma, quote, and bracket is perfectly placed to form valid JSON.
+
+    **EXAMPLE (FOLLOW THIS STRUCTURE EXACTLY):**
+    ```json
+    {
+      "symbols": [
+        {
+          "label": "Flow",
+          "bbox": { "x": 0.02, "y": 0.05, "width": 0.15, "height": 0.03 }
+        },
+        {
+          "label": "Pump",
+          "bbox": { "x": 0.01, "y": 0.25, "width": 0.10, "height": 0.08 }
+        },
+        {
+          "label": "3 Way Valve incl. Electric Actuator",
+          "bbox": { "x": 0.50, "y": 0.04, "width": 0.10, "height": 0.08 }
+        }
+      ]
+    }
+    ```
+  coarse_analysis_user_prompt: |
+      **TASK:** Extract HIGH-LEVEL TOPOLOGY from the P&ID. Focus *EXCLUSIVELY* on identifying only the *MAJOR PROCESS COMPONENTS* and their *MAIN PROCESS PIPELINES*.
+      **CRITICAL OUTPUT FORMAT:** Your entire response MUST be a single, valid JSON object.
+      Strictly adhere to this exact structure, including ALL specified keys.
+      {
+        "elements": [ {"id": "...", "type": "...", "label": "...", "bbox": {"x": 0.0, "y": 0.0, "width": 0.0, "height": 0.0} } ],
+        "connections": [ {"from_id": "...", "to_id": "..."} ]
+      }
+
+      **RULES:**
+      - Provide ONLY the JSON object. NO additional text, comments, markdown, or apologies.
+      - **Strict Filtering:** You MUST IGNORE all minor instruments (e.g., small pressure gauges, simple indicators), all control lines (thin dashed lines), and any other irrelevant details.
+      - **Focus on Core Flow:** Only identify connections that represent the PRIMARY flow path between major components.
+      - IGNORE content within these specified zones: {excluded_zones}.
+      - ENSURE valid JSON syntax: check all commas, brackets, and quotes.
+
+      **EXAMPLE STRUCTURE (FOLLOW EXACTLY):**
+      ```json
+      {
+        "elements": [
+          {"id": "P-101", "type": "Pump", "label": "Main Circulation Pump P-101", "bbox": {"x": 0.1, "y": 0.2, "width": 0.05, "height": 0.05}},
+          {"id": "T-201", "type": "Tank", "label": "Storage Tank T-201", "bbox": {"x": 0.3, "y": 0.4, "width": 0.1, "height": 0.15}}
+        ],
+        "connections": [
+          {"from_id": "P-101", "to_id": "T-201"}
+        ]
+      }
+      ```
+  inventory_extraction_user_prompt: |
+    **ROLE:** You are a high-speed P&ID inventory specialist.
+    **TASK:** Scan the entire P&ID image and identify ALL components.
+    **CRITICAL OUTPUT FORMAT:** Return ONLY a valid JSON object with a single key "inventory". This key must contain a LIST of objects.
+
+    **RULES:**
+    1.  **ONLY JSON:** Your entire output must be ONLY the valid JSON. No extra text or markdown.
+    2.  **STRUCTURE:** Each object in the "inventory" list MUST contain `"id"` and `"type"`.
+    3.  **ID:** The `"id"` MUST be the exact text label of the component (e.g., "P-101").
+    4.  **TYPE:** The `"type"` MUST be your best guess for the component's type based on the visual symbol (e.g., "Pump", "Valve").
+    5.  **NO BBOX / CONNECTIONS:** Do NOT include bounding boxes or connections. This is only an inventory list.
+
+    **EXAMPLE STRUCTURE (FOLLOW EXACTLY):**
+    ```json
+    {{
+      "inventory": [
+        {{ "id": "P-101", "type": "Pump" }},
+        {{ "id": "T-201", "type": "Tank" }},
+        {{ "id": "FT-10", "type": "Flow Sensor" }}
+      ]
+    }}
+    ```
+  raster_analysis_user_prompt_template: |
+    **ROLE:** You are a high-precision P&ID analysis engine with a deep understanding of system semantics.
+    **TASK:** Analyze the image segment and convert its entire structure into a structured JSON output, including visual and logical properties.
+    **CRITICAL OUTPUT FORMAT:** Your entire response MUST be a single, valid JSON object.
+
+    **RULES:**
+    **ROLE:** You are a high-precision P&ID analysis engine. Your primary goal is to extract a detailed component and connectivity graph.
+    **TASK:** Analyze the image segment and convert its entire structure into a structured JSON output. The correct identification of connection PORTS is CRITICAL.
+    **CRITICAL OUTPUT FORMAT:** Your entire response MUST be a single, valid JSON object.
+
+    **RULES:**
+    1.  **ELEMENTS:** Identify ALL components. Each element MUST have:
+        - `"id"`: The visible text label (e.g., "P-101"). MUST be unique.
+        - `"type"`: The component type from the knowledge base.
+        - `"label"`: A descriptive label.
+        - `"bbox"`: A precise bounding box for the entire component.
+        - **`"ports"` (MANDATORY):** A LIST of ALL connection points on the component. This is the most critical part. If you see a pipe connecting to a symbol, it MUST have a port. Each port MUST have:
+            - `"id"`: A unique ID for the port (e.g., "P-101-out").
+            - `"name"`: The port's function ('In', 'Out', 'Control').
+            - `"bbox"`: A VERY SMALL, precise bounding box around the EXACT connection point of the pipe on the symbol's border.
+        - `"system_group"`: If the component is inside a visually distinct, named area (e.g., a dashed box labeled "eChiller"), provide that name as a string. Otherwise, use `null`.
+    2.  **CONNECTIONS:** Identify ALL pipes. Each connection MUST have:
+        - `"from_id"`, `"from_port_id"`, `"to_id"`, `"to_port_id"`.
+        - `"color"`: The color of the pipe as a simple string (e.g., "red", "blue", "green", "black"). If standard black, use "black".
+        - `"style"`: The style of the pipe as a string ('solid', 'dashed', 'dotted').
+    3.  **KNOWLEDGE BASE & HEURISTICS:**
+        - Use this knowledge to guide your analysis. It contains known types, aliases, line rules from the legend, and a preliminary inventory of components found on the entire diagram. This inventory is a strong hint about what you might find on this tile.
+        - **KNOWLEDGE CONTEXT:** {known_types_json}
+        - **CORRECTION FEEDBACK (if provided):** The following information details errors from a previous analysis run. Use this to improve your current attempt.
+          {error_feedback}
+    **EXAMPLE STRUCTURE (FOLLOW EXACTLY):**
+    ```json
+    {{
+      "elements": [
+        {{
+          "id": "P-101", "type": "Pump", "label": "Pump P-101",
+          "bbox": {{"x": 0.1, "y": 0.2, "width": 0.1, "height": 0.08}},
+          "ports": [
+            {{"id": "P-101-in", "name": "In", "bbox": {{"x": 0.1, "y": 0.23, "width": 0.01, "height": 0.02}}}},
+            {{"id": "P-101-out", "name": "Out", "bbox": {{"x": 0.2, "y": 0.23, "width": 0.01, "height": 0.02}}}}
+          ],
+          "system_group": "Cooling System A"
+        }}
+      ],
+      "connections": [
+        {{
+          "from_id": "P-101", "from_port_id": "P-101-out",
+          "to_id": "V-102", "to_port_id": "V-102-in",
+          "color": "blue",
+          "style": "dotted"
+        }}
+      ]
+    }}
+    ```
+  # Phase 4: Code-Generierung
+  cgm_code_generation_user_prompt: |
+    **ROLE:** You are an expert Python programmer specializing in data structures for industrial systems.
+    **TASK:** Convert the provided JSON data representing an abstract P&ID network into runnable Python code using dataclasses.
+    **INPUT DATA (JSON):**
+    {json_data}
+
+    **CRITICAL OUTPUT FORMAT (Python Code ONLY):**
+    Your entire response MUST be clean, runnable Python code. NO explanations, NO comments, NO markdown fences (```python).
+    Strictly adhere to the following dataclass definitions and instantiation:
+
+    from dataclasses import dataclass
+
+    @dataclass(frozen=True)
+    class Port:
+        unit_name: str
+        port: str
+
+    @dataclass(frozen=True)
+    class Connector:
+        name: str
+        to_converter_ports: tuple[Port, ...]
+        from_converter_ports: tuple[Port, ...]
+
+    @dataclass(frozen=True)
+    class Network:
+        connectors: tuple[Connector, ...]
+
+    # Instanziierung des Netzwerks
+    cgm_network = Network(
+        connectors=(
+            Connector(
+                name="...",
+                from_converter_ports=(Port(unit_name="...", port="..."),),
+                to_converter_ports=(Port(unit_name="...", port="..."),),
+            ),
+            # ... weitere Konnektoren ...
+        )
+    )
+
+    **RULES:**
+    - Provide ONLY the Python code. NO extra text, comments, or markdown.
+    - Ensure all strings are correctly escaped if they contain quotes.
+    - The order of attributes in Connector MUST be `name`, `to_converter_ports`, `from_converter_ports`.
+    - Use `tuple[Port, ...]` for port lists, not `list` or `Tuple`.
+    - Map the `unit_name` from the JSON to `unit_name` in Port, and invent a suitable `port` name (e.g., "In", "Out", "ControlIn", "ControlOut").
+    - The `name` of the Connector should be descriptive, derived from the JSON connector's name (e.g., "Node_Merge_at_Heater_315" or "Conn_Process_HEX1-HNLT_to_Oven-WasteHeatRecovery").
+    - Ensure the generated code is syntactically valid Python.
+  
+  critic_user_prompt: |
+    **ROLE:** You are a highly specialized and precise P&ID error-correction AI. Your task is to analyze the provided image snippet (zoomed in on a problem area) and a problem description. Propose concrete, structured JSON actions to fix the issue based on visual evidence.
+
+    **PROBLEM DESCRIPTION:**
+    - {problem_description}
+
+    **CURRENT CONNECTIVITY CONTEXT:**
+    {context_snippet}
+
+    **CRITICAL OUTPUT FORMAT:** Return ONLY a valid JSON object with a single key "corrections".
+
+    **RULES:**
+    - The "corrections" key MUST contain a list of action objects.
+    - Each action object MUST have an "action" key and its required parameters.
+    - If no correction is possible or needed, return an empty list: {{"corrections": []}}.
+    - ENSURE valid JSON syntax: check all commas, brackets, and quotes.
+
+    **POSSIBLE ACTIONS (FOLLOW EXACTLY):**
+    1. {{"action": "ADD_CONNECTION", "from_id": "source_element_id", "to_id": "target_element_id", "from_port_id": "optional_source_port_id", "to_port_id": "optional_target_port_id"}}
+    2. {{"action": "CHANGE_TYPE", "element_id": "element_to_change_id", "new_type": "the_correct_type"}}
+    3. {{"action": "DELETE_ELEMENT", "element_id": "element_to_delete_id"}}
+    4. {{"action": "CHANGE_LABEL", "element_id": "element_to_change_id", "new_label": "the_correct_label"}}

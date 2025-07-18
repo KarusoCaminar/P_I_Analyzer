@@ -1,0 +1,85 @@
+from dataclasses import dataclass
+
+
+@dataclass(frozen=True)
+class Port:
+    unit_name: str
+    port: str
+
+
+@dataclass(frozen=True)
+class Connector:
+    name: str
+    to_converter_ports: tuple[Port, ...]
+    from_converter_ports: tuple[Port, ...]
+
+
+@dataclass(frozen=True)
+class Network:
+    connectors: tuple[Connector, ...]
+
+
+distillation_network = Network(
+    connectors=(
+        Connector(
+            name="Cold Water Inlet to Condenser",
+            from_converter_ports=(Port(unit_name="COLD WATER IN", port="outlet"),),
+            to_converter_ports=(Port(unit_name="Condenser", port="cold_water_in"),),
+        ),
+        Connector(
+            name="Condenser Outlet to Vacuum",
+            from_converter_ports=(Port(unit_name="Condenser", port="vapor_out"),),
+            to_converter_ports=(Port(unit_name="TO VACUUM", port="inlet"),),
+        ),
+        Connector(
+            name="Condenser Cold Water Out",
+            from_converter_ports=(Port(unit_name="Condenser", port="cold_water_out"),),
+            to_converter_ports=(Port(unit_name="COLD WATER OUT", port="inlet"),),
+        ),
+        Connector(
+            name="Condenser Liquid to Reflux Drum",
+            from_converter_ports=(Port(unit_name="Condenser", port="liquid_out"),),
+            to_converter_ports=(Port(unit_name="REFLUX DRUM", port="inlet"),),
+        ),
+        Connector(
+            name="Reflux Drum to Distillation Column (Reflux)",
+            from_converter_ports=(Port(unit_name="REFLUX DRUM", port="liquid_out"),),
+            to_converter_ports=(Port(unit_name="MEG DISTILLATION COLUMN", port="reflux_in"),),
+        ),
+        Connector(
+            name="Distillation Column Overhead Vapor",
+            from_converter_ports=(Port(unit_name="MEG DISTILLATION COLUMN", port="vapor_out_top"),),
+            to_converter_ports=(Port(unit_name="Condenser", port="vapor_in"),),
+        ),
+        Connector(
+            name="MEG Product Line",
+            from_converter_ports=(Port(unit_name="MEG DISTILLATION COLUMN", port="meg_product_out"),),
+            to_converter_ports=(Port(unit_name="MEG", port="inlet"),),
+        ),
+        Connector(
+            name="Steam Inlet to Reboiler",
+            from_converter_ports=(Port(unit_name="STEAM IN", port="outlet"),),
+            to_converter_ports=(Port(unit_name="REBOILER", port="steam_in"),),
+        ),
+        Connector(
+            name="Reboiler Steam Out",
+            from_converter_ports=(Port(unit_name="REBOILER", port="steam_out"),),
+            to_converter_ports=(Port(unit_name="STEAM OUT", port="inlet"),),
+        ),
+        Connector(
+            name="Reboiler Bottoms to Column",
+            from_converter_ports=(Port(unit_name="REBOILER", port="liquid_out_to_column"),),
+            to_converter_ports=(Port(unit_name="MEG DISTILLATION COLUMN", port="reboiler_return"),),
+        ),
+        Connector(
+            name="Column Bottoms to Reboiler",
+            from_converter_ports=(Port(unit_name="MEG DISTILLATION COLUMN", port="bottoms_out_to_reboiler"),),
+            to_converter_ports=(Port(unit_name="REBOILER", port="liquid_in_from_column"),),
+        ),
+        Connector(
+            name="DEG+TEG Product Line",
+            from_converter_ports=(Port(unit_name="REBOILER", port="deg_teg_product_out"),),
+            to_converter_ports=(Port(unit_name="DEG + TEG", port="inlet"),),
+        ),
+    )
+)

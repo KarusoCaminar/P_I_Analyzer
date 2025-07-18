@@ -1,0 +1,5577 @@
+[
+  {
+    "id": "a402afec-6ab4-48ac-8902-5cca446b0fe7",
+    "name": "Absorption Chiller",
+    "description": "Type representing generic absorption chillers.",
+    "parent": "Abstract Element Heating and Cooling",
+    "ports": [
+      {
+        "id": "40e6499e-5344-4af5-aa21-8497765086c6",
+        "name": "Hot In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "2c46afa0-3408-493c-a287-4cf83a559da6",
+        "name": "Hot Out",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "b3cc9a5c-0ccd-4aa8-8504-8efec9f53272",
+        "name": "Heating In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "46498c9d-f2c4-4611-af00-153f244b6d33",
+        "name": "Heating Out",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "bbd342aa-a6a4-4b81-9dbe-e69adcb158c1",
+        "name": "Cooling In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "b6a4dded-acb8-4855-a17c-0168f5ac68d5",
+        "name": "Cooling Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "80a1431f-aaf9-48ed-8689-f51257b97bb4",
+        "name": "Density Cooling"
+      },
+      {
+        "id": "28f63e0a-01e5-4637-a108-f8ccf9ae5da3",
+        "name": "Density Heating"
+      },
+      {
+        "id": "b86fc932-380c-43e5-b8d5-0f194c214b0e",
+        "name": "Density Hot"
+      },
+      {
+        "id": "90e4ce99-f28f-482b-bd41-c10b2bf32ba7",
+        "name": "Machine Failure"
+      },
+      {
+        "id": "8ebe7175-ee32-4d56-9e38-2a37e459ff9f",
+        "name": "Manual Operation"
+      },
+      {
+        "id": "25af064a-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow Cooling"
+      },
+      {
+        "id": "29a06d6d-89f2-4f90-b485-d79a0ada400f",
+        "name": "Mass Flow Cooling Maximum"
+      },
+      {
+        "id": "40172b74-b806-4f7d-b828-36d4f938c3f7",
+        "name": "Mass Flow Cooling Minimum"
+      },
+      {
+        "id": "f7c393fe-3d9c-4902-b021-615cf89a78c0",
+        "name": "Mass Flow Heating"
+      },
+      {
+        "id": "30ba563a-38b5-4b2a-ac08-6c9f3eb5adda",
+        "name": "Mass Flow Heating Maximum"
+      },
+      {
+        "id": "aecf81ea-1ecd-4099-a200-6e4c004eb165",
+        "name": "Mass Flow Heating Minimum"
+      },
+      {
+        "id": "9812449f-2e3b-4b73-b593-d5158314b263",
+        "name": "Mass Flow Hot"
+      },
+      {
+        "id": "8d1d53b2-089f-4ff0-a47d-b5aeb0347e19",
+        "name": "Mass Flow Hot Maximum"
+      },
+      {
+        "id": "5c829fe7-6811-45aa-8583-38fc0e71f734",
+        "name": "Mass Flow Hot Minimum"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "32d59bdc-dee1-4ef9-9bca-20e980ffe31c",
+        "name": "Pressure Difference Cooling"
+      },
+      {
+        "id": "937cae68-59af-44f0-aab1-397823266327",
+        "name": "Pressure Difference Heating"
+      },
+      {
+        "id": "9207de61-e364-44b9-8174-1809d1a6a3c1",
+        "name": "Pressure Difference Hot"
+      },
+      {
+        "id": "ca9ef214-d657-420a-a504-ddca39a0e531",
+        "name": "Pressure In Cooling"
+      },
+      {
+        "id": "60cfa284-c6d3-44c0-a91e-7bfe77d75760",
+        "name": "Pressure In Heating"
+      },
+      {
+        "id": "084dc638-4ef9-4fe9-9a13-8071a4b6ab7f",
+        "name": "Pressure In Hot"
+      },
+      {
+        "id": "49780732-3551-4bd9-b675-c011a5c5285b",
+        "name": "Pressure Out Cooling"
+      },
+      {
+        "id": "8c9d2772-610a-4ca0-b0c0-07bd6a1765b3",
+        "name": "Pressure Out Heating"
+      },
+      {
+        "id": "5694b1d8-7fcb-473c-8188-72cfc9565c44",
+        "name": "Pressure Out Hot"
+      },
+      {
+        "id": "0d3b5548-287c-42b7-8ffc-435dffe27e1b",
+        "name": "SEER"
+      },
+      {
+        "id": "f1024c22-fab5-4367-9051-728b07c78079",
+        "name": "Set Temperature Out Cooling"
+      },
+      {
+        "id": "7060500b-b16d-47d6-a1bf-5061fdfc7977",
+        "name": "Set Temperature Out Cooling (Written)"
+      },
+      {
+        "id": "10fb4970-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Cooling"
+      },
+      {
+        "id": "19b2106c-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Heating"
+      },
+      {
+        "id": "55734456-31ba-446a-aea7-96ab2d545bb0",
+        "name": "Temperature In Heating Maximum"
+      },
+      {
+        "id": "2879944f-3e9b-4dbe-b863-5810e5607b6d",
+        "name": "Temperature In Heating Minimum"
+      },
+      {
+        "id": "e0267702-890a-4cdc-92e8-183a6ada3a63",
+        "name": "Temperature In Hot"
+      },
+      {
+        "id": "8f8ea189-849e-4c96-aacf-3a4ab4581a7a",
+        "name": "Temperature In Hot Maximum"
+      },
+      {
+        "id": "41a49018-63fb-4153-95ff-b34e378ec0a6",
+        "name": "Temperature In Hot Minimum"
+      },
+      {
+        "id": "1546e7f0-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out Cooling"
+      },
+      {
+        "id": "16c13e66-0f2a-4275-b2d8-d6713a04be23",
+        "name": "Temperature Out Heating"
+      },
+      {
+        "id": "4e488bf8-f538-4c31-a70c-60e05ac8e12d",
+        "name": "Temperature Out Hot"
+      },
+      {
+        "id": "95e5562d-16a7-4fe7-913d-dff605c26796",
+        "name": "Thermal Capacity Cooling"
+      },
+      {
+        "id": "4457e79b-52c4-4c40-a149-0b997323ee5a",
+        "name": "Thermal Capacity Heating"
+      },
+      {
+        "id": "e970fd92-7ccd-40b5-8772-a0033b832178",
+        "name": "Thermal Capacity Hot"
+      },
+      {
+        "id": "d8cb9d86-0d46-41a3-a512-ec4e6a31544a",
+        "name": "Thermal Power Cooling"
+      },
+      {
+        "id": "a98e09f4-20f2-4515-9b1c-bd3718b3369c",
+        "name": "Thermal Power Heating"
+      },
+      {
+        "id": "10e4d386-1db7-43bc-b33e-f7d10e282a1c",
+        "name": "Thermal Power Hot"
+      },
+      {
+        "id": "a8174916-2d1e-46ec-95d4-c2558617dd30",
+        "name": "Volume Flow Cooling"
+      },
+      {
+        "id": "9940ff41-4d60-487e-9418-138d65ca42e3",
+        "name": "Volume Flow Cooling Maximum"
+      },
+      {
+        "id": "18039b04-6c64-4a59-90c1-3e4e3e2ec680",
+        "name": "Volume Flow Cooling Minimum"
+      },
+      {
+        "id": "178318c4-0a63-441a-95b1-01c4dc8fe879",
+        "name": "Volume Flow Heating"
+      },
+      {
+        "id": "65f4c0dd-d26a-48ef-8e06-eb8f3680abb4",
+        "name": "Volume Flow Heating Maximum"
+      },
+      {
+        "id": "4df61fbd-6fb9-4b07-92e1-59a80c852863",
+        "name": "Volume Flow Heating Minimum"
+      },
+      {
+        "id": "914d8dd6-ee02-4cf2-9c44-82bfe83314e9",
+        "name": "Volume Flow Hot"
+      },
+      {
+        "id": "a037b2c8-cb58-4a3c-b0cd-0383f62721da",
+        "name": "Volume Flow Hot Maximum"
+      },
+      {
+        "id": "eaacb63f-2e45-440a-ab7b-72d45cd96be5",
+        "name": "Volume Flow Hot Minimum"
+      },
+      {
+        "id": "3e522749-7299-40f8-88ec-f6ad8f8047d4",
+        "name": "Volume Flow Pressure Coefficient Cooling"
+      },
+      {
+        "id": "a8a67124-9139-4142-b861-21390bfa6996",
+        "name": "Volume Flow Pressure Coefficient Heating"
+      },
+      {
+        "id": "e4126cb5-e871-4afe-b889-147b5eb8aa57",
+        "name": "Volume Flow Pressure Coefficient Hot"
+      }
+    ]
+  },
+  {
+    "id": "15db774b-079e-4803-ba44-9ac2557ff51f",
+    "name": "Abstract Element Cooling",
+    "description": "Abstract element containing all relevant cooling features of element",
+    "parent": null,
+    "ports": [
+      {
+        "id": "bbd342aa-a6a4-4b81-9dbe-e69adcb158c1",
+        "name": "Cooling In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "b6a4dded-acb8-4855-a17c-0168f5ac68d5",
+        "name": "Cooling Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "80a1431f-aaf9-48ed-8689-f51257b97bb4",
+        "name": "Density Cooling"
+      },
+      {
+        "id": "25af064a-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow Cooling"
+      },
+      {
+        "id": "32d59bdc-dee1-4ef9-9bca-20e980ffe31c",
+        "name": "Pressure Difference Cooling"
+      },
+      {
+        "id": "ca9ef214-d657-420a-a504-ddca39a0e531",
+        "name": "Pressure In Cooling"
+      },
+      {
+        "id": "49780732-3551-4bd9-b675-c011a5c5285b",
+        "name": "Pressure Out Cooling"
+      },
+      {
+        "id": "10fb4970-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Cooling"
+      },
+      {
+        "id": "1546e7f0-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out Cooling"
+      },
+      {
+        "id": "95e5562d-16a7-4fe7-913d-dff605c26796",
+        "name": "Thermal Capacity Cooling"
+      },
+      {
+        "id": "d8cb9d86-0d46-41a3-a512-ec4e6a31544a",
+        "name": "Thermal Power Cooling"
+      },
+      {
+        "id": "a8174916-2d1e-46ec-95d4-c2558617dd30",
+        "name": "Volume Flow Cooling"
+      },
+      {
+        "id": "3e522749-7299-40f8-88ec-f6ad8f8047d4",
+        "name": "Volume Flow Pressure Coefficient Cooling"
+      }
+    ]
+  },
+  {
+    "id": "2a970842-206c-4a77-adb0-4f87d7ba1e32",
+    "name": "Abstract Element Heating",
+    "description": "Abstract element containing all relevant heating features of element",
+    "parent": null,
+    "ports": [
+      {
+        "id": "b3cc9a5c-0ccd-4aa8-8504-8efec9f53272",
+        "name": "Heating In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "46498c9d-f2c4-4611-af00-153f244b6d33",
+        "name": "Heating Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "28f63e0a-01e5-4637-a108-f8ccf9ae5da3",
+        "name": "Density Heating"
+      },
+      {
+        "id": "f7c393fe-3d9c-4902-b021-615cf89a78c0",
+        "name": "Mass Flow Heating"
+      },
+      {
+        "id": "30ba563a-38b5-4b2a-ac08-6c9f3eb5adda",
+        "name": "Mass Flow Heating Maximum"
+      },
+      {
+        "id": "aecf81ea-1ecd-4099-a200-6e4c004eb165",
+        "name": "Mass Flow Heating Minimum"
+      },
+      {
+        "id": "937cae68-59af-44f0-aab1-397823266327",
+        "name": "Pressure Difference Heating"
+      },
+      {
+        "id": "60cfa284-c6d3-44c0-a91e-7bfe77d75760",
+        "name": "Pressure In Heating"
+      },
+      {
+        "id": "8c9d2772-610a-4ca0-b0c0-07bd6a1765b3",
+        "name": "Pressure Out Heating"
+      },
+      {
+        "id": "943311e6-959c-4eca-a28f-0df9dc93cf03",
+        "name": "Set Temperature Out Heating"
+      },
+      {
+        "id": "54e1f04f-af14-4ef2-ac2f-70954f9e79e6",
+        "name": "Set Temperature Out Heating (Written)"
+      },
+      {
+        "id": "19b2106c-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Heating"
+      },
+      {
+        "id": "16c13e66-0f2a-4275-b2d8-d6713a04be23",
+        "name": "Temperature Out Heating"
+      },
+      {
+        "id": "4457e79b-52c4-4c40-a149-0b997323ee5a",
+        "name": "Thermal Capacity Heating"
+      },
+      {
+        "id": "a98e09f4-20f2-4515-9b1c-bd3718b3369c",
+        "name": "Thermal Power Heating"
+      },
+      {
+        "id": "178318c4-0a63-441a-95b1-01c4dc8fe879",
+        "name": "Volume Flow Heating"
+      },
+      {
+        "id": "65f4c0dd-d26a-48ef-8e06-eb8f3680abb4",
+        "name": "Volume Flow Heating Maximum"
+      },
+      {
+        "id": "4df61fbd-6fb9-4b07-92e1-59a80c852863",
+        "name": "Volume Flow Heating Minimum"
+      },
+      {
+        "id": "a8a67124-9139-4142-b861-21390bfa6996",
+        "name": "Volume Flow Pressure Coefficient Heating"
+      }
+    ]
+  },
+  {
+    "id": "ed289111-cd1e-4263-8fe9-fe0615ffdde8",
+    "name": "Abstract Element Heating and Cooling",
+    "description": "Abstract element containing all relevant cooling and heating features of element",
+    "parent": "Abstract Element Cooling",
+    "ports": [
+      {
+        "id": "b3cc9a5c-0ccd-4aa8-8504-8efec9f53272",
+        "name": "Heating In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "46498c9d-f2c4-4611-af00-153f244b6d33",
+        "name": "Heating Out",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "bbd342aa-a6a4-4b81-9dbe-e69adcb158c1",
+        "name": "Cooling In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "b6a4dded-acb8-4855-a17c-0168f5ac68d5",
+        "name": "Cooling Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "80a1431f-aaf9-48ed-8689-f51257b97bb4",
+        "name": "Density Cooling"
+      },
+      {
+        "id": "28f63e0a-01e5-4637-a108-f8ccf9ae5da3",
+        "name": "Density Heating"
+      },
+      {
+        "id": "25af064a-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow Cooling"
+      },
+      {
+        "id": "f7c393fe-3d9c-4902-b021-615cf89a78c0",
+        "name": "Mass Flow Heating"
+      },
+      {
+        "id": "32d59bdc-dee1-4ef9-9bca-20e980ffe31c",
+        "name": "Pressure Difference Cooling"
+      },
+      {
+        "id": "937cae68-59af-44f0-aab1-397823266327",
+        "name": "Pressure Difference Heating"
+      },
+      {
+        "id": "ca9ef214-d657-420a-a504-ddca39a0e531",
+        "name": "Pressure In Cooling"
+      },
+      {
+        "id": "60cfa284-c6d3-44c0-a91e-7bfe77d75760",
+        "name": "Pressure In Heating"
+      },
+      {
+        "id": "49780732-3551-4bd9-b675-c011a5c5285b",
+        "name": "Pressure Out Cooling"
+      },
+      {
+        "id": "8c9d2772-610a-4ca0-b0c0-07bd6a1765b3",
+        "name": "Pressure Out Heating"
+      },
+      {
+        "id": "10fb4970-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Cooling"
+      },
+      {
+        "id": "19b2106c-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Heating"
+      },
+      {
+        "id": "1546e7f0-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out Cooling"
+      },
+      {
+        "id": "16c13e66-0f2a-4275-b2d8-d6713a04be23",
+        "name": "Temperature Out Heating"
+      },
+      {
+        "id": "95e5562d-16a7-4fe7-913d-dff605c26796",
+        "name": "Thermal Capacity Cooling"
+      },
+      {
+        "id": "4457e79b-52c4-4c40-a149-0b997323ee5a",
+        "name": "Thermal Capacity Heating"
+      },
+      {
+        "id": "d8cb9d86-0d46-41a3-a512-ec4e6a31544a",
+        "name": "Thermal Power Cooling"
+      },
+      {
+        "id": "a98e09f4-20f2-4515-9b1c-bd3718b3369c",
+        "name": "Thermal Power Heating"
+      },
+      {
+        "id": "a8174916-2d1e-46ec-95d4-c2558617dd30",
+        "name": "Volume Flow Cooling"
+      },
+      {
+        "id": "178318c4-0a63-441a-95b1-01c4dc8fe879",
+        "name": "Volume Flow Heating"
+      },
+      {
+        "id": "3e522749-7299-40f8-88ec-f6ad8f8047d4",
+        "name": "Volume Flow Pressure Coefficient Cooling"
+      },
+      {
+        "id": "a8a67124-9139-4142-b861-21390bfa6996",
+        "name": "Volume Flow Pressure Coefficient Heating"
+      }
+    ]
+  },
+  {
+    "id": "7dbb2945-7df2-4823-94bf-b9cd23348664",
+    "name": "Abstract Element Medium",
+    "description": "Abstract element containing all relevant features for element with 'Medium' port",
+    "parent": null,
+    "ports": [
+      {
+        "id": "5ee7e228-dd13-40d2-ad81-9e65aec981c5",
+        "name": "Medium In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "3b16e24c-7348-4045-8a73-aeed094b0b6e",
+        "name": "Medium Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "e1cc5fdc-5101-4ac8-a522-b67972fa0992",
+        "name": "Density"
+      },
+      {
+        "id": "1dc7a02c-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow"
+      },
+      {
+        "id": "f4c553b7-8135-4146-83a3-5b48c4794e04",
+        "name": "Pressure Difference"
+      },
+      {
+        "id": "c6f8be5f-70f5-4b1e-8313-2cc56740ce45",
+        "name": "Pressure In"
+      },
+      {
+        "id": "589da515-5af6-4765-ac3c-6f1471dcfcf7",
+        "name": "Pressure Out"
+      },
+      {
+        "id": "30ac5c94-d3c9-46fc-a9e7-4e1289514a10",
+        "name": "Thermal Capacity"
+      },
+      {
+        "id": "9fc45b1c-c905-43f7-b2ee-87b2e9745bfa",
+        "name": "Volume Flow"
+      }
+    ]
+  },
+  {
+    "id": "a4f5f766-f319-492f-8fc5-a21b4b05766e",
+    "name": "Abstract Energy Contract",
+    "description": "Generic electricity contract. Features correspond directly to the respective component in the optimizer.",
+    "parent": null,
+    "ports": [],
+    "features": [
+      {
+        "id": "037e5b7a-4083-4a62-a54a-1d366d6e8e12",
+        "name": "Power Bought"
+      },
+      {
+        "id": "af6330a0-d548-4566-a8dc-2b95aa882073",
+        "name": "Power Bought Fixed"
+      },
+      {
+        "id": "9106ea7b-e9ed-41b1-afbc-2b577f8149fa",
+        "name": "Power Sold"
+      },
+      {
+        "id": "822fec8a-2e7c-495c-a6f1-ad8bb2e5ff0a",
+        "name": "Power Sold Fixed"
+      },
+      {
+        "id": "2c0047fa-692f-45c7-9e97-e56c9211df91",
+        "name": "Price Buy"
+      },
+      {
+        "id": "bee0fe66-33df-4c05-bf08-7a1ebbad0225",
+        "name": "Price Sell"
+      },
+      {
+        "id": "9d1775a6-18bc-4a52-a01f-9f28cc297d82",
+        "name": "Tax Buy"
+      },
+      {
+        "id": "ab530863-aa87-491a-adae-19c50602f185",
+        "name": "Tax Sell"
+      }
+    ]
+  },
+  {
+    "id": "d52bac94-e636-4fd5-9dad-52b9a52b4956",
+    "name": "Air Cooled Compression Chiller",
+    "description": "Type representing generic air cooled compression chillers.",
+    "parent": "Abstract Element Cooling",
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "bbd342aa-a6a4-4b81-9dbe-e69adcb158c1",
+        "name": "Cooling In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "b6a4dded-acb8-4855-a17c-0168f5ac68d5",
+        "name": "Cooling Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "bafb920e-26de-4272-bd2c-f0358153855f",
+        "name": "Coefficient of Performance"
+      },
+      {
+        "id": "80a1431f-aaf9-48ed-8689-f51257b97bb4",
+        "name": "Density Cooling"
+      },
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "a340e5e3-7cd6-425d-b4ca-e2060da2f96f",
+        "name": "Electrical Power Compressor"
+      },
+      {
+        "id": "de975a9a-ff36-405d-9545-7dd108edd230",
+        "name": "Electrical Power Compressor Maximum"
+      },
+      {
+        "id": "142a141b-c2ce-4fe1-b5e7-8077130f8322",
+        "name": "Electrical Power Compressor Minimum"
+      },
+      {
+        "id": "e64262e2-604e-4523-a211-c7e7e723be2c",
+        "name": "Electrical Power Ventilation"
+      },
+      {
+        "id": "24a83ce7-2284-473b-ae8b-528cca00fac4",
+        "name": "Electrical Power Ventilation Maximum"
+      },
+      {
+        "id": "35171d72-d560-446d-ac5e-dd7806428fce",
+        "name": "Electrical Power Ventilation Minimum"
+      },
+      {
+        "id": "15c9d926-0992-4aed-8409-78193bd34779",
+        "name": "Electrical Voltage"
+      },
+      {
+        "id": "90e4ce99-f28f-482b-bd41-c10b2bf32ba7",
+        "name": "Machine Failure"
+      },
+      {
+        "id": "8ebe7175-ee32-4d56-9e38-2a37e459ff9f",
+        "name": "Manual Operation"
+      },
+      {
+        "id": "25af064a-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow Cooling"
+      },
+      {
+        "id": "29a06d6d-89f2-4f90-b485-d79a0ada400f",
+        "name": "Mass Flow Cooling Maximum"
+      },
+      {
+        "id": "40172b74-b806-4f7d-b828-36d4f938c3f7",
+        "name": "Mass Flow Cooling Minimum"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "9dd01024-1344-435f-876c-02195f9d4598",
+        "name": "Operation Mode"
+      },
+      {
+        "id": "12f3c284-deec-4cdc-abb0-52f0aba252b9",
+        "name": "Operation Mode (Written)"
+      },
+      {
+        "id": "32d59bdc-dee1-4ef9-9bca-20e980ffe31c",
+        "name": "Pressure Difference Cooling"
+      },
+      {
+        "id": "ca9ef214-d657-420a-a504-ddca39a0e531",
+        "name": "Pressure In Cooling"
+      },
+      {
+        "id": "49780732-3551-4bd9-b675-c011a5c5285b",
+        "name": "Pressure Out Cooling"
+      },
+      {
+        "id": "7223a24c-b160-4f4b-a403-620f75ee5af9",
+        "name": "Rate of Rotation Compressor"
+      },
+      {
+        "id": "c2e300eb-c939-45db-84ad-8bd8af78ac0a",
+        "name": "Rate of Rotation Ventilation"
+      },
+      {
+        "id": "0d3b5548-287c-42b7-8ffc-435dffe27e1b",
+        "name": "SEER"
+      },
+      {
+        "id": "f1024c22-fab5-4367-9051-728b07c78079",
+        "name": "Set Temperature Out Cooling"
+      },
+      {
+        "id": "7060500b-b16d-47d6-a1bf-5061fdfc7977",
+        "name": "Set Temperature Out Cooling (Written)"
+      },
+      {
+        "id": "2d36645a-b4d7-4608-a45a-b0a6c38e2e7a",
+        "name": "Temperature Environment"
+      },
+      {
+        "id": "10fb4970-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Cooling"
+      },
+      {
+        "id": "1546e7f0-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out Cooling"
+      },
+      {
+        "id": "95e5562d-16a7-4fe7-913d-dff605c26796",
+        "name": "Thermal Capacity Cooling"
+      },
+      {
+        "id": "d8cb9d86-0d46-41a3-a512-ec4e6a31544a",
+        "name": "Thermal Power Cooling"
+      },
+      {
+        "id": "a8174916-2d1e-46ec-95d4-c2558617dd30",
+        "name": "Volume Flow Cooling"
+      },
+      {
+        "id": "9940ff41-4d60-487e-9418-138d65ca42e3",
+        "name": "Volume Flow Cooling Maximum"
+      },
+      {
+        "id": "18039b04-6c64-4a59-90c1-3e4e3e2ec680",
+        "name": "Volume Flow Cooling Minimum"
+      },
+      {
+        "id": "3e522749-7299-40f8-88ec-f6ad8f8047d4",
+        "name": "Volume Flow Pressure Coefficient Cooling"
+      }
+    ]
+  },
+  {
+    "id": "28bb95d6-a29e-4b0b-9a48-7432a432ebbf",
+    "name": "Air Quality Sensor",
+    "description": "Device that measures different parameters of the ambient air of a room",
+    "parent": null,
+    "ports": [],
+    "features": [
+      {
+        "id": "f07984c4-6efb-4bd3-b017-c43525861433",
+        "name": "CO2 Concentration"
+      },
+      {
+        "id": "1dc399a0-7335-4117-8ae9-4714f3715e97",
+        "name": "Relative Air Humidity"
+      },
+      {
+        "id": "f3d9904a-cba7-11ec-9d64-0242ac120002",
+        "name": "Temperature"
+      },
+      {
+        "id": "568ab64b-e474-4816-bdc1-a5012c01cc3a",
+        "name": "VOC Index"
+      }
+    ]
+  },
+  {
+    "id": "3c668418-651e-4216-80ec-74577aaec8e6",
+    "name": "Bivalent Consumer Fuel / Electricity ",
+    "description": "Bivalent consumers that can be operated with fuel (Operation Mode = 0) or electricity (Operation Mode = 1). Power is defined as the sum of electrical and fuel power.",
+    "parent": null,
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "29e61365-f05e-4c37-9dbb-7c0669134696",
+        "name": "Fuel",
+        "connection_type": "Fuel"
+      }
+    ],
+    "features": [
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "57800d19-c580-4236-b417-255478ac7f5d",
+        "name": "Fuel Power"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "9dd01024-1344-435f-876c-02195f9d4598",
+        "name": "Operation Mode"
+      },
+      {
+        "id": "12f3c284-deec-4cdc-abb0-52f0aba252b9",
+        "name": "Operation Mode (Written)"
+      },
+      {
+        "id": "e6d209fe-70d7-44bc-9990-f0004b51c8aa",
+        "name": "Power"
+      },
+      {
+        "id": "20a4036a-44de-4a29-9654-7d2f9db065dc",
+        "name": "Power Forecast"
+      }
+    ]
+  },
+  {
+    "id": "048dd002-db78-4280-8e9c-7d1f3ce0e72b",
+    "name": "Boiler",
+    "description": "Type representing generic boilers.",
+    "parent": "Abstract Element Heating",
+    "ports": [
+      {
+        "id": "29e61365-f05e-4c37-9dbb-7c0669134696",
+        "name": "Fuel",
+        "connection_type": "Fuel"
+      },
+      {
+        "id": "b3cc9a5c-0ccd-4aa8-8504-8efec9f53272",
+        "name": "Heating In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "46498c9d-f2c4-4611-af00-153f244b6d33",
+        "name": "Heating Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "28f63e0a-01e5-4637-a108-f8ccf9ae5da3",
+        "name": "Density Heating"
+      },
+      {
+        "id": "57800d19-c580-4236-b417-255478ac7f5d",
+        "name": "Fuel Power"
+      },
+      {
+        "id": "0e93e553-f41a-47d3-a19b-6488e15df074",
+        "name": "Fuel Price"
+      },
+      {
+        "id": "f7c393fe-3d9c-4902-b021-615cf89a78c0",
+        "name": "Mass Flow Heating"
+      },
+      {
+        "id": "30ba563a-38b5-4b2a-ac08-6c9f3eb5adda",
+        "name": "Mass Flow Heating Maximum"
+      },
+      {
+        "id": "aecf81ea-1ecd-4099-a200-6e4c004eb165",
+        "name": "Mass Flow Heating Minimum"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "937cae68-59af-44f0-aab1-397823266327",
+        "name": "Pressure Difference Heating"
+      },
+      {
+        "id": "60cfa284-c6d3-44c0-a91e-7bfe77d75760",
+        "name": "Pressure In Heating"
+      },
+      {
+        "id": "8c9d2772-610a-4ca0-b0c0-07bd6a1765b3",
+        "name": "Pressure Out Heating"
+      },
+      {
+        "id": "41d7aaac-d5b9-42b7-8574-bd5d0ba9de09",
+        "name": "Set Signal"
+      },
+      {
+        "id": "ad0ec563-9682-494c-9721-43f753f7ad7f",
+        "name": "Set Signal (Written)"
+      },
+      {
+        "id": "943311e6-959c-4eca-a28f-0df9dc93cf03",
+        "name": "Set Temperature Out Heating"
+      },
+      {
+        "id": "54e1f04f-af14-4ef2-ac2f-70954f9e79e6",
+        "name": "Set Temperature Out Heating (Written)"
+      },
+      {
+        "id": "19b2106c-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Heating"
+      },
+      {
+        "id": "16c13e66-0f2a-4275-b2d8-d6713a04be23",
+        "name": "Temperature Out Heating"
+      },
+      {
+        "id": "4457e79b-52c4-4c40-a149-0b997323ee5a",
+        "name": "Thermal Capacity Heating"
+      },
+      {
+        "id": "a98e09f4-20f2-4515-9b1c-bd3718b3369c",
+        "name": "Thermal Power Heating"
+      },
+      {
+        "id": "178318c4-0a63-441a-95b1-01c4dc8fe879",
+        "name": "Volume Flow Heating"
+      },
+      {
+        "id": "65f4c0dd-d26a-48ef-8e06-eb8f3680abb4",
+        "name": "Volume Flow Heating Maximum"
+      },
+      {
+        "id": "4df61fbd-6fb9-4b07-92e1-59a80c852863",
+        "name": "Volume Flow Heating Minimum"
+      },
+      {
+        "id": "a8a67124-9139-4142-b861-21390bfa6996",
+        "name": "Volume Flow Pressure Coefficient Heating"
+      }
+    ]
+  },
+  {
+    "id": "90e16999-a232-4e06-899b-a87de1b0ac45",
+    "name": "Combined Heat and Power One Temperature Level (CHP)",
+    "description": "Type representing generic CHPs with one temperature levels.",
+    "parent": "Abstract Element Heating",
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "29e61365-f05e-4c37-9dbb-7c0669134696",
+        "name": "Fuel",
+        "connection_type": "Fuel"
+      },
+      {
+        "id": "b3cc9a5c-0ccd-4aa8-8504-8efec9f53272",
+        "name": "Heating In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "46498c9d-f2c4-4611-af00-153f244b6d33",
+        "name": "Heating Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "28f63e0a-01e5-4637-a108-f8ccf9ae5da3",
+        "name": "Density Heating"
+      },
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "d47c4f8d-f663-478c-a7eb-abc563d37cc7",
+        "name": "Electrical Power Maximum"
+      },
+      {
+        "id": "b1284a54-adcf-401d-a268-b9901ae6e1a9",
+        "name": "Electrical Power Minimum"
+      },
+      {
+        "id": "57800d19-c580-4236-b417-255478ac7f5d",
+        "name": "Fuel Power"
+      },
+      {
+        "id": "0e93e553-f41a-47d3-a19b-6488e15df074",
+        "name": "Fuel Price"
+      },
+      {
+        "id": "90e4ce99-f28f-482b-bd41-c10b2bf32ba7",
+        "name": "Machine Failure"
+      },
+      {
+        "id": "8ebe7175-ee32-4d56-9e38-2a37e459ff9f",
+        "name": "Manual Operation"
+      },
+      {
+        "id": "f7c393fe-3d9c-4902-b021-615cf89a78c0",
+        "name": "Mass Flow Heating"
+      },
+      {
+        "id": "30ba563a-38b5-4b2a-ac08-6c9f3eb5adda",
+        "name": "Mass Flow Heating Maximum"
+      },
+      {
+        "id": "aecf81ea-1ecd-4099-a200-6e4c004eb165",
+        "name": "Mass Flow Heating Minimum"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "937cae68-59af-44f0-aab1-397823266327",
+        "name": "Pressure Difference Heating"
+      },
+      {
+        "id": "60cfa284-c6d3-44c0-a91e-7bfe77d75760",
+        "name": "Pressure In Heating"
+      },
+      {
+        "id": "8c9d2772-610a-4ca0-b0c0-07bd6a1765b3",
+        "name": "Pressure Out Heating"
+      },
+      {
+        "id": "41d7aaac-d5b9-42b7-8574-bd5d0ba9de09",
+        "name": "Set Signal"
+      },
+      {
+        "id": "ad0ec563-9682-494c-9721-43f753f7ad7f",
+        "name": "Set Signal (Written)"
+      },
+      {
+        "id": "943311e6-959c-4eca-a28f-0df9dc93cf03",
+        "name": "Set Temperature Out Heating"
+      },
+      {
+        "id": "54e1f04f-af14-4ef2-ac2f-70954f9e79e6",
+        "name": "Set Temperature Out Heating (Written)"
+      },
+      {
+        "id": "19b2106c-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Heating"
+      },
+      {
+        "id": "16c13e66-0f2a-4275-b2d8-d6713a04be23",
+        "name": "Temperature Out Heating"
+      },
+      {
+        "id": "4457e79b-52c4-4c40-a149-0b997323ee5a",
+        "name": "Thermal Capacity Heating"
+      },
+      {
+        "id": "a98e09f4-20f2-4515-9b1c-bd3718b3369c",
+        "name": "Thermal Power Heating"
+      },
+      {
+        "id": "178318c4-0a63-441a-95b1-01c4dc8fe879",
+        "name": "Volume Flow Heating"
+      },
+      {
+        "id": "65f4c0dd-d26a-48ef-8e06-eb8f3680abb4",
+        "name": "Volume Flow Heating Maximum"
+      },
+      {
+        "id": "4df61fbd-6fb9-4b07-92e1-59a80c852863",
+        "name": "Volume Flow Heating Minimum"
+      },
+      {
+        "id": "a8a67124-9139-4142-b861-21390bfa6996",
+        "name": "Volume Flow Pressure Coefficient Heating"
+      }
+    ]
+  },
+  {
+    "id": "34e68160-ec94-424d-890c-00b1bbc14353",
+    "name": "Combined Heat and Power Two Temperature Levels (CHP)",
+    "description": "Type representing generic CHPs with two temperature levels.",
+    "parent": "Combined Heat and Power One Temperature Level (CHP)",
+    "ports": [
+      {
+        "id": "40e6499e-5344-4af5-aa21-8497765086c6",
+        "name": "Hot In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "2c46afa0-3408-493c-a287-4cf83a559da6",
+        "name": "Hot Out",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "29e61365-f05e-4c37-9dbb-7c0669134696",
+        "name": "Fuel",
+        "connection_type": "Fuel"
+      },
+      {
+        "id": "b3cc9a5c-0ccd-4aa8-8504-8efec9f53272",
+        "name": "Heating In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "46498c9d-f2c4-4611-af00-153f244b6d33",
+        "name": "Heating Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "28f63e0a-01e5-4637-a108-f8ccf9ae5da3",
+        "name": "Density Heating"
+      },
+      {
+        "id": "b86fc932-380c-43e5-b8d5-0f194c214b0e",
+        "name": "Density Hot"
+      },
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "d47c4f8d-f663-478c-a7eb-abc563d37cc7",
+        "name": "Electrical Power Maximum"
+      },
+      {
+        "id": "b1284a54-adcf-401d-a268-b9901ae6e1a9",
+        "name": "Electrical Power Minimum"
+      },
+      {
+        "id": "57800d19-c580-4236-b417-255478ac7f5d",
+        "name": "Fuel Power"
+      },
+      {
+        "id": "0e93e553-f41a-47d3-a19b-6488e15df074",
+        "name": "Fuel Price"
+      },
+      {
+        "id": "90e4ce99-f28f-482b-bd41-c10b2bf32ba7",
+        "name": "Machine Failure"
+      },
+      {
+        "id": "8ebe7175-ee32-4d56-9e38-2a37e459ff9f",
+        "name": "Manual Operation"
+      },
+      {
+        "id": "f7c393fe-3d9c-4902-b021-615cf89a78c0",
+        "name": "Mass Flow Heating"
+      },
+      {
+        "id": "30ba563a-38b5-4b2a-ac08-6c9f3eb5adda",
+        "name": "Mass Flow Heating Maximum"
+      },
+      {
+        "id": "aecf81ea-1ecd-4099-a200-6e4c004eb165",
+        "name": "Mass Flow Heating Minimum"
+      },
+      {
+        "id": "9812449f-2e3b-4b73-b593-d5158314b263",
+        "name": "Mass Flow Hot"
+      },
+      {
+        "id": "8d1d53b2-089f-4ff0-a47d-b5aeb0347e19",
+        "name": "Mass Flow Hot Maximum"
+      },
+      {
+        "id": "5c829fe7-6811-45aa-8583-38fc0e71f734",
+        "name": "Mass Flow Hot Minimum"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "937cae68-59af-44f0-aab1-397823266327",
+        "name": "Pressure Difference Heating"
+      },
+      {
+        "id": "9207de61-e364-44b9-8174-1809d1a6a3c1",
+        "name": "Pressure Difference Hot"
+      },
+      {
+        "id": "60cfa284-c6d3-44c0-a91e-7bfe77d75760",
+        "name": "Pressure In Heating"
+      },
+      {
+        "id": "084dc638-4ef9-4fe9-9a13-8071a4b6ab7f",
+        "name": "Pressure In Hot"
+      },
+      {
+        "id": "8c9d2772-610a-4ca0-b0c0-07bd6a1765b3",
+        "name": "Pressure Out Heating"
+      },
+      {
+        "id": "5694b1d8-7fcb-473c-8188-72cfc9565c44",
+        "name": "Pressure Out Hot"
+      },
+      {
+        "id": "41d7aaac-d5b9-42b7-8574-bd5d0ba9de09",
+        "name": "Set Signal"
+      },
+      {
+        "id": "ad0ec563-9682-494c-9721-43f753f7ad7f",
+        "name": "Set Signal (Written)"
+      },
+      {
+        "id": "943311e6-959c-4eca-a28f-0df9dc93cf03",
+        "name": "Set Temperature Out Heating"
+      },
+      {
+        "id": "54e1f04f-af14-4ef2-ac2f-70954f9e79e6",
+        "name": "Set Temperature Out Heating (Written)"
+      },
+      {
+        "id": "19b2106c-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Heating"
+      },
+      {
+        "id": "e0267702-890a-4cdc-92e8-183a6ada3a63",
+        "name": "Temperature In Hot"
+      },
+      {
+        "id": "16c13e66-0f2a-4275-b2d8-d6713a04be23",
+        "name": "Temperature Out Heating"
+      },
+      {
+        "id": "4e488bf8-f538-4c31-a70c-60e05ac8e12d",
+        "name": "Temperature Out Hot"
+      },
+      {
+        "id": "4457e79b-52c4-4c40-a149-0b997323ee5a",
+        "name": "Thermal Capacity Heating"
+      },
+      {
+        "id": "e970fd92-7ccd-40b5-8772-a0033b832178",
+        "name": "Thermal Capacity Hot"
+      },
+      {
+        "id": "a98e09f4-20f2-4515-9b1c-bd3718b3369c",
+        "name": "Thermal Power Heating"
+      },
+      {
+        "id": "10e4d386-1db7-43bc-b33e-f7d10e282a1c",
+        "name": "Thermal Power Hot"
+      },
+      {
+        "id": "178318c4-0a63-441a-95b1-01c4dc8fe879",
+        "name": "Volume Flow Heating"
+      },
+      {
+        "id": "65f4c0dd-d26a-48ef-8e06-eb8f3680abb4",
+        "name": "Volume Flow Heating Maximum"
+      },
+      {
+        "id": "4df61fbd-6fb9-4b07-92e1-59a80c852863",
+        "name": "Volume Flow Heating Minimum"
+      },
+      {
+        "id": "914d8dd6-ee02-4cf2-9c44-82bfe83314e9",
+        "name": "Volume Flow Hot"
+      },
+      {
+        "id": "a037b2c8-cb58-4a3c-b0cd-0383f62721da",
+        "name": "Volume Flow Hot Maximum"
+      },
+      {
+        "id": "eaacb63f-2e45-440a-ab7b-72d45cd96be5",
+        "name": "Volume Flow Hot Minimum"
+      },
+      {
+        "id": "a8a67124-9139-4142-b861-21390bfa6996",
+        "name": "Volume Flow Pressure Coefficient Heating"
+      },
+      {
+        "id": "e4126cb5-e871-4afe-b889-147b5eb8aa57",
+        "name": "Volume Flow Pressure Coefficient Hot"
+      }
+    ]
+  },
+  {
+    "id": "4fb279b6-77b8-4308-a4ba-057c13fecda0",
+    "name": "Company",
+    "description": "Type representing companies.",
+    "parent": null,
+    "ports": [],
+    "features": []
+  },
+  {
+    "id": "07863ade-8cec-4f82-ad64-d00e7871cf74",
+    "name": "Compression Chiller",
+    "description": "Type representing generic compression chillers.",
+    "parent": "Abstract Element Heating and Cooling",
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "b3cc9a5c-0ccd-4aa8-8504-8efec9f53272",
+        "name": "Heating In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "46498c9d-f2c4-4611-af00-153f244b6d33",
+        "name": "Heating Out",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "bbd342aa-a6a4-4b81-9dbe-e69adcb158c1",
+        "name": "Cooling In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "b6a4dded-acb8-4855-a17c-0168f5ac68d5",
+        "name": "Cooling Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "bafb920e-26de-4272-bd2c-f0358153855f",
+        "name": "Coefficient of Performance"
+      },
+      {
+        "id": "80a1431f-aaf9-48ed-8689-f51257b97bb4",
+        "name": "Density Cooling"
+      },
+      {
+        "id": "28f63e0a-01e5-4637-a108-f8ccf9ae5da3",
+        "name": "Density Heating"
+      },
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "15c9d926-0992-4aed-8409-78193bd34779",
+        "name": "Electrical Voltage"
+      },
+      {
+        "id": "90e4ce99-f28f-482b-bd41-c10b2bf32ba7",
+        "name": "Machine Failure"
+      },
+      {
+        "id": "8ebe7175-ee32-4d56-9e38-2a37e459ff9f",
+        "name": "Manual Operation"
+      },
+      {
+        "id": "25af064a-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow Cooling"
+      },
+      {
+        "id": "29a06d6d-89f2-4f90-b485-d79a0ada400f",
+        "name": "Mass Flow Cooling Maximum"
+      },
+      {
+        "id": "40172b74-b806-4f7d-b828-36d4f938c3f7",
+        "name": "Mass Flow Cooling Minimum"
+      },
+      {
+        "id": "f7c393fe-3d9c-4902-b021-615cf89a78c0",
+        "name": "Mass Flow Heating"
+      },
+      {
+        "id": "30ba563a-38b5-4b2a-ac08-6c9f3eb5adda",
+        "name": "Mass Flow Heating Maximum"
+      },
+      {
+        "id": "aecf81ea-1ecd-4099-a200-6e4c004eb165",
+        "name": "Mass Flow Heating Minimum"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "32d59bdc-dee1-4ef9-9bca-20e980ffe31c",
+        "name": "Pressure Difference Cooling"
+      },
+      {
+        "id": "937cae68-59af-44f0-aab1-397823266327",
+        "name": "Pressure Difference Heating"
+      },
+      {
+        "id": "ca9ef214-d657-420a-a504-ddca39a0e531",
+        "name": "Pressure In Cooling"
+      },
+      {
+        "id": "60cfa284-c6d3-44c0-a91e-7bfe77d75760",
+        "name": "Pressure In Heating"
+      },
+      {
+        "id": "49780732-3551-4bd9-b675-c011a5c5285b",
+        "name": "Pressure Out Cooling"
+      },
+      {
+        "id": "8c9d2772-610a-4ca0-b0c0-07bd6a1765b3",
+        "name": "Pressure Out Heating"
+      },
+      {
+        "id": "0d3b5548-287c-42b7-8ffc-435dffe27e1b",
+        "name": "SEER"
+      },
+      {
+        "id": "f1024c22-fab5-4367-9051-728b07c78079",
+        "name": "Set Temperature Out Cooling"
+      },
+      {
+        "id": "7060500b-b16d-47d6-a1bf-5061fdfc7977",
+        "name": "Set Temperature Out Cooling (Written)"
+      },
+      {
+        "id": "10fb4970-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Cooling"
+      },
+      {
+        "id": "19b2106c-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Heating"
+      },
+      {
+        "id": "55734456-31ba-446a-aea7-96ab2d545bb0",
+        "name": "Temperature In Heating Maximum"
+      },
+      {
+        "id": "2879944f-3e9b-4dbe-b863-5810e5607b6d",
+        "name": "Temperature In Heating Minimum"
+      },
+      {
+        "id": "1546e7f0-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out Cooling"
+      },
+      {
+        "id": "16c13e66-0f2a-4275-b2d8-d6713a04be23",
+        "name": "Temperature Out Heating"
+      },
+      {
+        "id": "95e5562d-16a7-4fe7-913d-dff605c26796",
+        "name": "Thermal Capacity Cooling"
+      },
+      {
+        "id": "4457e79b-52c4-4c40-a149-0b997323ee5a",
+        "name": "Thermal Capacity Heating"
+      },
+      {
+        "id": "d8cb9d86-0d46-41a3-a512-ec4e6a31544a",
+        "name": "Thermal Power Cooling"
+      },
+      {
+        "id": "a98e09f4-20f2-4515-9b1c-bd3718b3369c",
+        "name": "Thermal Power Heating"
+      },
+      {
+        "id": "a8174916-2d1e-46ec-95d4-c2558617dd30",
+        "name": "Volume Flow Cooling"
+      },
+      {
+        "id": "9940ff41-4d60-487e-9418-138d65ca42e3",
+        "name": "Volume Flow Cooling Maximum"
+      },
+      {
+        "id": "18039b04-6c64-4a59-90c1-3e4e3e2ec680",
+        "name": "Volume Flow Cooling Minimum"
+      },
+      {
+        "id": "178318c4-0a63-441a-95b1-01c4dc8fe879",
+        "name": "Volume Flow Heating"
+      },
+      {
+        "id": "65f4c0dd-d26a-48ef-8e06-eb8f3680abb4",
+        "name": "Volume Flow Heating Maximum"
+      },
+      {
+        "id": "4df61fbd-6fb9-4b07-92e1-59a80c852863",
+        "name": "Volume Flow Heating Minimum"
+      },
+      {
+        "id": "3e522749-7299-40f8-88ec-f6ad8f8047d4",
+        "name": "Volume Flow Pressure Coefficient Cooling"
+      },
+      {
+        "id": "a8a67124-9139-4142-b861-21390bfa6996",
+        "name": "Volume Flow Pressure Coefficient Heating"
+      }
+    ]
+  },
+  {
+    "id": "ada2a1f2-b326-413d-abd4-8357078adbf2",
+    "name": "Cooling Module",
+    "description": "Type representing an machine group consisting of a chiller, a pump and a cooling tower.",
+    "parent": "Abstract Element Cooling",
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "bbd342aa-a6a4-4b81-9dbe-e69adcb158c1",
+        "name": "Cooling In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "b6a4dded-acb8-4855-a17c-0168f5ac68d5",
+        "name": "Cooling Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "80a1431f-aaf9-48ed-8689-f51257b97bb4",
+        "name": "Density Cooling"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "d47c4f8d-f663-478c-a7eb-abc563d37cc7",
+        "name": "Electrical Power Maximum"
+      },
+      {
+        "id": "90e4ce99-f28f-482b-bd41-c10b2bf32ba7",
+        "name": "Machine Failure"
+      },
+      {
+        "id": "8ebe7175-ee32-4d56-9e38-2a37e459ff9f",
+        "name": "Manual Operation"
+      },
+      {
+        "id": "25af064a-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow Cooling"
+      },
+      {
+        "id": "29a06d6d-89f2-4f90-b485-d79a0ada400f",
+        "name": "Mass Flow Cooling Maximum"
+      },
+      {
+        "id": "40172b74-b806-4f7d-b828-36d4f938c3f7",
+        "name": "Mass Flow Cooling Minimum"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "32d59bdc-dee1-4ef9-9bca-20e980ffe31c",
+        "name": "Pressure Difference Cooling"
+      },
+      {
+        "id": "ca9ef214-d657-420a-a504-ddca39a0e531",
+        "name": "Pressure In Cooling"
+      },
+      {
+        "id": "49780732-3551-4bd9-b675-c011a5c5285b",
+        "name": "Pressure Out Cooling"
+      },
+      {
+        "id": "1dc399a0-7335-4117-8ae9-4714f3715e97",
+        "name": "Relative Air Humidity"
+      },
+      {
+        "id": "f1024c22-fab5-4367-9051-728b07c78079",
+        "name": "Set Temperature Out Cooling"
+      },
+      {
+        "id": "7060500b-b16d-47d6-a1bf-5061fdfc7977",
+        "name": "Set Temperature Out Cooling (Written)"
+      },
+      {
+        "id": "2d36645a-b4d7-4608-a45a-b0a6c38e2e7a",
+        "name": "Temperature Environment"
+      },
+      {
+        "id": "10fb4970-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Cooling"
+      },
+      {
+        "id": "1546e7f0-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out Cooling"
+      },
+      {
+        "id": "95e5562d-16a7-4fe7-913d-dff605c26796",
+        "name": "Thermal Capacity Cooling"
+      },
+      {
+        "id": "d8cb9d86-0d46-41a3-a512-ec4e6a31544a",
+        "name": "Thermal Power Cooling"
+      },
+      {
+        "id": "a8174916-2d1e-46ec-95d4-c2558617dd30",
+        "name": "Volume Flow Cooling"
+      },
+      {
+        "id": "9940ff41-4d60-487e-9418-138d65ca42e3",
+        "name": "Volume Flow Cooling Maximum"
+      },
+      {
+        "id": "18039b04-6c64-4a59-90c1-3e4e3e2ec680",
+        "name": "Volume Flow Cooling Minimum"
+      },
+      {
+        "id": "3e522749-7299-40f8-88ec-f6ad8f8047d4",
+        "name": "Volume Flow Pressure Coefficient Cooling"
+      },
+      {
+        "id": "ed9fca2e-d53c-4be7-b570-77af93f14882",
+        "name": "Wet Bulb Temperature"
+      }
+    ]
+  },
+  {
+    "id": "2f924adc-ca5d-430a-8b36-b98756c3b285",
+    "name": "Cooling Tower",
+    "description": "Type representing generic cooling towers.",
+    "parent": "Abstract Element Cooling",
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "bbd342aa-a6a4-4b81-9dbe-e69adcb158c1",
+        "name": "Cooling In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "b6a4dded-acb8-4855-a17c-0168f5ac68d5",
+        "name": "Cooling Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "80a1431f-aaf9-48ed-8689-f51257b97bb4",
+        "name": "Density Cooling"
+      },
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "d47c4f8d-f663-478c-a7eb-abc563d37cc7",
+        "name": "Electrical Power Maximum"
+      },
+      {
+        "id": "b1284a54-adcf-401d-a268-b9901ae6e1a9",
+        "name": "Electrical Power Minimum"
+      },
+      {
+        "id": "15c9d926-0992-4aed-8409-78193bd34779",
+        "name": "Electrical Voltage"
+      },
+      {
+        "id": "90e4ce99-f28f-482b-bd41-c10b2bf32ba7",
+        "name": "Machine Failure"
+      },
+      {
+        "id": "8ebe7175-ee32-4d56-9e38-2a37e459ff9f",
+        "name": "Manual Operation"
+      },
+      {
+        "id": "25af064a-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow Cooling"
+      },
+      {
+        "id": "29a06d6d-89f2-4f90-b485-d79a0ada400f",
+        "name": "Mass Flow Cooling Maximum"
+      },
+      {
+        "id": "40172b74-b806-4f7d-b828-36d4f938c3f7",
+        "name": "Mass Flow Cooling Minimum"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "9dd01024-1344-435f-876c-02195f9d4598",
+        "name": "Operation Mode"
+      },
+      {
+        "id": "32d59bdc-dee1-4ef9-9bca-20e980ffe31c",
+        "name": "Pressure Difference Cooling"
+      },
+      {
+        "id": "ca9ef214-d657-420a-a504-ddca39a0e531",
+        "name": "Pressure In Cooling"
+      },
+      {
+        "id": "49780732-3551-4bd9-b675-c011a5c5285b",
+        "name": "Pressure Out Cooling"
+      },
+      {
+        "id": "c2e300eb-c939-45db-84ad-8bd8af78ac0a",
+        "name": "Rate of Rotation Ventilation"
+      },
+      {
+        "id": "1dc399a0-7335-4117-8ae9-4714f3715e97",
+        "name": "Relative Air Humidity"
+      },
+      {
+        "id": "f1024c22-fab5-4367-9051-728b07c78079",
+        "name": "Set Temperature Out Cooling"
+      },
+      {
+        "id": "7060500b-b16d-47d6-a1bf-5061fdfc7977",
+        "name": "Set Temperature Out Cooling (Written)"
+      },
+      {
+        "id": "2d36645a-b4d7-4608-a45a-b0a6c38e2e7a",
+        "name": "Temperature Environment"
+      },
+      {
+        "id": "10fb4970-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Cooling"
+      },
+      {
+        "id": "f1a066d8-47a5-497e-b77d-e5bdff86e441",
+        "name": "Temperature Out Air"
+      },
+      {
+        "id": "1546e7f0-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out Cooling"
+      },
+      {
+        "id": "95e5562d-16a7-4fe7-913d-dff605c26796",
+        "name": "Thermal Capacity Cooling"
+      },
+      {
+        "id": "d8cb9d86-0d46-41a3-a512-ec4e6a31544a",
+        "name": "Thermal Power Cooling"
+      },
+      {
+        "id": "a8174916-2d1e-46ec-95d4-c2558617dd30",
+        "name": "Volume Flow Cooling"
+      },
+      {
+        "id": "9940ff41-4d60-487e-9418-138d65ca42e3",
+        "name": "Volume Flow Cooling Maximum"
+      },
+      {
+        "id": "18039b04-6c64-4a59-90c1-3e4e3e2ec680",
+        "name": "Volume Flow Cooling Minimum"
+      },
+      {
+        "id": "3e522749-7299-40f8-88ec-f6ad8f8047d4",
+        "name": "Volume Flow Pressure Coefficient Cooling"
+      },
+      {
+        "id": "ed9fca2e-d53c-4be7-b570-77af93f14882",
+        "name": "Wet Bulb Temperature"
+      }
+    ]
+  },
+  {
+    "id": "59a6387f-6b8d-427d-b2a3-899b57488f43",
+    "name": "Dry Cooling Tower",
+    "description": "Type representing generic closed-loop dry cooling towers.",
+    "parent": "Cooling Tower",
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "bbd342aa-a6a4-4b81-9dbe-e69adcb158c1",
+        "name": "Cooling In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "b6a4dded-acb8-4855-a17c-0168f5ac68d5",
+        "name": "Cooling Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "80a1431f-aaf9-48ed-8689-f51257b97bb4",
+        "name": "Density Cooling"
+      },
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "d47c4f8d-f663-478c-a7eb-abc563d37cc7",
+        "name": "Electrical Power Maximum"
+      },
+      {
+        "id": "b1284a54-adcf-401d-a268-b9901ae6e1a9",
+        "name": "Electrical Power Minimum"
+      },
+      {
+        "id": "15c9d926-0992-4aed-8409-78193bd34779",
+        "name": "Electrical Voltage"
+      },
+      {
+        "id": "90e4ce99-f28f-482b-bd41-c10b2bf32ba7",
+        "name": "Machine Failure"
+      },
+      {
+        "id": "8ebe7175-ee32-4d56-9e38-2a37e459ff9f",
+        "name": "Manual Operation"
+      },
+      {
+        "id": "25af064a-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow Cooling"
+      },
+      {
+        "id": "29a06d6d-89f2-4f90-b485-d79a0ada400f",
+        "name": "Mass Flow Cooling Maximum"
+      },
+      {
+        "id": "40172b74-b806-4f7d-b828-36d4f938c3f7",
+        "name": "Mass Flow Cooling Minimum"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "9dd01024-1344-435f-876c-02195f9d4598",
+        "name": "Operation Mode"
+      },
+      {
+        "id": "32d59bdc-dee1-4ef9-9bca-20e980ffe31c",
+        "name": "Pressure Difference Cooling"
+      },
+      {
+        "id": "ca9ef214-d657-420a-a504-ddca39a0e531",
+        "name": "Pressure In Cooling"
+      },
+      {
+        "id": "49780732-3551-4bd9-b675-c011a5c5285b",
+        "name": "Pressure Out Cooling"
+      },
+      {
+        "id": "c2e300eb-c939-45db-84ad-8bd8af78ac0a",
+        "name": "Rate of Rotation Ventilation"
+      },
+      {
+        "id": "1dc399a0-7335-4117-8ae9-4714f3715e97",
+        "name": "Relative Air Humidity"
+      },
+      {
+        "id": "f1024c22-fab5-4367-9051-728b07c78079",
+        "name": "Set Temperature Out Cooling"
+      },
+      {
+        "id": "7060500b-b16d-47d6-a1bf-5061fdfc7977",
+        "name": "Set Temperature Out Cooling (Written)"
+      },
+      {
+        "id": "2d36645a-b4d7-4608-a45a-b0a6c38e2e7a",
+        "name": "Temperature Environment"
+      },
+      {
+        "id": "10fb4970-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Cooling"
+      },
+      {
+        "id": "f1a066d8-47a5-497e-b77d-e5bdff86e441",
+        "name": "Temperature Out Air"
+      },
+      {
+        "id": "1546e7f0-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out Cooling"
+      },
+      {
+        "id": "95e5562d-16a7-4fe7-913d-dff605c26796",
+        "name": "Thermal Capacity Cooling"
+      },
+      {
+        "id": "d8cb9d86-0d46-41a3-a512-ec4e6a31544a",
+        "name": "Thermal Power Cooling"
+      },
+      {
+        "id": "a8174916-2d1e-46ec-95d4-c2558617dd30",
+        "name": "Volume Flow Cooling"
+      },
+      {
+        "id": "9940ff41-4d60-487e-9418-138d65ca42e3",
+        "name": "Volume Flow Cooling Maximum"
+      },
+      {
+        "id": "18039b04-6c64-4a59-90c1-3e4e3e2ec680",
+        "name": "Volume Flow Cooling Minimum"
+      },
+      {
+        "id": "3e522749-7299-40f8-88ec-f6ad8f8047d4",
+        "name": "Volume Flow Pressure Coefficient Cooling"
+      },
+      {
+        "id": "ed9fca2e-d53c-4be7-b570-77af93f14882",
+        "name": "Wet Bulb Temperature"
+      }
+    ]
+  },
+  {
+    "id": "443f95e2-3205-4a98-9632-54a010d2bb56",
+    "name": "Electric Heater",
+    "description": "Type representing generic resistive heaters.",
+    "parent": "Abstract Element Heating",
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "b3cc9a5c-0ccd-4aa8-8504-8efec9f53272",
+        "name": "Heating In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "46498c9d-f2c4-4611-af00-153f244b6d33",
+        "name": "Heating Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "28f63e0a-01e5-4637-a108-f8ccf9ae5da3",
+        "name": "Density Heating"
+      },
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "f7c393fe-3d9c-4902-b021-615cf89a78c0",
+        "name": "Mass Flow Heating"
+      },
+      {
+        "id": "30ba563a-38b5-4b2a-ac08-6c9f3eb5adda",
+        "name": "Mass Flow Heating Maximum"
+      },
+      {
+        "id": "aecf81ea-1ecd-4099-a200-6e4c004eb165",
+        "name": "Mass Flow Heating Minimum"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "937cae68-59af-44f0-aab1-397823266327",
+        "name": "Pressure Difference Heating"
+      },
+      {
+        "id": "60cfa284-c6d3-44c0-a91e-7bfe77d75760",
+        "name": "Pressure In Heating"
+      },
+      {
+        "id": "8c9d2772-610a-4ca0-b0c0-07bd6a1765b3",
+        "name": "Pressure Out Heating"
+      },
+      {
+        "id": "41d7aaac-d5b9-42b7-8574-bd5d0ba9de09",
+        "name": "Set Signal"
+      },
+      {
+        "id": "ad0ec563-9682-494c-9721-43f753f7ad7f",
+        "name": "Set Signal (Written)"
+      },
+      {
+        "id": "943311e6-959c-4eca-a28f-0df9dc93cf03",
+        "name": "Set Temperature Out Heating"
+      },
+      {
+        "id": "54e1f04f-af14-4ef2-ac2f-70954f9e79e6",
+        "name": "Set Temperature Out Heating (Written)"
+      },
+      {
+        "id": "19b2106c-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Heating"
+      },
+      {
+        "id": "16c13e66-0f2a-4275-b2d8-d6713a04be23",
+        "name": "Temperature Out Heating"
+      },
+      {
+        "id": "4457e79b-52c4-4c40-a149-0b997323ee5a",
+        "name": "Thermal Capacity Heating"
+      },
+      {
+        "id": "a98e09f4-20f2-4515-9b1c-bd3718b3369c",
+        "name": "Thermal Power Heating"
+      },
+      {
+        "id": "178318c4-0a63-441a-95b1-01c4dc8fe879",
+        "name": "Volume Flow Heating"
+      },
+      {
+        "id": "65f4c0dd-d26a-48ef-8e06-eb8f3680abb4",
+        "name": "Volume Flow Heating Maximum"
+      },
+      {
+        "id": "4df61fbd-6fb9-4b07-92e1-59a80c852863",
+        "name": "Volume Flow Heating Minimum"
+      },
+      {
+        "id": "a8a67124-9139-4142-b861-21390bfa6996",
+        "name": "Volume Flow Pressure Coefficient Heating"
+      }
+    ]
+  },
+  {
+    "id": "28bbffa2-e16b-4d98-8348-d94860d7ddc1",
+    "name": "Electrical Consumer",
+    "description": "Type representing generic electrical consumers.",
+    "parent": null,
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      }
+    ],
+    "features": [
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      }
+    ]
+  },
+  {
+    "id": "c7c07645-6a2f-4154-a750-18b12ec10965",
+    "name": "Electricity Contract Futures",
+    "description": "Modeling long term energy delivery contracts.",
+    "parent": "Energy Contract",
+    "ports": [],
+    "features": [
+      {
+        "id": "fea8453a-cb6c-43d8-83ac-06f30bb3c1df",
+        "name": "Concession Fee"
+      },
+      {
+        "id": "bcc175ae-98f3-4659-8a9e-d4be80ae00a5",
+        "name": "Electricity Tax"
+      },
+      {
+        "id": "330bfead-fb54-4d74-af91-461895227672",
+        "name": "Fixation Base Load"
+      },
+      {
+        "id": "0af2d40d-3164-496d-8c1d-dc5ae8105dd4",
+        "name": "Fixation Off-Peak Load"
+      },
+      {
+        "id": "303a7360-0421-4e50-a558-9e10cf39fe05",
+        "name": "Fixation Peak Load"
+      },
+      {
+        "id": "e2a486a7-d220-44c0-8a60-9dcfa94f5a91",
+        "name": "Grid Usage Fee"
+      },
+      {
+        "id": "037e5b7a-4083-4a62-a54a-1d366d6e8e12",
+        "name": "Power Bought"
+      },
+      {
+        "id": "af6330a0-d548-4566-a8dc-2b95aa882073",
+        "name": "Power Bought Fixed"
+      },
+      {
+        "id": "9106ea7b-e9ed-41b1-afbc-2b577f8149fa",
+        "name": "Power Sold"
+      },
+      {
+        "id": "822fec8a-2e7c-495c-a6f1-ad8bb2e5ff0a",
+        "name": "Power Sold Fixed"
+      },
+      {
+        "id": "2c0047fa-692f-45c7-9e97-e56c9211df91",
+        "name": "Price Buy"
+      },
+      {
+        "id": "a3745984-55cd-4eac-b4b5-1c743c23493b",
+        "name": "Price Buy Net"
+      },
+      {
+        "id": "bee0fe66-33df-4c05-bf08-7a1ebbad0225",
+        "name": "Price Sell"
+      },
+      {
+        "id": "aa16afe7-0d6a-4967-98cf-8d3318621a5f",
+        "name": "Quarter Hourly Electricity Price"
+      },
+      {
+        "id": "3341d74d-63d0-45e0-81be-c0476a44648b",
+        "name": "Quarter Hourly Energy (Long-Term Forecast)"
+      },
+      {
+        "id": "cfd231e6-9799-4a07-ad84-b51eec3cff92",
+        "name": "Quarter Hourly Energy Budget"
+      },
+      {
+        "id": "9a9016ef-2168-449e-aaba-66edfe94c3ee",
+        "name": "Quarter Hourly Power Budget"
+      },
+      {
+        "id": "ece5beb9-cc1c-475c-8a86-498989dfec6c",
+        "name": "Quarterly Energy Base Load (Long-Term Forecast)"
+      },
+      {
+        "id": "e5bbd52a-33a7-42db-8366-3124fedc2bd4",
+        "name": "Quarterly Energy Off-Peak Load (Long-Term Forecast)"
+      },
+      {
+        "id": "161e9c70-dae7-4780-bc13-222551628183",
+        "name": "Quarterly Energy Peak Load (Long-Term Forecast)"
+      },
+      {
+        "id": "b8059a75-f971-41c8-ad7b-588cc20f9e4e",
+        "name": "Quarterly Price Base Load"
+      },
+      {
+        "id": "60ef5c5f-78be-48bc-8ae5-4a1e57b2dbdc",
+        "name": "Quarterly Price Off-Peak Load"
+      },
+      {
+        "id": "4f7faa8d-8512-41b1-ae21-8a84f9c8c077",
+        "name": "Quarterly Price Peak Load"
+      },
+      {
+        "id": "5ff5b6d7-453a-46dd-9e70-7a31ea8e7329",
+        "name": "Supplier Charge"
+      },
+      {
+        "id": "9d1775a6-18bc-4a52-a01f-9f28cc297d82",
+        "name": "Tax Buy"
+      },
+      {
+        "id": "ab530863-aa87-491a-adae-19c50602f185",
+        "name": "Tax Sell"
+      },
+      {
+        "id": "26ed78e2-c185-4461-ba78-3184ada3d0dc",
+        "name": "VAT"
+      },
+      {
+        "id": "ff2afcba-e331-4d14-83e5-d38511ee5739",
+        "name": "VAT Rate"
+      }
+    ]
+  },
+  {
+    "id": "112441d7-5379-4917-a59f-547f04473c2c",
+    "name": "Electricity Contract Spot Market",
+    "description": null,
+    "parent": "Energy Contract",
+    "ports": [],
+    "features": [
+      {
+        "id": "fea8453a-cb6c-43d8-83ac-06f30bb3c1df",
+        "name": "Concession Fee"
+      },
+      {
+        "id": "bcc175ae-98f3-4659-8a9e-d4be80ae00a5",
+        "name": "Electricity Tax"
+      },
+      {
+        "id": "e2a486a7-d220-44c0-8a60-9dcfa94f5a91",
+        "name": "Grid Usage Fee"
+      },
+      {
+        "id": "037e5b7a-4083-4a62-a54a-1d366d6e8e12",
+        "name": "Power Bought"
+      },
+      {
+        "id": "af6330a0-d548-4566-a8dc-2b95aa882073",
+        "name": "Power Bought Fixed"
+      },
+      {
+        "id": "9106ea7b-e9ed-41b1-afbc-2b577f8149fa",
+        "name": "Power Sold"
+      },
+      {
+        "id": "822fec8a-2e7c-495c-a6f1-ad8bb2e5ff0a",
+        "name": "Power Sold Fixed"
+      },
+      {
+        "id": "2c0047fa-692f-45c7-9e97-e56c9211df91",
+        "name": "Price Buy"
+      },
+      {
+        "id": "a3745984-55cd-4eac-b4b5-1c743c23493b",
+        "name": "Price Buy Net"
+      },
+      {
+        "id": "bee0fe66-33df-4c05-bf08-7a1ebbad0225",
+        "name": "Price Sell"
+      },
+      {
+        "id": "c4f550ec-6dc5-479a-91e0-58cebb6d0e4e",
+        "name": "PriceSpotMarketBuy"
+      },
+      {
+        "id": "4bc38216-c74a-4a0a-b4d4-8e3dc3a53e80",
+        "name": "PriceSpotMarketSell"
+      },
+      {
+        "id": "5ff5b6d7-453a-46dd-9e70-7a31ea8e7329",
+        "name": "Supplier Charge"
+      },
+      {
+        "id": "9d1775a6-18bc-4a52-a01f-9f28cc297d82",
+        "name": "Tax Buy"
+      },
+      {
+        "id": "ab530863-aa87-491a-adae-19c50602f185",
+        "name": "Tax Sell"
+      },
+      {
+        "id": "26ed78e2-c185-4461-ba78-3184ada3d0dc",
+        "name": "VAT"
+      },
+      {
+        "id": "ff2afcba-e331-4d14-83e5-d38511ee5739",
+        "name": "VAT Rate"
+      }
+    ]
+  },
+  {
+    "id": "b0e042bb-0249-424a-b880-aa5b0cbf96d5",
+    "name": "Energy Contract",
+    "description": "Adds features for energy price composition.",
+    "parent": "Abstract Energy Contract",
+    "ports": [],
+    "features": [
+      {
+        "id": "fea8453a-cb6c-43d8-83ac-06f30bb3c1df",
+        "name": "Concession Fee"
+      },
+      {
+        "id": "e2a486a7-d220-44c0-8a60-9dcfa94f5a91",
+        "name": "Grid Usage Fee"
+      },
+      {
+        "id": "037e5b7a-4083-4a62-a54a-1d366d6e8e12",
+        "name": "Power Bought"
+      },
+      {
+        "id": "af6330a0-d548-4566-a8dc-2b95aa882073",
+        "name": "Power Bought Fixed"
+      },
+      {
+        "id": "9106ea7b-e9ed-41b1-afbc-2b577f8149fa",
+        "name": "Power Sold"
+      },
+      {
+        "id": "822fec8a-2e7c-495c-a6f1-ad8bb2e5ff0a",
+        "name": "Power Sold Fixed"
+      },
+      {
+        "id": "2c0047fa-692f-45c7-9e97-e56c9211df91",
+        "name": "Price Buy"
+      },
+      {
+        "id": "a3745984-55cd-4eac-b4b5-1c743c23493b",
+        "name": "Price Buy Net"
+      },
+      {
+        "id": "bee0fe66-33df-4c05-bf08-7a1ebbad0225",
+        "name": "Price Sell"
+      },
+      {
+        "id": "5ff5b6d7-453a-46dd-9e70-7a31ea8e7329",
+        "name": "Supplier Charge"
+      },
+      {
+        "id": "9d1775a6-18bc-4a52-a01f-9f28cc297d82",
+        "name": "Tax Buy"
+      },
+      {
+        "id": "ab530863-aa87-491a-adae-19c50602f185",
+        "name": "Tax Sell"
+      },
+      {
+        "id": "26ed78e2-c185-4461-ba78-3184ada3d0dc",
+        "name": "VAT"
+      },
+      {
+        "id": "ff2afcba-e331-4d14-83e5-d38511ee5739",
+        "name": "VAT Rate"
+      }
+    ]
+  },
+  {
+    "id": "4e2f873b-8362-41c5-9e64-2002175ca93c",
+    "name": "Error Monitor",
+    "description": "Tracks Errors for a specific Script",
+    "parent": null,
+    "ports": [],
+    "features": [
+      {
+        "id": "104527d5-0422-41da-88df-7631d95d9fac",
+        "name": "Error: Connection"
+      },
+      {
+        "id": "adc0e247-83bd-4f6b-add5-4bc1ddf58e7d",
+        "name": "Error: Format"
+      },
+      {
+        "id": "055b28f5-14a5-49ab-92ea-9623b3f6e9c9",
+        "name": "Error: Missing Data"
+      },
+      {
+        "id": "2d14d69a-ccb0-44a7-babd-c0d95279fbba",
+        "name": "Error: Missing Datapoint Or Series"
+      },
+      {
+        "id": "b5e6c5c6-e2f0-48d7-a3f9-babaff92d3b5",
+        "name": "Error: Other"
+      },
+      {
+        "id": "43107a55-1000-4b8c-8b2e-062bbe16c3fd",
+        "name": "Error: Writing"
+      }
+    ]
+  },
+  {
+    "id": "a82817a5-41a7-4e84-9831-8faec564cb77",
+    "name": "Evaporative Cooling Tower",
+    "description": "Type representing generic evaporative, open-loop cooling towers.",
+    "parent": "Cooling Tower",
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "bbd342aa-a6a4-4b81-9dbe-e69adcb158c1",
+        "name": "Cooling In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "b6a4dded-acb8-4855-a17c-0168f5ac68d5",
+        "name": "Cooling Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "80a1431f-aaf9-48ed-8689-f51257b97bb4",
+        "name": "Density Cooling"
+      },
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "d47c4f8d-f663-478c-a7eb-abc563d37cc7",
+        "name": "Electrical Power Maximum"
+      },
+      {
+        "id": "b1284a54-adcf-401d-a268-b9901ae6e1a9",
+        "name": "Electrical Power Minimum"
+      },
+      {
+        "id": "15c9d926-0992-4aed-8409-78193bd34779",
+        "name": "Electrical Voltage"
+      },
+      {
+        "id": "90e4ce99-f28f-482b-bd41-c10b2bf32ba7",
+        "name": "Machine Failure"
+      },
+      {
+        "id": "8ebe7175-ee32-4d56-9e38-2a37e459ff9f",
+        "name": "Manual Operation"
+      },
+      {
+        "id": "25af064a-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow Cooling"
+      },
+      {
+        "id": "29a06d6d-89f2-4f90-b485-d79a0ada400f",
+        "name": "Mass Flow Cooling Maximum"
+      },
+      {
+        "id": "40172b74-b806-4f7d-b828-36d4f938c3f7",
+        "name": "Mass Flow Cooling Minimum"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "9dd01024-1344-435f-876c-02195f9d4598",
+        "name": "Operation Mode"
+      },
+      {
+        "id": "32d59bdc-dee1-4ef9-9bca-20e980ffe31c",
+        "name": "Pressure Difference Cooling"
+      },
+      {
+        "id": "ca9ef214-d657-420a-a504-ddca39a0e531",
+        "name": "Pressure In Cooling"
+      },
+      {
+        "id": "49780732-3551-4bd9-b675-c011a5c5285b",
+        "name": "Pressure Out Cooling"
+      },
+      {
+        "id": "c2e300eb-c939-45db-84ad-8bd8af78ac0a",
+        "name": "Rate of Rotation Ventilation"
+      },
+      {
+        "id": "1dc399a0-7335-4117-8ae9-4714f3715e97",
+        "name": "Relative Air Humidity"
+      },
+      {
+        "id": "f1024c22-fab5-4367-9051-728b07c78079",
+        "name": "Set Temperature Out Cooling"
+      },
+      {
+        "id": "7060500b-b16d-47d6-a1bf-5061fdfc7977",
+        "name": "Set Temperature Out Cooling (Written)"
+      },
+      {
+        "id": "2d36645a-b4d7-4608-a45a-b0a6c38e2e7a",
+        "name": "Temperature Environment"
+      },
+      {
+        "id": "10fb4970-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Cooling"
+      },
+      {
+        "id": "f1a066d8-47a5-497e-b77d-e5bdff86e441",
+        "name": "Temperature Out Air"
+      },
+      {
+        "id": "1546e7f0-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out Cooling"
+      },
+      {
+        "id": "95e5562d-16a7-4fe7-913d-dff605c26796",
+        "name": "Thermal Capacity Cooling"
+      },
+      {
+        "id": "d8cb9d86-0d46-41a3-a512-ec4e6a31544a",
+        "name": "Thermal Power Cooling"
+      },
+      {
+        "id": "a8174916-2d1e-46ec-95d4-c2558617dd30",
+        "name": "Volume Flow Cooling"
+      },
+      {
+        "id": "9940ff41-4d60-487e-9418-138d65ca42e3",
+        "name": "Volume Flow Cooling Maximum"
+      },
+      {
+        "id": "18039b04-6c64-4a59-90c1-3e4e3e2ec680",
+        "name": "Volume Flow Cooling Minimum"
+      },
+      {
+        "id": "3e522749-7299-40f8-88ec-f6ad8f8047d4",
+        "name": "Volume Flow Pressure Coefficient Cooling"
+      },
+      {
+        "id": "ed9fca2e-d53c-4be7-b570-77af93f14882",
+        "name": "Wet Bulb Temperature"
+      }
+    ]
+  },
+  {
+    "id": "5c9b3740-2029-4ea0-8168-e634097b7ec3",
+    "name": "Forecaster",
+    "description": "Type representing Forecaster",
+    "parent": null,
+    "ports": [],
+    "features": [
+      {
+        "id": "4ad5ad0f-051b-4702-95f7-c6ec92a0d62f",
+        "name": "End Time"
+      },
+      {
+        "id": "9116594e-0159-4750-a699-8716ff198e17",
+        "name": "Forecasting Metrics"
+      },
+      {
+        "id": "f8e33012-6c64-47dd-8f9f-24fb9417d12c",
+        "name": "Forecasting Target Name"
+      },
+      {
+        "id": "7bf80c48-a11e-4a55-9cd9-983cfa7c99ee",
+        "name": "Input Features"
+      },
+      {
+        "id": "23dafa67-ee93-4afb-ba55-46fef1046587",
+        "name": "Input Frequency"
+      },
+      {
+        "id": "cfe4092f-9486-41f6-9404-ba4525ea80b7",
+        "name": "Output Features"
+      },
+      {
+        "id": "38911dc9-c7d7-4d35-8021-af4abf955204",
+        "name": "Output Horizon"
+      },
+      {
+        "id": "5b93f1c5-b081-42a2-8506-a2e28d8dc1f4",
+        "name": "Start Time"
+      },
+      {
+        "id": "a45ed7d7-c698-4536-adc7-2afb8631a74f",
+        "name": "Tini Evo Config"
+      }
+    ]
+  },
+  {
+    "id": "6eb7e4ea-7083-440e-98be-8dc4796e04ea",
+    "name": "Gas Contract Futures",
+    "description": "Modeling long term energy delivery contracts.",
+    "parent": "Energy Contract",
+    "ports": [],
+    "features": [
+      {
+        "id": "fea8453a-cb6c-43d8-83ac-06f30bb3c1df",
+        "name": "Concession Fee"
+      },
+      {
+        "id": "84879810-88e6-4fe4-a154-eaf6412a85bb",
+        "name": "Daily Energy (Long-Term Forecast)"
+      },
+      {
+        "id": "2d291e39-b733-445d-a360-f5690a477df1",
+        "name": "Daily Energy Budget"
+      },
+      {
+        "id": "5e45d778-ec9f-446e-b814-7245fe89360d",
+        "name": "Daily Energy Budget Remaining"
+      },
+      {
+        "id": "330bfead-fb54-4d74-af91-461895227672",
+        "name": "Fixation Base Load"
+      },
+      {
+        "id": "680bf90b-f31c-4109-8c73-435f6cad0463",
+        "name": "Gas Tax"
+      },
+      {
+        "id": "22de034c-5739-45f6-8cd5-84095f45ce67",
+        "name": "GasStorageLevy"
+      },
+      {
+        "id": "e2a486a7-d220-44c0-8a60-9dcfa94f5a91",
+        "name": "Grid Usage Fee"
+      },
+      {
+        "id": "bee187a4-3251-4a3f-84cd-950a47c13c12",
+        "name": "Higher Heating Value"
+      },
+      {
+        "id": "9bfc12c9-56f1-416f-974f-0f53e744cd50",
+        "name": "Lower Heating Value"
+      },
+      {
+        "id": "037e5b7a-4083-4a62-a54a-1d366d6e8e12",
+        "name": "Power Bought"
+      },
+      {
+        "id": "af6330a0-d548-4566-a8dc-2b95aa882073",
+        "name": "Power Bought Fixed"
+      },
+      {
+        "id": "9106ea7b-e9ed-41b1-afbc-2b577f8149fa",
+        "name": "Power Sold"
+      },
+      {
+        "id": "822fec8a-2e7c-495c-a6f1-ad8bb2e5ff0a",
+        "name": "Power Sold Fixed"
+      },
+      {
+        "id": "2c0047fa-692f-45c7-9e97-e56c9211df91",
+        "name": "Price Buy"
+      },
+      {
+        "id": "a3745984-55cd-4eac-b4b5-1c743c23493b",
+        "name": "Price Buy Net"
+      },
+      {
+        "id": "bee0fe66-33df-4c05-bf08-7a1ebbad0225",
+        "name": "Price Sell"
+      },
+      {
+        "id": "ece5beb9-cc1c-475c-8a86-498989dfec6c",
+        "name": "Quarterly Energy Base Load (Long-Term Forecast)"
+      },
+      {
+        "id": "b8059a75-f971-41c8-ad7b-588cc20f9e4e",
+        "name": "Quarterly Price Base Load"
+      },
+      {
+        "id": "5ff5b6d7-453a-46dd-9e70-7a31ea8e7329",
+        "name": "Supplier Charge"
+      },
+      {
+        "id": "9d1775a6-18bc-4a52-a01f-9f28cc297d82",
+        "name": "Tax Buy"
+      },
+      {
+        "id": "ab530863-aa87-491a-adae-19c50602f185",
+        "name": "Tax Sell"
+      },
+      {
+        "id": "26ed78e2-c185-4461-ba78-3184ada3d0dc",
+        "name": "VAT"
+      },
+      {
+        "id": "ff2afcba-e331-4d14-83e5-d38511ee5739",
+        "name": "VAT Rate"
+      }
+    ]
+  },
+  {
+    "id": "c62b7ced-11f2-493f-a9f6-065249294bbc",
+    "name": "Gas Contract Spot Market",
+    "description": null,
+    "parent": "Energy Contract",
+    "ports": [],
+    "features": [
+      {
+        "id": "fea8453a-cb6c-43d8-83ac-06f30bb3c1df",
+        "name": "Concession Fee"
+      },
+      {
+        "id": "680bf90b-f31c-4109-8c73-435f6cad0463",
+        "name": "Gas Tax"
+      },
+      {
+        "id": "22de034c-5739-45f6-8cd5-84095f45ce67",
+        "name": "GasStorageLevy"
+      },
+      {
+        "id": "e2a486a7-d220-44c0-8a60-9dcfa94f5a91",
+        "name": "Grid Usage Fee"
+      },
+      {
+        "id": "bee187a4-3251-4a3f-84cd-950a47c13c12",
+        "name": "Higher Heating Value"
+      },
+      {
+        "id": "9bfc12c9-56f1-416f-974f-0f53e744cd50",
+        "name": "Lower Heating Value"
+      },
+      {
+        "id": "037e5b7a-4083-4a62-a54a-1d366d6e8e12",
+        "name": "Power Bought"
+      },
+      {
+        "id": "af6330a0-d548-4566-a8dc-2b95aa882073",
+        "name": "Power Bought Fixed"
+      },
+      {
+        "id": "9106ea7b-e9ed-41b1-afbc-2b577f8149fa",
+        "name": "Power Sold"
+      },
+      {
+        "id": "822fec8a-2e7c-495c-a6f1-ad8bb2e5ff0a",
+        "name": "Power Sold Fixed"
+      },
+      {
+        "id": "2c0047fa-692f-45c7-9e97-e56c9211df91",
+        "name": "Price Buy"
+      },
+      {
+        "id": "a3745984-55cd-4eac-b4b5-1c743c23493b",
+        "name": "Price Buy Net"
+      },
+      {
+        "id": "bee0fe66-33df-4c05-bf08-7a1ebbad0225",
+        "name": "Price Sell"
+      },
+      {
+        "id": "c4f550ec-6dc5-479a-91e0-58cebb6d0e4e",
+        "name": "PriceSpotMarketBuy"
+      },
+      {
+        "id": "4bc38216-c74a-4a0a-b4d4-8e3dc3a53e80",
+        "name": "PriceSpotMarketSell"
+      },
+      {
+        "id": "5ff5b6d7-453a-46dd-9e70-7a31ea8e7329",
+        "name": "Supplier Charge"
+      },
+      {
+        "id": "9d1775a6-18bc-4a52-a01f-9f28cc297d82",
+        "name": "Tax Buy"
+      },
+      {
+        "id": "ab530863-aa87-491a-adae-19c50602f185",
+        "name": "Tax Sell"
+      },
+      {
+        "id": "26ed78e2-c185-4461-ba78-3184ada3d0dc",
+        "name": "VAT"
+      },
+      {
+        "id": "ff2afcba-e331-4d14-83e5-d38511ee5739",
+        "name": "VAT Rate"
+      }
+    ]
+  },
+  {
+    "id": "c1150cf9-aa31-49d2-9aac-06a69d4cba7d",
+    "name": "Heat Exchanger",
+    "description": "Type representing generic heat exchangers.",
+    "parent": "Abstract Element Heating and Cooling",
+    "ports": [
+      {
+        "id": "b3cc9a5c-0ccd-4aa8-8504-8efec9f53272",
+        "name": "Heating In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "46498c9d-f2c4-4611-af00-153f244b6d33",
+        "name": "Heating Out",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "bbd342aa-a6a4-4b81-9dbe-e69adcb158c1",
+        "name": "Cooling In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "b6a4dded-acb8-4855-a17c-0168f5ac68d5",
+        "name": "Cooling Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "80a1431f-aaf9-48ed-8689-f51257b97bb4",
+        "name": "Density Cooling"
+      },
+      {
+        "id": "28f63e0a-01e5-4637-a108-f8ccf9ae5da3",
+        "name": "Density Heating"
+      },
+      {
+        "id": "4f7e5488-9e20-4e3e-b542-8a92c1fa2684",
+        "name": "Efficiency"
+      },
+      {
+        "id": "25af064a-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow Cooling"
+      },
+      {
+        "id": "f7c393fe-3d9c-4902-b021-615cf89a78c0",
+        "name": "Mass Flow Heating"
+      },
+      {
+        "id": "32d59bdc-dee1-4ef9-9bca-20e980ffe31c",
+        "name": "Pressure Difference Cooling"
+      },
+      {
+        "id": "937cae68-59af-44f0-aab1-397823266327",
+        "name": "Pressure Difference Heating"
+      },
+      {
+        "id": "ca9ef214-d657-420a-a504-ddca39a0e531",
+        "name": "Pressure In Cooling"
+      },
+      {
+        "id": "60cfa284-c6d3-44c0-a91e-7bfe77d75760",
+        "name": "Pressure In Heating"
+      },
+      {
+        "id": "49780732-3551-4bd9-b675-c011a5c5285b",
+        "name": "Pressure Out Cooling"
+      },
+      {
+        "id": "8c9d2772-610a-4ca0-b0c0-07bd6a1765b3",
+        "name": "Pressure Out Heating"
+      },
+      {
+        "id": "10fb4970-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Cooling"
+      },
+      {
+        "id": "19b2106c-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Heating"
+      },
+      {
+        "id": "1546e7f0-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out Cooling"
+      },
+      {
+        "id": "16c13e66-0f2a-4275-b2d8-d6713a04be23",
+        "name": "Temperature Out Heating"
+      },
+      {
+        "id": "95e5562d-16a7-4fe7-913d-dff605c26796",
+        "name": "Thermal Capacity Cooling"
+      },
+      {
+        "id": "4457e79b-52c4-4c40-a149-0b997323ee5a",
+        "name": "Thermal Capacity Heating"
+      },
+      {
+        "id": "d8cb9d86-0d46-41a3-a512-ec4e6a31544a",
+        "name": "Thermal Power Cooling"
+      },
+      {
+        "id": "a98e09f4-20f2-4515-9b1c-bd3718b3369c",
+        "name": "Thermal Power Heating"
+      },
+      {
+        "id": "a8174916-2d1e-46ec-95d4-c2558617dd30",
+        "name": "Volume Flow Cooling"
+      },
+      {
+        "id": "178318c4-0a63-441a-95b1-01c4dc8fe879",
+        "name": "Volume Flow Heating"
+      },
+      {
+        "id": "3e522749-7299-40f8-88ec-f6ad8f8047d4",
+        "name": "Volume Flow Pressure Coefficient Cooling"
+      },
+      {
+        "id": "a8a67124-9139-4142-b861-21390bfa6996",
+        "name": "Volume Flow Pressure Coefficient Heating"
+      }
+    ]
+  },
+  {
+    "id": "a60043b6-d115-444d-bc49-d1b40ba2cd79",
+    "name": "Heat Meter",
+    "description": "Type bundling the features of a heat meter",
+    "parent": null,
+    "ports": [],
+    "features": [
+      {
+        "id": "e1cc5fdc-5101-4ac8-a522-b67972fa0992",
+        "name": "Density"
+      },
+      {
+        "id": "1dc7a02c-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow"
+      },
+      {
+        "id": "03a02020-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In"
+      },
+      {
+        "id": "0bf647d6-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out"
+      },
+      {
+        "id": "30ac5c94-d3c9-46fc-a9e7-4e1289514a10",
+        "name": "Thermal Capacity"
+      },
+      {
+        "id": "befcc905-a0db-462b-8049-9f23b61526aa",
+        "name": "Thermal Power"
+      },
+      {
+        "id": "9fc45b1c-c905-43f7-b2ee-87b2e9745bfa",
+        "name": "Volume Flow"
+      }
+    ]
+  },
+  {
+    "id": "056feb17-098f-4dc8-8864-355ed29970c5",
+    "name": "Heat Pump",
+    "description": "Type representing generic heat pumps.",
+    "parent": "Abstract Element Heating and Cooling",
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "b3cc9a5c-0ccd-4aa8-8504-8efec9f53272",
+        "name": "Heating In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "46498c9d-f2c4-4611-af00-153f244b6d33",
+        "name": "Heating Out",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "bbd342aa-a6a4-4b81-9dbe-e69adcb158c1",
+        "name": "Cooling In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "b6a4dded-acb8-4855-a17c-0168f5ac68d5",
+        "name": "Cooling Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "bafb920e-26de-4272-bd2c-f0358153855f",
+        "name": "Coefficient of Performance"
+      },
+      {
+        "id": "80a1431f-aaf9-48ed-8689-f51257b97bb4",
+        "name": "Density Cooling"
+      },
+      {
+        "id": "28f63e0a-01e5-4637-a108-f8ccf9ae5da3",
+        "name": "Density Heating"
+      },
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "d47c4f8d-f663-478c-a7eb-abc563d37cc7",
+        "name": "Electrical Power Maximum"
+      },
+      {
+        "id": "15c9d926-0992-4aed-8409-78193bd34779",
+        "name": "Electrical Voltage"
+      },
+      {
+        "id": "90e4ce99-f28f-482b-bd41-c10b2bf32ba7",
+        "name": "Machine Failure"
+      },
+      {
+        "id": "8ebe7175-ee32-4d56-9e38-2a37e459ff9f",
+        "name": "Manual Operation"
+      },
+      {
+        "id": "25af064a-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow Cooling"
+      },
+      {
+        "id": "29a06d6d-89f2-4f90-b485-d79a0ada400f",
+        "name": "Mass Flow Cooling Maximum"
+      },
+      {
+        "id": "40172b74-b806-4f7d-b828-36d4f938c3f7",
+        "name": "Mass Flow Cooling Minimum"
+      },
+      {
+        "id": "f7c393fe-3d9c-4902-b021-615cf89a78c0",
+        "name": "Mass Flow Heating"
+      },
+      {
+        "id": "30ba563a-38b5-4b2a-ac08-6c9f3eb5adda",
+        "name": "Mass Flow Heating Maximum"
+      },
+      {
+        "id": "aecf81ea-1ecd-4099-a200-6e4c004eb165",
+        "name": "Mass Flow Heating Minimum"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "32d59bdc-dee1-4ef9-9bca-20e980ffe31c",
+        "name": "Pressure Difference Cooling"
+      },
+      {
+        "id": "937cae68-59af-44f0-aab1-397823266327",
+        "name": "Pressure Difference Heating"
+      },
+      {
+        "id": "ca9ef214-d657-420a-a504-ddca39a0e531",
+        "name": "Pressure In Cooling"
+      },
+      {
+        "id": "60cfa284-c6d3-44c0-a91e-7bfe77d75760",
+        "name": "Pressure In Heating"
+      },
+      {
+        "id": "49780732-3551-4bd9-b675-c011a5c5285b",
+        "name": "Pressure Out Cooling"
+      },
+      {
+        "id": "8c9d2772-610a-4ca0-b0c0-07bd6a1765b3",
+        "name": "Pressure Out Heating"
+      },
+      {
+        "id": "c2327528-2286-4400-8a32-596ce0922c52",
+        "name": "SCOP"
+      },
+      {
+        "id": "f1024c22-fab5-4367-9051-728b07c78079",
+        "name": "Set Temperature Out Cooling"
+      },
+      {
+        "id": "7060500b-b16d-47d6-a1bf-5061fdfc7977",
+        "name": "Set Temperature Out Cooling (Written)"
+      },
+      {
+        "id": "10fb4970-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Cooling"
+      },
+      {
+        "id": "19b2106c-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Heating"
+      },
+      {
+        "id": "1546e7f0-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out Cooling"
+      },
+      {
+        "id": "16c13e66-0f2a-4275-b2d8-d6713a04be23",
+        "name": "Temperature Out Heating"
+      },
+      {
+        "id": "95e5562d-16a7-4fe7-913d-dff605c26796",
+        "name": "Thermal Capacity Cooling"
+      },
+      {
+        "id": "4457e79b-52c4-4c40-a149-0b997323ee5a",
+        "name": "Thermal Capacity Heating"
+      },
+      {
+        "id": "d8cb9d86-0d46-41a3-a512-ec4e6a31544a",
+        "name": "Thermal Power Cooling"
+      },
+      {
+        "id": "a98e09f4-20f2-4515-9b1c-bd3718b3369c",
+        "name": "Thermal Power Heating"
+      },
+      {
+        "id": "a8174916-2d1e-46ec-95d4-c2558617dd30",
+        "name": "Volume Flow Cooling"
+      },
+      {
+        "id": "9940ff41-4d60-487e-9418-138d65ca42e3",
+        "name": "Volume Flow Cooling Maximum"
+      },
+      {
+        "id": "18039b04-6c64-4a59-90c1-3e4e3e2ec680",
+        "name": "Volume Flow Cooling Minimum"
+      },
+      {
+        "id": "178318c4-0a63-441a-95b1-01c4dc8fe879",
+        "name": "Volume Flow Heating"
+      },
+      {
+        "id": "65f4c0dd-d26a-48ef-8e06-eb8f3680abb4",
+        "name": "Volume Flow Heating Maximum"
+      },
+      {
+        "id": "4df61fbd-6fb9-4b07-92e1-59a80c852863",
+        "name": "Volume Flow Heating Minimum"
+      },
+      {
+        "id": "3e522749-7299-40f8-88ec-f6ad8f8047d4",
+        "name": "Volume Flow Pressure Coefficient Cooling"
+      },
+      {
+        "id": "a8a67124-9139-4142-b861-21390bfa6996",
+        "name": "Volume Flow Pressure Coefficient Heating"
+      }
+    ]
+  },
+  {
+    "id": "56673d81-d69c-45f1-b0f9-07caf80eb936",
+    "name": "Hybrid Compression Chiller",
+    "description": "Type representing Hybrid Compression Chiller",
+    "parent": "Air Cooled Compression Chiller",
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "bbd342aa-a6a4-4b81-9dbe-e69adcb158c1",
+        "name": "Cooling In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "b6a4dded-acb8-4855-a17c-0168f5ac68d5",
+        "name": "Cooling Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "bafb920e-26de-4272-bd2c-f0358153855f",
+        "name": "Coefficient of Performance"
+      },
+      {
+        "id": "80a1431f-aaf9-48ed-8689-f51257b97bb4",
+        "name": "Density Cooling"
+      },
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "a340e5e3-7cd6-425d-b4ca-e2060da2f96f",
+        "name": "Electrical Power Compressor"
+      },
+      {
+        "id": "de975a9a-ff36-405d-9545-7dd108edd230",
+        "name": "Electrical Power Compressor Maximum"
+      },
+      {
+        "id": "142a141b-c2ce-4fe1-b5e7-8077130f8322",
+        "name": "Electrical Power Compressor Minimum"
+      },
+      {
+        "id": "e64262e2-604e-4523-a211-c7e7e723be2c",
+        "name": "Electrical Power Ventilation"
+      },
+      {
+        "id": "24a83ce7-2284-473b-ae8b-528cca00fac4",
+        "name": "Electrical Power Ventilation Maximum"
+      },
+      {
+        "id": "35171d72-d560-446d-ac5e-dd7806428fce",
+        "name": "Electrical Power Ventilation Minimum"
+      },
+      {
+        "id": "15c9d926-0992-4aed-8409-78193bd34779",
+        "name": "Electrical Voltage"
+      },
+      {
+        "id": "405077c3-b88a-4d41-b804-260fa61b587c",
+        "name": "Free Cooling Status"
+      },
+      {
+        "id": "90e4ce99-f28f-482b-bd41-c10b2bf32ba7",
+        "name": "Machine Failure"
+      },
+      {
+        "id": "8ebe7175-ee32-4d56-9e38-2a37e459ff9f",
+        "name": "Manual Operation"
+      },
+      {
+        "id": "25af064a-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow Cooling"
+      },
+      {
+        "id": "29a06d6d-89f2-4f90-b485-d79a0ada400f",
+        "name": "Mass Flow Cooling Maximum"
+      },
+      {
+        "id": "40172b74-b806-4f7d-b828-36d4f938c3f7",
+        "name": "Mass Flow Cooling Minimum"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "9dd01024-1344-435f-876c-02195f9d4598",
+        "name": "Operation Mode"
+      },
+      {
+        "id": "12f3c284-deec-4cdc-abb0-52f0aba252b9",
+        "name": "Operation Mode (Written)"
+      },
+      {
+        "id": "32d59bdc-dee1-4ef9-9bca-20e980ffe31c",
+        "name": "Pressure Difference Cooling"
+      },
+      {
+        "id": "ca9ef214-d657-420a-a504-ddca39a0e531",
+        "name": "Pressure In Cooling"
+      },
+      {
+        "id": "49780732-3551-4bd9-b675-c011a5c5285b",
+        "name": "Pressure Out Cooling"
+      },
+      {
+        "id": "7223a24c-b160-4f4b-a403-620f75ee5af9",
+        "name": "Rate of Rotation Compressor"
+      },
+      {
+        "id": "c2e300eb-c939-45db-84ad-8bd8af78ac0a",
+        "name": "Rate of Rotation Ventilation"
+      },
+      {
+        "id": "0d3b5548-287c-42b7-8ffc-435dffe27e1b",
+        "name": "SEER"
+      },
+      {
+        "id": "b7d10673-8b6c-494f-a348-b7a35a488884",
+        "name": "Set Signal Ventilation"
+      },
+      {
+        "id": "f1024c22-fab5-4367-9051-728b07c78079",
+        "name": "Set Temperature Out Cooling"
+      },
+      {
+        "id": "7060500b-b16d-47d6-a1bf-5061fdfc7977",
+        "name": "Set Temperature Out Cooling (Written)"
+      },
+      {
+        "id": "2d36645a-b4d7-4608-a45a-b0a6c38e2e7a",
+        "name": "Temperature Environment"
+      },
+      {
+        "id": "10fb4970-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Cooling"
+      },
+      {
+        "id": "1546e7f0-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out Cooling"
+      },
+      {
+        "id": "95e5562d-16a7-4fe7-913d-dff605c26796",
+        "name": "Thermal Capacity Cooling"
+      },
+      {
+        "id": "d8cb9d86-0d46-41a3-a512-ec4e6a31544a",
+        "name": "Thermal Power Cooling"
+      },
+      {
+        "id": "a8174916-2d1e-46ec-95d4-c2558617dd30",
+        "name": "Volume Flow Cooling"
+      },
+      {
+        "id": "9940ff41-4d60-487e-9418-138d65ca42e3",
+        "name": "Volume Flow Cooling Maximum"
+      },
+      {
+        "id": "18039b04-6c64-4a59-90c1-3e4e3e2ec680",
+        "name": "Volume Flow Cooling Minimum"
+      },
+      {
+        "id": "3e522749-7299-40f8-88ec-f6ad8f8047d4",
+        "name": "Volume Flow Pressure Coefficient Cooling"
+      }
+    ]
+  },
+  {
+    "id": "bf5d5cc5-910d-4881-9dc4-0c0619c61162",
+    "name": "Hybrid Cooling Tower One Pump",
+    "description": "Type representing generic closed-loop, hybrid cooling towers with one pump.",
+    "parent": "Cooling Tower",
+    "ports": [
+      {
+        "id": "5ee7e228-dd13-40d2-ad81-9e65aec981c5",
+        "name": "Medium In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "bbd342aa-a6a4-4b81-9dbe-e69adcb158c1",
+        "name": "Cooling In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "b6a4dded-acb8-4855-a17c-0168f5ac68d5",
+        "name": "Cooling Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "80a1431f-aaf9-48ed-8689-f51257b97bb4",
+        "name": "Density Cooling"
+      },
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "d47c4f8d-f663-478c-a7eb-abc563d37cc7",
+        "name": "Electrical Power Maximum"
+      },
+      {
+        "id": "b1284a54-adcf-401d-a268-b9901ae6e1a9",
+        "name": "Electrical Power Minimum"
+      },
+      {
+        "id": "15c9d926-0992-4aed-8409-78193bd34779",
+        "name": "Electrical Voltage"
+      },
+      {
+        "id": "90e4ce99-f28f-482b-bd41-c10b2bf32ba7",
+        "name": "Machine Failure"
+      },
+      {
+        "id": "8ebe7175-ee32-4d56-9e38-2a37e459ff9f",
+        "name": "Manual Operation"
+      },
+      {
+        "id": "25af064a-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow Cooling"
+      },
+      {
+        "id": "29a06d6d-89f2-4f90-b485-d79a0ada400f",
+        "name": "Mass Flow Cooling Maximum"
+      },
+      {
+        "id": "40172b74-b806-4f7d-b828-36d4f938c3f7",
+        "name": "Mass Flow Cooling Minimum"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "31b4a13c-93e3-4610-beea-d182e133e755",
+        "name": "ON / OFF Injection Pump"
+      },
+      {
+        "id": "8cbeafb7-c489-4d3b-a57a-b4c01165fe21",
+        "name": "ON / OFF Injection Pump (Written)"
+      },
+      {
+        "id": "9dd01024-1344-435f-876c-02195f9d4598",
+        "name": "Operation Mode"
+      },
+      {
+        "id": "32d59bdc-dee1-4ef9-9bca-20e980ffe31c",
+        "name": "Pressure Difference Cooling"
+      },
+      {
+        "id": "ca9ef214-d657-420a-a504-ddca39a0e531",
+        "name": "Pressure In Cooling"
+      },
+      {
+        "id": "49780732-3551-4bd9-b675-c011a5c5285b",
+        "name": "Pressure Out Cooling"
+      },
+      {
+        "id": "c2e300eb-c939-45db-84ad-8bd8af78ac0a",
+        "name": "Rate of Rotation Ventilation"
+      },
+      {
+        "id": "1dc399a0-7335-4117-8ae9-4714f3715e97",
+        "name": "Relative Air Humidity"
+      },
+      {
+        "id": "f1024c22-fab5-4367-9051-728b07c78079",
+        "name": "Set Temperature Out Cooling"
+      },
+      {
+        "id": "7060500b-b16d-47d6-a1bf-5061fdfc7977",
+        "name": "Set Temperature Out Cooling (Written)"
+      },
+      {
+        "id": "2d36645a-b4d7-4608-a45a-b0a6c38e2e7a",
+        "name": "Temperature Environment"
+      },
+      {
+        "id": "10fb4970-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Cooling"
+      },
+      {
+        "id": "f1a066d8-47a5-497e-b77d-e5bdff86e441",
+        "name": "Temperature Out Air"
+      },
+      {
+        "id": "1546e7f0-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out Cooling"
+      },
+      {
+        "id": "95e5562d-16a7-4fe7-913d-dff605c26796",
+        "name": "Thermal Capacity Cooling"
+      },
+      {
+        "id": "d8cb9d86-0d46-41a3-a512-ec4e6a31544a",
+        "name": "Thermal Power Cooling"
+      },
+      {
+        "id": "a8174916-2d1e-46ec-95d4-c2558617dd30",
+        "name": "Volume Flow Cooling"
+      },
+      {
+        "id": "9940ff41-4d60-487e-9418-138d65ca42e3",
+        "name": "Volume Flow Cooling Maximum"
+      },
+      {
+        "id": "18039b04-6c64-4a59-90c1-3e4e3e2ec680",
+        "name": "Volume Flow Cooling Minimum"
+      },
+      {
+        "id": "3e522749-7299-40f8-88ec-f6ad8f8047d4",
+        "name": "Volume Flow Pressure Coefficient Cooling"
+      },
+      {
+        "id": "ed9fca2e-d53c-4be7-b570-77af93f14882",
+        "name": "Wet Bulb Temperature"
+      }
+    ]
+  },
+  {
+    "id": "6ecc50a4-9638-4daf-8511-418fd1c99d5c",
+    "name": "Hybrid Cooling Tower Two Pumps",
+    "description": "Type representing generic closed-loop, hybrid cooling towers with two pumps.",
+    "parent": "Cooling Tower",
+    "ports": [
+      {
+        "id": "5ee7e228-dd13-40d2-ad81-9e65aec981c5",
+        "name": "Medium In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "bbd342aa-a6a4-4b81-9dbe-e69adcb158c1",
+        "name": "Cooling In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "b6a4dded-acb8-4855-a17c-0168f5ac68d5",
+        "name": "Cooling Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "80a1431f-aaf9-48ed-8689-f51257b97bb4",
+        "name": "Density Cooling"
+      },
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "d47c4f8d-f663-478c-a7eb-abc563d37cc7",
+        "name": "Electrical Power Maximum"
+      },
+      {
+        "id": "b1284a54-adcf-401d-a268-b9901ae6e1a9",
+        "name": "Electrical Power Minimum"
+      },
+      {
+        "id": "15c9d926-0992-4aed-8409-78193bd34779",
+        "name": "Electrical Voltage"
+      },
+      {
+        "id": "90e4ce99-f28f-482b-bd41-c10b2bf32ba7",
+        "name": "Machine Failure"
+      },
+      {
+        "id": "8ebe7175-ee32-4d56-9e38-2a37e459ff9f",
+        "name": "Manual Operation"
+      },
+      {
+        "id": "25af064a-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow Cooling"
+      },
+      {
+        "id": "29a06d6d-89f2-4f90-b485-d79a0ada400f",
+        "name": "Mass Flow Cooling Maximum"
+      },
+      {
+        "id": "40172b74-b806-4f7d-b828-36d4f938c3f7",
+        "name": "Mass Flow Cooling Minimum"
+      },
+      {
+        "id": "6d5e061a-47a3-4b75-ae3b-92f6ea60164d",
+        "name": "Number of Injection Pumps"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "71be912a-bf16-433e-a12b-be6557aafdce",
+        "name": "ON / OFF Injection Pump First"
+      },
+      {
+        "id": "65849633-ede0-45ff-bce3-4e9257a54576",
+        "name": "ON / OFF Injection Pump First (Written)"
+      },
+      {
+        "id": "21de165f-0c94-4ad8-88fb-bdfce96a13b8",
+        "name": "ON / OFF Injection Pump Second"
+      },
+      {
+        "id": "fdc0d515-db8a-4c1d-8a5b-d23266e50d6f",
+        "name": "ON / OFF Injection Pump Second (Written)"
+      },
+      {
+        "id": "9dd01024-1344-435f-876c-02195f9d4598",
+        "name": "Operation Mode"
+      },
+      {
+        "id": "32d59bdc-dee1-4ef9-9bca-20e980ffe31c",
+        "name": "Pressure Difference Cooling"
+      },
+      {
+        "id": "ca9ef214-d657-420a-a504-ddca39a0e531",
+        "name": "Pressure In Cooling"
+      },
+      {
+        "id": "49780732-3551-4bd9-b675-c011a5c5285b",
+        "name": "Pressure Out Cooling"
+      },
+      {
+        "id": "c2e300eb-c939-45db-84ad-8bd8af78ac0a",
+        "name": "Rate of Rotation Ventilation"
+      },
+      {
+        "id": "1dc399a0-7335-4117-8ae9-4714f3715e97",
+        "name": "Relative Air Humidity"
+      },
+      {
+        "id": "f1024c22-fab5-4367-9051-728b07c78079",
+        "name": "Set Temperature Out Cooling"
+      },
+      {
+        "id": "7060500b-b16d-47d6-a1bf-5061fdfc7977",
+        "name": "Set Temperature Out Cooling (Written)"
+      },
+      {
+        "id": "2d36645a-b4d7-4608-a45a-b0a6c38e2e7a",
+        "name": "Temperature Environment"
+      },
+      {
+        "id": "10fb4970-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Cooling"
+      },
+      {
+        "id": "f1a066d8-47a5-497e-b77d-e5bdff86e441",
+        "name": "Temperature Out Air"
+      },
+      {
+        "id": "1546e7f0-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out Cooling"
+      },
+      {
+        "id": "95e5562d-16a7-4fe7-913d-dff605c26796",
+        "name": "Thermal Capacity Cooling"
+      },
+      {
+        "id": "d8cb9d86-0d46-41a3-a512-ec4e6a31544a",
+        "name": "Thermal Power Cooling"
+      },
+      {
+        "id": "a8174916-2d1e-46ec-95d4-c2558617dd30",
+        "name": "Volume Flow Cooling"
+      },
+      {
+        "id": "9940ff41-4d60-487e-9418-138d65ca42e3",
+        "name": "Volume Flow Cooling Maximum"
+      },
+      {
+        "id": "18039b04-6c64-4a59-90c1-3e4e3e2ec680",
+        "name": "Volume Flow Cooling Minimum"
+      },
+      {
+        "id": "3e522749-7299-40f8-88ec-f6ad8f8047d4",
+        "name": "Volume Flow Pressure Coefficient Cooling"
+      },
+      {
+        "id": "ed9fca2e-d53c-4be7-b570-77af93f14882",
+        "name": "Wet Bulb Temperature"
+      }
+    ]
+  },
+  {
+    "id": "613d356c-ce38-412b-aa5d-1816931fbae6",
+    "name": "Machine",
+    "description": "Type representing machines.",
+    "parent": null,
+    "ports": [],
+    "features": []
+  },
+  {
+    "id": "53ed5548-4bc5-4518-bc31-53a7543b42d6",
+    "name": "Machine Groups",
+    "description": "Type representing machine groups.",
+    "parent": null,
+    "ports": [],
+    "features": []
+  },
+  {
+    "id": "6c069565-ef8c-46e5-be17-c4a1c9e336e5",
+    "name": "Network Node",
+    "description": "Type representing a Network Node where different mass flows join or split up.",
+    "parent": null,
+    "ports": [
+      {
+        "id": "5ee7e228-dd13-40d2-ad81-9e65aec981c5",
+        "name": "Medium In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "3b16e24c-7348-4045-8a73-aeed094b0b6e",
+        "name": "Medium Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": []
+  },
+  {
+    "id": "c6012c0c-1bb9-4eb0-94f9-9619c89c002c",
+    "name": "Optimizer",
+    "description": "Meta Element, that withholds meta information of an energy system or part of an energy system.",
+    "parent": "Error Monitor",
+    "ports": [],
+    "features": [
+      {
+        "id": "16f2a530-2653-496c-9fa9-ca2cc3b9a0be",
+        "name": "Agreed Service Time"
+      },
+      {
+        "id": "554d0839-d14a-4cc3-a57c-b24599407138",
+        "name": "Electricity Price"
+      },
+      {
+        "id": "a995728c-cdaf-4ab9-bd2b-6d9d5cc20145",
+        "name": "Element Id Mapping"
+      },
+      {
+        "id": "e94e17dc-c81a-4e93-95df-53c6e142dfa9",
+        "name": "Error Heartbeat"
+      },
+      {
+        "id": "104527d5-0422-41da-88df-7631d95d9fac",
+        "name": "Error: Connection"
+      },
+      {
+        "id": "adc0e247-83bd-4f6b-add5-4bc1ddf58e7d",
+        "name": "Error: Format"
+      },
+      {
+        "id": "74262840-1675-4e77-aa93-6bd94b0c8c7b",
+        "name": "Error: Invalid Optimization"
+      },
+      {
+        "id": "94eefa6d-8fe3-43e4-b637-4d4314b91419",
+        "name": "Error: Invalid Optimization Data"
+      },
+      {
+        "id": "ac286a07-9fa2-45cf-b52b-b60093e5ba61",
+        "name": "Error: Invalid Optimization Input Data"
+      },
+      {
+        "id": "055b28f5-14a5-49ab-92ea-9623b3f6e9c9",
+        "name": "Error: Missing Data"
+      },
+      {
+        "id": "2d14d69a-ccb0-44a7-babd-c0d95279fbba",
+        "name": "Error: Missing Datapoint Or Series"
+      },
+      {
+        "id": "bb3f770f-a6cb-406c-a8d7-51bc2ea6c760",
+        "name": "Error: Model Error"
+      },
+      {
+        "id": "b5e6c5c6-e2f0-48d7-a3f9-babaff92d3b5",
+        "name": "Error: Other"
+      },
+      {
+        "id": "6c8a3645-5271-428d-aa70-ef8a6971c25f",
+        "name": "Error: Unsafe System State"
+      },
+      {
+        "id": "43107a55-1000-4b8c-8b2e-062bbe16c3fd",
+        "name": "Error: Writing"
+      },
+      {
+        "id": "07bcc894-f2f9-4c32-8678-4d3bb964b902",
+        "name": "Heartbeat"
+      },
+      {
+        "id": "64a12d04-0500-46a3-af6a-d10908aab731",
+        "name": "Heartbeat (Written)"
+      },
+      {
+        "id": "57c643cc-d61e-4221-8a8e-f9813323b7e4",
+        "name": "Heartbeat Limit"
+      },
+      {
+        "id": "3f37dd16-3d0f-4260-9e09-f7f29f232ad7",
+        "name": "Minimum Efficiency"
+      },
+      {
+        "id": "3c23cee3-12e1-4336-a097-8c7efee7ac2a",
+        "name": "Momentary Efficiency"
+      },
+      {
+        "id": "41c52259-382c-4874-b581-ada1a8fea211",
+        "name": "Monthly Efficiency"
+      },
+      {
+        "id": "dec8270e-970d-41b7-a785-f33c545ff391",
+        "name": "Optimization Error Counter"
+      },
+      {
+        "id": "bea1bd57-8cc6-4253-8325-9001f646baac",
+        "name": "Optimization Mode"
+      },
+      {
+        "id": "f2278cf8-02b7-4992-908c-e078a0e61485",
+        "name": "Optimizer Active"
+      },
+      {
+        "id": "c8306c8d-5213-4ec2-8f02-58678e271fcd",
+        "name": "Optimizer Enabled"
+      },
+      {
+        "id": "20bec9d2-c9bf-455b-b167-73411229e729",
+        "name": "Optimizer Ready"
+      },
+      {
+        "id": "b74079d1-1222-414e-827c-aba2be6d53f1",
+        "name": "Price for Power Peak"
+      },
+      {
+        "id": "347cc13f-ef40-4821-8535-c7f5200fc5ae",
+        "name": "Price for Temperature Error"
+      },
+      {
+        "id": "acd4e576-dad1-4667-8090-45a9006f0e3d",
+        "name": "Service Availability"
+      },
+      {
+        "id": "761e8425-980e-4c01-b2f4-6f5dd7871a42",
+        "name": "Service Downtime"
+      },
+      {
+        "id": "7fcd383c-6fc4-42a1-8e77-59f1b73b7697",
+        "name": "Setpoints out of Bounds Error"
+      },
+      {
+        "id": "1ac6a0bd-b603-4551-811c-67fd33ca9472",
+        "name": "System States out of Bounds Error"
+      },
+      {
+        "id": "c17d0978-faf6-4b7d-8a51-31f963782e95",
+        "name": "Tax for Electricity Bought"
+      },
+      {
+        "id": "c29b8570-76b8-49f3-9ec7-fb1df1f08bc2",
+        "name": "Tax for Electricity Sold"
+      },
+      {
+        "id": "263d8637-eb32-4b52-bd6d-5cf7153d2c0f",
+        "name": "Time Horizon Structure"
+      },
+      {
+        "id": "1bf38dfa-801f-4978-97c1-8fb018856be5",
+        "name": "Yearly Efficiency"
+      }
+    ]
+  },
+  {
+    "id": "38fe2ff0-c467-4d35-8e12-c8d7ab1dc606",
+    "name": "Photovoltaic System",
+    "description": null,
+    "parent": null,
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      }
+    ],
+    "features": [
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "107b3d78-0210-4e46-a50d-9e7c6bf814a6",
+        "name": "Electrical Energy"
+      },
+      {
+        "id": "84b05590-2e8d-4436-960d-506b8f992575",
+        "name": "Electrical Energy since Year Start"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "ba57e035-e4aa-4ad6-a70f-bec89a8d8b54",
+        "name": "Electrical Power (Forecast)"
+      },
+      {
+        "id": "cd643807-f95a-445a-bff7-d4c5e6443926",
+        "name": "Electrical Power (Optimizer)"
+      },
+      {
+        "id": "d47c4f8d-f663-478c-a7eb-abc563d37cc7",
+        "name": "Electrical Power Maximum"
+      }
+    ]
+  },
+  {
+    "id": "f7280623-f096-4a2e-a57f-74919ab80e48",
+    "name": "Pipe",
+    "description": "Type representing generic pipes.",
+    "parent": "Abstract Element Medium",
+    "ports": [
+      {
+        "id": "5ee7e228-dd13-40d2-ad81-9e65aec981c5",
+        "name": "Medium In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "3b16e24c-7348-4045-8a73-aeed094b0b6e",
+        "name": "Medium Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "e1cc5fdc-5101-4ac8-a522-b67972fa0992",
+        "name": "Density"
+      },
+      {
+        "id": "1dc7a02c-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow"
+      },
+      {
+        "id": "f4c553b7-8135-4146-83a3-5b48c4794e04",
+        "name": "Pressure Difference"
+      },
+      {
+        "id": "c6f8be5f-70f5-4b1e-8313-2cc56740ce45",
+        "name": "Pressure In"
+      },
+      {
+        "id": "589da515-5af6-4765-ac3c-6f1471dcfcf7",
+        "name": "Pressure Out"
+      },
+      {
+        "id": "03a02020-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In"
+      },
+      {
+        "id": "40b45b33-dd37-43a0-a726-403482fd2d29",
+        "name": "Temperature Offset"
+      },
+      {
+        "id": "0bf647d6-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out"
+      },
+      {
+        "id": "30ac5c94-d3c9-46fc-a9e7-4e1289514a10",
+        "name": "Thermal Capacity"
+      },
+      {
+        "id": "9fc45b1c-c905-43f7-b2ee-87b2e9745bfa",
+        "name": "Volume Flow"
+      }
+    ]
+  },
+  {
+    "id": "20a5f348-9978-4d99-99ab-1724c159086f",
+    "name": "Platform Monitoring",
+    "description": "Health information of etaONE.",
+    "parent": "Error Monitor",
+    "ports": [],
+    "features": [
+      {
+        "id": "16f2a530-2653-496c-9fa9-ca2cc3b9a0be",
+        "name": "Agreed Service Time"
+      },
+      {
+        "id": "e94e17dc-c81a-4e93-95df-53c6e142dfa9",
+        "name": "Error Heartbeat"
+      },
+      {
+        "id": "104527d5-0422-41da-88df-7631d95d9fac",
+        "name": "Error: Connection"
+      },
+      {
+        "id": "adc0e247-83bd-4f6b-add5-4bc1ddf58e7d",
+        "name": "Error: Format"
+      },
+      {
+        "id": "74262840-1675-4e77-aa93-6bd94b0c8c7b",
+        "name": "Error: Invalid Optimization"
+      },
+      {
+        "id": "94eefa6d-8fe3-43e4-b637-4d4314b91419",
+        "name": "Error: Invalid Optimization Data"
+      },
+      {
+        "id": "ac286a07-9fa2-45cf-b52b-b60093e5ba61",
+        "name": "Error: Invalid Optimization Input Data"
+      },
+      {
+        "id": "055b28f5-14a5-49ab-92ea-9623b3f6e9c9",
+        "name": "Error: Missing Data"
+      },
+      {
+        "id": "2d14d69a-ccb0-44a7-babd-c0d95279fbba",
+        "name": "Error: Missing Datapoint Or Series"
+      },
+      {
+        "id": "bb3f770f-a6cb-406c-a8d7-51bc2ea6c760",
+        "name": "Error: Model Error"
+      },
+      {
+        "id": "b5e6c5c6-e2f0-48d7-a3f9-babaff92d3b5",
+        "name": "Error: Other"
+      },
+      {
+        "id": "6c8a3645-5271-428d-aa70-ef8a6971c25f",
+        "name": "Error: Unsafe System State"
+      },
+      {
+        "id": "43107a55-1000-4b8c-8b2e-062bbe16c3fd",
+        "name": "Error: Writing"
+      },
+      {
+        "id": "07bcc894-f2f9-4c32-8678-4d3bb964b902",
+        "name": "Heartbeat"
+      },
+      {
+        "id": "64a12d04-0500-46a3-af6a-d10908aab731",
+        "name": "Heartbeat (Written)"
+      },
+      {
+        "id": "57c643cc-d61e-4221-8a8e-f9813323b7e4",
+        "name": "Heartbeat Limit"
+      },
+      {
+        "id": "acd4e576-dad1-4667-8090-45a9006f0e3d",
+        "name": "Service Availability"
+      },
+      {
+        "id": "761e8425-980e-4c01-b2f4-6f5dd7871a42",
+        "name": "Service Downtime"
+      },
+      {
+        "id": "7fcd383c-6fc4-42a1-8e77-59f1b73b7697",
+        "name": "Setpoints out of Bounds Error"
+      },
+      {
+        "id": "1ac6a0bd-b603-4551-811c-67fd33ca9472",
+        "name": "System States out of Bounds Error"
+      }
+    ]
+  },
+  {
+    "id": "bfb34455-70fe-4c91-b71f-057d27aa455f",
+    "name": "Power Generator",
+    "description": null,
+    "parent": null,
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "29e61365-f05e-4c37-9dbb-7c0669134696",
+        "name": "Fuel",
+        "connection_type": "Fuel"
+      }
+    ],
+    "features": [
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "d47c4f8d-f663-478c-a7eb-abc563d37cc7",
+        "name": "Electrical Power Maximum"
+      },
+      {
+        "id": "b1284a54-adcf-401d-a268-b9901ae6e1a9",
+        "name": "Electrical Power Minimum"
+      },
+      {
+        "id": "57800d19-c580-4236-b417-255478ac7f5d",
+        "name": "Fuel Power"
+      },
+      {
+        "id": "0e93e553-f41a-47d3-a19b-6488e15df074",
+        "name": "Fuel Price"
+      },
+      {
+        "id": "90e4ce99-f28f-482b-bd41-c10b2bf32ba7",
+        "name": "Machine Failure"
+      },
+      {
+        "id": "8ebe7175-ee32-4d56-9e38-2a37e459ff9f",
+        "name": "Manual Operation"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "41d7aaac-d5b9-42b7-8574-bd5d0ba9de09",
+        "name": "Set Signal"
+      },
+      {
+        "id": "ad0ec563-9682-494c-9721-43f753f7ad7f",
+        "name": "Set Signal (Written)"
+      }
+    ]
+  },
+  {
+    "id": "f968b117-1a85-4b7a-b7af-94bbeec73878",
+    "name": "Product",
+    "description": "Type representing a single product produced.",
+    "parent": null,
+    "ports": [],
+    "features": [
+      {
+        "id": "181c03ac-57f2-4619-a734-97999acc8d94",
+        "name": "CO2 Emissions per Piece"
+      },
+      {
+        "id": "419a6d94-eaed-4c7a-92c0-0520cafb5946",
+        "name": "Incoming"
+      },
+      {
+        "id": "c7c006db-1e3f-4d42-8054-24ac14d37cd1",
+        "name": "Manufacturing Stations"
+      },
+      {
+        "id": "244c61ce-1150-4200-9fe2-641cc1c53980",
+        "name": "Outgoing"
+      },
+      {
+        "id": "6cb33464-06c7-449e-aa94-41ec0fe9d42d",
+        "name": "Product Category ID"
+      }
+    ]
+  },
+  {
+    "id": "4d29751f-3c08-492c-b554-deaa6365df17",
+    "name": "Product Category",
+    "description": null,
+    "parent": null,
+    "ports": [],
+    "features": [
+      {
+        "id": "e8f895c3-5fb6-431f-8515-ced5ea5a5f19",
+        "name": "Number Of Products Produced"
+      },
+      {
+        "id": "9f410322-0f25-4ef4-8dd4-3f793bc23273",
+        "name": "Products Produced"
+      }
+    ]
+  },
+  {
+    "id": "de648768-4996-433b-819a-5518bbcb1c79",
+    "name": "Product Type",
+    "description": "Type representing product types.",
+    "parent": null,
+    "ports": [],
+    "features": []
+  },
+  {
+    "id": "c4d7dcfa-9749-4b60-99cb-295e59951689",
+    "name": "Production Machine",
+    "description": null,
+    "parent": null,
+    "ports": [],
+    "features": [
+      {
+        "id": "45bf2a3f-0a0b-4c9e-904f-812cb06450d9",
+        "name": "CO2 Emissions"
+      },
+      {
+        "id": "4bd91572-e734-447b-a16f-f051240f0e40",
+        "name": "Cycle Dates"
+      },
+      {
+        "id": "419a6d94-eaed-4c7a-92c0-0520cafb5946",
+        "name": "Incoming"
+      },
+      {
+        "id": "244c61ce-1150-4200-9fe2-641cc1c53980",
+        "name": "Outgoing"
+      },
+      {
+        "id": "acc9cf98-9d99-409b-8fdf-d891bbdb3c85",
+        "name": "Products In Machine"
+      }
+    ]
+  },
+  {
+    "id": "dbdef226-c6b5-4df6-9899-8cd303fc32e7",
+    "name": "Production Site",
+    "description": null,
+    "parent": null,
+    "ports": [],
+    "features": [
+      {
+        "id": "45bf2a3f-0a0b-4c9e-904f-812cb06450d9",
+        "name": "CO2 Emissions"
+      }
+    ]
+  },
+  {
+    "id": "ca955b3c-8618-4346-81bc-5b20f6dcd860",
+    "name": "Pump",
+    "description": "Type representing generic pumps. Efficiency is the ratio of hydraulic power to electrical power",
+    "parent": "Abstract Element Medium",
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "5ee7e228-dd13-40d2-ad81-9e65aec981c5",
+        "name": "Medium In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "3b16e24c-7348-4045-8a73-aeed094b0b6e",
+        "name": "Medium Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "e1cc5fdc-5101-4ac8-a522-b67972fa0992",
+        "name": "Density"
+      },
+      {
+        "id": "4f7e5488-9e20-4e3e-b542-8a92c1fa2684",
+        "name": "Efficiency"
+      },
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "15c9d926-0992-4aed-8409-78193bd34779",
+        "name": "Electrical Voltage"
+      },
+      {
+        "id": "90e4ce99-f28f-482b-bd41-c10b2bf32ba7",
+        "name": "Machine Failure"
+      },
+      {
+        "id": "8ebe7175-ee32-4d56-9e38-2a37e459ff9f",
+        "name": "Manual Operation"
+      },
+      {
+        "id": "1dc7a02c-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow"
+      },
+      {
+        "id": "bdf7750c-d98d-427b-be89-51b67945f5d7",
+        "name": "Nominal Rate of Rotation"
+      },
+      {
+        "id": "25213fb2-dfb8-4556-911b-9c81003f8c20",
+        "name": "Nominal Volume Flow"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "f4c553b7-8135-4146-83a3-5b48c4794e04",
+        "name": "Pressure Difference"
+      },
+      {
+        "id": "c6f8be5f-70f5-4b1e-8313-2cc56740ce45",
+        "name": "Pressure In"
+      },
+      {
+        "id": "589da515-5af6-4765-ac3c-6f1471dcfcf7",
+        "name": "Pressure Out"
+      },
+      {
+        "id": "95583ac0-1b60-4a44-b1bc-396379bb5b78",
+        "name": "Rate of Rotation"
+      },
+      {
+        "id": "1fa084fe-81a8-47fc-b0b1-f175135bbbb1",
+        "name": "Rate of Rotation Maximum"
+      },
+      {
+        "id": "217302b2-f807-4c96-84eb-d54db411df58",
+        "name": "Rate of Rotation Minimum"
+      },
+      {
+        "id": "41d7aaac-d5b9-42b7-8574-bd5d0ba9de09",
+        "name": "Set Signal"
+      },
+      {
+        "id": "ad0ec563-9682-494c-9721-43f753f7ad7f",
+        "name": "Set Signal (Written)"
+      },
+      {
+        "id": "b0e10a09-ab05-4f4b-b188-6a708b4db0fb",
+        "name": "Set Signal Maximum"
+      },
+      {
+        "id": "1b17d626-c576-4a18-8ba3-74a732ebd6c8",
+        "name": "Set Signal Minimum"
+      },
+      {
+        "id": "30ac5c94-d3c9-46fc-a9e7-4e1289514a10",
+        "name": "Thermal Capacity"
+      },
+      {
+        "id": "9fc45b1c-c905-43f7-b2ee-87b2e9745bfa",
+        "name": "Volume Flow"
+      }
+    ]
+  },
+  {
+    "id": "a5d5e3bd-08da-4e3d-9645-ddccfb157453",
+    "name": "Pump Group",
+    "description": "Type representing a group of pumps.",
+    "parent": "Pump",
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "5ee7e228-dd13-40d2-ad81-9e65aec981c5",
+        "name": "Medium In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "3b16e24c-7348-4045-8a73-aeed094b0b6e",
+        "name": "Medium Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "e1cc5fdc-5101-4ac8-a522-b67972fa0992",
+        "name": "Density"
+      },
+      {
+        "id": "4f7e5488-9e20-4e3e-b542-8a92c1fa2684",
+        "name": "Efficiency"
+      },
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "15c9d926-0992-4aed-8409-78193bd34779",
+        "name": "Electrical Voltage"
+      },
+      {
+        "id": "90e4ce99-f28f-482b-bd41-c10b2bf32ba7",
+        "name": "Machine Failure"
+      },
+      {
+        "id": "8ebe7175-ee32-4d56-9e38-2a37e459ff9f",
+        "name": "Manual Operation"
+      },
+      {
+        "id": "1dc7a02c-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow"
+      },
+      {
+        "id": "bdf7750c-d98d-427b-be89-51b67945f5d7",
+        "name": "Nominal Rate of Rotation"
+      },
+      {
+        "id": "25213fb2-dfb8-4556-911b-9c81003f8c20",
+        "name": "Nominal Volume Flow"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "9dd01024-1344-435f-876c-02195f9d4598",
+        "name": "Operation Mode"
+      },
+      {
+        "id": "12f3c284-deec-4cdc-abb0-52f0aba252b9",
+        "name": "Operation Mode (Written)"
+      },
+      {
+        "id": "41ac3e64-1152-424f-923e-46f647172da3",
+        "name": "Operation Modes"
+      },
+      {
+        "id": "f4c553b7-8135-4146-83a3-5b48c4794e04",
+        "name": "Pressure Difference"
+      },
+      {
+        "id": "c6f8be5f-70f5-4b1e-8313-2cc56740ce45",
+        "name": "Pressure In"
+      },
+      {
+        "id": "589da515-5af6-4765-ac3c-6f1471dcfcf7",
+        "name": "Pressure Out"
+      },
+      {
+        "id": "95583ac0-1b60-4a44-b1bc-396379bb5b78",
+        "name": "Rate of Rotation"
+      },
+      {
+        "id": "1fa084fe-81a8-47fc-b0b1-f175135bbbb1",
+        "name": "Rate of Rotation Maximum"
+      },
+      {
+        "id": "217302b2-f807-4c96-84eb-d54db411df58",
+        "name": "Rate of Rotation Minimum"
+      },
+      {
+        "id": "41d7aaac-d5b9-42b7-8574-bd5d0ba9de09",
+        "name": "Set Signal"
+      },
+      {
+        "id": "ad0ec563-9682-494c-9721-43f753f7ad7f",
+        "name": "Set Signal (Written)"
+      },
+      {
+        "id": "b0e10a09-ab05-4f4b-b188-6a708b4db0fb",
+        "name": "Set Signal Maximum"
+      },
+      {
+        "id": "1b17d626-c576-4a18-8ba3-74a732ebd6c8",
+        "name": "Set Signal Minimum"
+      },
+      {
+        "id": "30ac5c94-d3c9-46fc-a9e7-4e1289514a10",
+        "name": "Thermal Capacity"
+      },
+      {
+        "id": "9fc45b1c-c905-43f7-b2ee-87b2e9745bfa",
+        "name": "Volume Flow"
+      }
+    ]
+  },
+  {
+    "id": "51cd3bbf-1161-41c1-9201-d15763d4a95e",
+    "name": "Room",
+    "description": "Modeling of rooms:\nUse in and out features to model air flows to other rooms.\n\nTemperature = Mean Air Temperature\n\nModeling of wort case points in room:\nLowest Temperature = Temperature at worst case point in room. \nLowest Temperature Minimum -> Temperature should not fall below this value.\n\nThermal Power Optimizer = If positive heat is drawn from the thermal inertia, if negative heat is stored.\n",
+    "parent": "Abstract Element Medium",
+    "ports": [
+      {
+        "id": "b665a231-fe00-41de-a0ae-51c2f6deb90c",
+        "name": "Extract Air (ETA)",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "5ee7e228-dd13-40d2-ad81-9e65aec981c5",
+        "name": "Medium In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "3b16e24c-7348-4045-8a73-aeed094b0b6e",
+        "name": "Medium Out",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "54ca93f8-f47a-4090-af8f-01faa3a7a3a8",
+        "name": "Supply Air (SUP)",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "5c01a51c-e8e2-40b4-b583-2b5a9b2d4eeb",
+        "name": "Air Mass"
+      },
+      {
+        "id": "52b37cfd-f0e8-4124-84c5-c46939e63c3b",
+        "name": "CO2 Accretion Rate"
+      },
+      {
+        "id": "06c76e70-4861-4cc2-8b82-67bf97595f20",
+        "name": "CO2 Accretion Rate (Forecast)"
+      },
+      {
+        "id": "f07984c4-6efb-4bd3-b017-c43525861433",
+        "name": "CO2 Concentration"
+      },
+      {
+        "id": "91e97c2e-1d8f-451a-8586-87dd2fae2cd0",
+        "name": "CO2 Concentration Bound Violation Penalty"
+      },
+      {
+        "id": "c4703daa-7aad-4439-b743-b887efd36742",
+        "name": "CO2 Concentration Extract Air"
+      },
+      {
+        "id": "9bef399e-1c15-429b-8eaa-047ef63ad9f4",
+        "name": "CO2 Concentration Maximum"
+      },
+      {
+        "id": "e569705e-cacd-49c7-9a0e-5755f885c172",
+        "name": "CO2 Concentration Maximum Soft Bound"
+      },
+      {
+        "id": "a4bdba77-0865-4c10-b206-b7b7c5649358",
+        "name": "CO2 Concentration Medium In"
+      },
+      {
+        "id": "db6179f6-f3ce-49d0-bfbc-5ae6b6e1886b",
+        "name": "CO2 Concentration Medium Out"
+      },
+      {
+        "id": "12ea4c2e-bfb9-4b7d-8113-a2f870d1b428",
+        "name": "CO2 Concentration Supply Air"
+      },
+      {
+        "id": "e1cc5fdc-5101-4ac8-a522-b67972fa0992",
+        "name": "Density"
+      },
+      {
+        "id": "d6d1cdf4-7869-4284-b03e-78e129d4f20d",
+        "name": "Heat Transfer Coefficient"
+      },
+      {
+        "id": "1899f513-c6c4-48ad-804e-a30115331697",
+        "name": "Humidity Accretion Rate"
+      },
+      {
+        "id": "a621456e-bb01-41a6-b5a4-8897ce70a8de",
+        "name": "Humidity Accretion Rate (Forecast)"
+      },
+      {
+        "id": "5e24ff66-d12a-11ec-9d64-0242ac120002",
+        "name": "Mass"
+      },
+      {
+        "id": "1dc7a02c-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow"
+      },
+      {
+        "id": "a3aef8df-438c-44b1-b58d-a602facb2545",
+        "name": "Mass Flow Extract Air"
+      },
+      {
+        "id": "8d2c28a9-8500-4af6-b065-7b571ee3d09b",
+        "name": "Mass Flow Supply Air"
+      },
+      {
+        "id": "f4c553b7-8135-4146-83a3-5b48c4794e04",
+        "name": "Pressure Difference"
+      },
+      {
+        "id": "c6f8be5f-70f5-4b1e-8313-2cc56740ce45",
+        "name": "Pressure In"
+      },
+      {
+        "id": "589da515-5af6-4765-ac3c-6f1471dcfcf7",
+        "name": "Pressure Out"
+      },
+      {
+        "id": "1dc399a0-7335-4117-8ae9-4714f3715e97",
+        "name": "Relative Air Humidity"
+      },
+      {
+        "id": "460cde6f-22ea-4756-a584-e22029ad8a1a",
+        "name": "Relative Air Humidity Maximum"
+      },
+      {
+        "id": "216f2b6f-b60f-4af1-8608-4663e337020a",
+        "name": "Surface Area"
+      },
+      {
+        "id": "f3d9904a-cba7-11ec-9d64-0242ac120002",
+        "name": "Temperature"
+      },
+      {
+        "id": "2d36645a-b4d7-4608-a45a-b0a6c38e2e7a",
+        "name": "Temperature Environment"
+      },
+      {
+        "id": "e527b590-bdba-4e83-bbde-505c3fd2e7e5",
+        "name": "Temperature Environment (Forecast)"
+      },
+      {
+        "id": "62468ec2-e37d-4dbb-b842-c1b3eb34b854",
+        "name": "Temperature Extract Air"
+      },
+      {
+        "id": "b2d6f179-9a29-4ae2-9a10-bf4c256faad8",
+        "name": "Temperature Maximum"
+      },
+      {
+        "id": "dcf53811-5bac-4916-acd5-25b9f60b813b",
+        "name": "Temperature Maximum Soft Bound"
+      },
+      {
+        "id": "1855005f-233b-49fd-8e7c-63bd6f028c5f",
+        "name": "Temperature Minimum"
+      },
+      {
+        "id": "631e7df8-cf02-49e8-b84b-7756663a581d",
+        "name": "Temperature Minimum Soft Bound"
+      },
+      {
+        "id": "291808ee-a91e-4269-a72d-9216b0a203aa",
+        "name": "Temperature Soft Bound Violation Penalty"
+      },
+      {
+        "id": "23873a1f-b9d0-4bf6-90d0-b0f403fc34ec",
+        "name": "Temperature Supply Air"
+      },
+      {
+        "id": "30ac5c94-d3c9-46fc-a9e7-4e1289514a10",
+        "name": "Thermal Capacity"
+      },
+      {
+        "id": "30902983-fa6e-447c-b73d-3a40cfaf3717",
+        "name": "Thermal Energy"
+      },
+      {
+        "id": "13daacab-435f-46fd-b55e-fe570b0872a8",
+        "name": "Thermal Power Air Handling"
+      },
+      {
+        "id": "86965c55-1097-415b-9c51-f601f8e8f612",
+        "name": "Thermal Power Direct"
+      },
+      {
+        "id": "5ae79c92-b1a7-47cb-8b8d-5e03aee352d2",
+        "name": "Thermal Power Direct (Forecast Error)"
+      },
+      {
+        "id": "05f53c46-0a39-4b3b-8279-495b9cc108d1",
+        "name": "Thermal Power Direct (Forecast)"
+      },
+      {
+        "id": "b27b735f-b5d9-49ba-b189-a62711654026",
+        "name": "Thermal Power Ports"
+      },
+      {
+        "id": "9fc45b1c-c905-43f7-b2ee-87b2e9745bfa",
+        "name": "Volume Flow"
+      },
+      {
+        "id": "2234a846-a48b-4295-81a2-be834d5b4cd4",
+        "name": "Volume Flow Extract Air"
+      },
+      {
+        "id": "4dd51e05-488d-4e7c-8148-6693fdc1ff7b",
+        "name": "Volume Flow Supply Air"
+      }
+    ]
+  },
+  {
+    "id": "9af7a4f4-6716-4e28-a48e-fa77aba5ef06",
+    "name": "Rotary Heat Exchanger",
+    "description": "Type representing generic rotary heat exchangers.",
+    "parent": "Heat Exchanger",
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "b3cc9a5c-0ccd-4aa8-8504-8efec9f53272",
+        "name": "Heating In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "46498c9d-f2c4-4611-af00-153f244b6d33",
+        "name": "Heating Out",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "bbd342aa-a6a4-4b81-9dbe-e69adcb158c1",
+        "name": "Cooling In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "b6a4dded-acb8-4855-a17c-0168f5ac68d5",
+        "name": "Cooling Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "80a1431f-aaf9-48ed-8689-f51257b97bb4",
+        "name": "Density Cooling"
+      },
+      {
+        "id": "28f63e0a-01e5-4637-a108-f8ccf9ae5da3",
+        "name": "Density Heating"
+      },
+      {
+        "id": "4f7e5488-9e20-4e3e-b542-8a92c1fa2684",
+        "name": "Efficiency"
+      },
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "15c9d926-0992-4aed-8409-78193bd34779",
+        "name": "Electrical Voltage"
+      },
+      {
+        "id": "25af064a-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow Cooling"
+      },
+      {
+        "id": "f7c393fe-3d9c-4902-b021-615cf89a78c0",
+        "name": "Mass Flow Heating"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "32d59bdc-dee1-4ef9-9bca-20e980ffe31c",
+        "name": "Pressure Difference Cooling"
+      },
+      {
+        "id": "937cae68-59af-44f0-aab1-397823266327",
+        "name": "Pressure Difference Heating"
+      },
+      {
+        "id": "ca9ef214-d657-420a-a504-ddca39a0e531",
+        "name": "Pressure In Cooling"
+      },
+      {
+        "id": "60cfa284-c6d3-44c0-a91e-7bfe77d75760",
+        "name": "Pressure In Heating"
+      },
+      {
+        "id": "49780732-3551-4bd9-b675-c011a5c5285b",
+        "name": "Pressure Out Cooling"
+      },
+      {
+        "id": "8c9d2772-610a-4ca0-b0c0-07bd6a1765b3",
+        "name": "Pressure Out Heating"
+      },
+      {
+        "id": "95583ac0-1b60-4a44-b1bc-396379bb5b78",
+        "name": "Rate of Rotation"
+      },
+      {
+        "id": "41d7aaac-d5b9-42b7-8574-bd5d0ba9de09",
+        "name": "Set Signal"
+      },
+      {
+        "id": "ad0ec563-9682-494c-9721-43f753f7ad7f",
+        "name": "Set Signal (Written)"
+      },
+      {
+        "id": "b0e10a09-ab05-4f4b-b188-6a708b4db0fb",
+        "name": "Set Signal Maximum"
+      },
+      {
+        "id": "1b17d626-c576-4a18-8ba3-74a732ebd6c8",
+        "name": "Set Signal Minimum"
+      },
+      {
+        "id": "10fb4970-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Cooling"
+      },
+      {
+        "id": "19b2106c-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In Heating"
+      },
+      {
+        "id": "1546e7f0-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out Cooling"
+      },
+      {
+        "id": "16c13e66-0f2a-4275-b2d8-d6713a04be23",
+        "name": "Temperature Out Heating"
+      },
+      {
+        "id": "95e5562d-16a7-4fe7-913d-dff605c26796",
+        "name": "Thermal Capacity Cooling"
+      },
+      {
+        "id": "4457e79b-52c4-4c40-a149-0b997323ee5a",
+        "name": "Thermal Capacity Heating"
+      },
+      {
+        "id": "d8cb9d86-0d46-41a3-a512-ec4e6a31544a",
+        "name": "Thermal Power Cooling"
+      },
+      {
+        "id": "a98e09f4-20f2-4515-9b1c-bd3718b3369c",
+        "name": "Thermal Power Heating"
+      },
+      {
+        "id": "a8174916-2d1e-46ec-95d4-c2558617dd30",
+        "name": "Volume Flow Cooling"
+      },
+      {
+        "id": "178318c4-0a63-441a-95b1-01c4dc8fe879",
+        "name": "Volume Flow Heating"
+      },
+      {
+        "id": "3e522749-7299-40f8-88ec-f6ad8f8047d4",
+        "name": "Volume Flow Pressure Coefficient Cooling"
+      },
+      {
+        "id": "a8a67124-9139-4142-b861-21390bfa6996",
+        "name": "Volume Flow Pressure Coefficient Heating"
+      }
+    ]
+  },
+  {
+    "id": "e242ee7f-cc49-4996-9493-a6d24db40384",
+    "name": "Sink",
+    "description": "Type representing volume flow sink in open systems.",
+    "parent": null,
+    "ports": [
+      {
+        "id": "5ee7e228-dd13-40d2-ad81-9e65aec981c5",
+        "name": "Medium In",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "1dc7a02c-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow"
+      },
+      {
+        "id": "c6f8be5f-70f5-4b1e-8313-2cc56740ce45",
+        "name": "Pressure In"
+      },
+      {
+        "id": "6893ec38-056d-403b-a53a-7eba5514babe",
+        "name": "Set Temperature In"
+      },
+      {
+        "id": "03a02020-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In"
+      },
+      {
+        "id": "9fc45b1c-c905-43f7-b2ee-87b2e9745bfa",
+        "name": "Volume Flow"
+      }
+    ]
+  },
+  {
+    "id": "15609d00-2dd1-4075-912b-2982073468de",
+    "name": "Source",
+    "description": "Type representing a volume flow source in open systems.",
+    "parent": null,
+    "ports": [
+      {
+        "id": "3b16e24c-7348-4045-8a73-aeed094b0b6e",
+        "name": "Medium Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "1dc7a02c-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow"
+      },
+      {
+        "id": "589da515-5af6-4765-ac3c-6f1471dcfcf7",
+        "name": "Pressure Out"
+      },
+      {
+        "id": "0bf647d6-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out"
+      },
+      {
+        "id": "9fc45b1c-c905-43f7-b2ee-87b2e9745bfa",
+        "name": "Volume Flow"
+      }
+    ]
+  },
+  {
+    "id": "1d463485-9b4b-4df7-aa77-61c30a8a2b42",
+    "name": "Supply Machine",
+    "description": "Type representing supply machines.",
+    "parent": null,
+    "ports": [],
+    "features": []
+  },
+  {
+    "id": "e15c0006-9fed-444e-b4ed-85e0d9f545cb",
+    "name": "Thermal Consumer",
+    "description": "Type representing thermal consumers.",
+    "parent": "Heat Meter",
+    "ports": [],
+    "features": [
+      {
+        "id": "e1cc5fdc-5101-4ac8-a522-b67972fa0992",
+        "name": "Density"
+      },
+      {
+        "id": "1dc7a02c-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow"
+      },
+      {
+        "id": "f4c553b7-8135-4146-83a3-5b48c4794e04",
+        "name": "Pressure Difference"
+      },
+      {
+        "id": "c6f8be5f-70f5-4b1e-8313-2cc56740ce45",
+        "name": "Pressure In"
+      },
+      {
+        "id": "589da515-5af6-4765-ac3c-6f1471dcfcf7",
+        "name": "Pressure Out"
+      },
+      {
+        "id": "6893ec38-056d-403b-a53a-7eba5514babe",
+        "name": "Set Temperature In"
+      },
+      {
+        "id": "03a02020-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In"
+      },
+      {
+        "id": "dbac81ff-7a2b-4750-863f-6aa1908e7844",
+        "name": "Temperature In Maximum"
+      },
+      {
+        "id": "97443434-ed44-47ca-9369-ddb528d41cc9",
+        "name": "Temperature In Minimum"
+      },
+      {
+        "id": "0bf647d6-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out"
+      },
+      {
+        "id": "30ac5c94-d3c9-46fc-a9e7-4e1289514a10",
+        "name": "Thermal Capacity"
+      },
+      {
+        "id": "befcc905-a0db-462b-8049-9f23b61526aa",
+        "name": "Thermal Power"
+      },
+      {
+        "id": "9fc45b1c-c905-43f7-b2ee-87b2e9745bfa",
+        "name": "Volume Flow"
+      }
+    ]
+  },
+  {
+    "id": "7173c237-1aa2-498b-a32b-fd5f529d5cc5",
+    "name": "Thermal Energy Storage (TES)",
+    "description": "Type representing generic thermal energy storages.",
+    "parent": null,
+    "ports": [
+      {
+        "id": "5ee7e228-dd13-40d2-ad81-9e65aec981c5",
+        "name": "Medium In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "3b16e24c-7348-4045-8a73-aeed094b0b6e",
+        "name": "Medium Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "d6d1cdf4-7869-4284-b03e-78e129d4f20d",
+        "name": "Heat Transfer Coefficient"
+      },
+      {
+        "id": "5e24ff66-d12a-11ec-9d64-0242ac120002",
+        "name": "Mass"
+      },
+      {
+        "id": "216f2b6f-b60f-4af1-8608-4663e337020a",
+        "name": "Surface Area"
+      },
+      {
+        "id": "f3d9904a-cba7-11ec-9d64-0242ac120002",
+        "name": "Temperature"
+      },
+      {
+        "id": "a4c384b5-140e-455c-bef8-e04cfe7c3566",
+        "name": "Temperature Bottom"
+      },
+      {
+        "id": "2d36645a-b4d7-4608-a45a-b0a6c38e2e7a",
+        "name": "Temperature Environment"
+      },
+      {
+        "id": "b2d6f179-9a29-4ae2-9a10-bf4c256faad8",
+        "name": "Temperature Maximum"
+      },
+      {
+        "id": "dcf53811-5bac-4916-acd5-25b9f60b813b",
+        "name": "Temperature Maximum Soft Bound"
+      },
+      {
+        "id": "1855005f-233b-49fd-8e7c-63bd6f028c5f",
+        "name": "Temperature Minimum"
+      },
+      {
+        "id": "631e7df8-cf02-49e8-b84b-7756663a581d",
+        "name": "Temperature Minimum Soft Bound"
+      },
+      {
+        "id": "291808ee-a91e-4269-a72d-9216b0a203aa",
+        "name": "Temperature Soft Bound Violation Penalty"
+      },
+      {
+        "id": "18ff67e8-2e70-446d-9794-921d39e51481",
+        "name": "Temperature Top"
+      },
+      {
+        "id": "30902983-fa6e-447c-b73d-3a40cfaf3717",
+        "name": "Thermal Energy"
+      },
+      {
+        "id": "befcc905-a0db-462b-8049-9f23b61526aa",
+        "name": "Thermal Power"
+      },
+      {
+        "id": "86965c55-1097-415b-9c51-f601f8e8f612",
+        "name": "Thermal Power Direct"
+      },
+      {
+        "id": "b27b735f-b5d9-49ba-b189-a62711654026",
+        "name": "Thermal Power Ports"
+      }
+    ]
+  },
+  {
+    "id": "4c072549-ef3c-4c0b-8da5-55ead80e05c9",
+    "name": "Thermal Register",
+    "description": "Type representing thermal registers.",
+    "parent": null,
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "5ee7e228-dd13-40d2-ad81-9e65aec981c5",
+        "name": "Medium In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "3b16e24c-7348-4045-8a73-aeed094b0b6e",
+        "name": "Medium Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "1dc7a02c-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow"
+      },
+      {
+        "id": "c6acc59e-ccb8-4fd6-8dd4-ae376d4e61ea",
+        "name": "Mass Flow Air"
+      },
+      {
+        "id": "95583ac0-1b60-4a44-b1bc-396379bb5b78",
+        "name": "Rate of Rotation"
+      },
+      {
+        "id": "bd728aaa-a9ab-4528-989a-fb9a42ac6d6b",
+        "name": "Set Signal Valve"
+      },
+      {
+        "id": "f110c289-5c21-40e4-b16f-c3815993c5a8",
+        "name": "Set Signal Valve (Written)"
+      },
+      {
+        "id": "cb34d8cd-8b7b-439d-940a-dd699cba0974",
+        "name": "Set Temperature Out Air"
+      },
+      {
+        "id": "03a02020-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In"
+      },
+      {
+        "id": "5b2f992e-d550-4f61-bef8-7af8b30c1245",
+        "name": "Temperature In Air"
+      },
+      {
+        "id": "48e956b0-9c8f-4397-b60b-fa686441d3a6",
+        "name": "Temperature Mixed"
+      },
+      {
+        "id": "0bf647d6-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out"
+      },
+      {
+        "id": "f1a066d8-47a5-497e-b77d-e5bdff86e441",
+        "name": "Temperature Out Air"
+      },
+      {
+        "id": "9fc45b1c-c905-43f7-b2ee-87b2e9745bfa",
+        "name": "Volume Flow"
+      },
+      {
+        "id": "0c2c6cf7-fba2-40c6-addd-a96c65283dc5",
+        "name": "Volume Flow Air"
+      }
+    ]
+  },
+  {
+    "id": "85276dfb-d89e-4390-b2ff-633ca2f76b5a",
+    "name": "Thermal Register With Internal Recirculation",
+    "description": "If SetSignalValve is 0%, then 100% of MassFlowInternal remains recirculating through the heat exchanger.If set SetSignalValve is 50%, then 50% of MassFlow and 50% of MassFlowInternal is pumped through the heat exchanger . If the SetSignalValve is 100%, then no fluid is recirculating an 100% of MassFlow is pumped through the heat exchanger.",
+    "parent": "Thermal Register",
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "5ee7e228-dd13-40d2-ad81-9e65aec981c5",
+        "name": "Medium In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "3b16e24c-7348-4045-8a73-aeed094b0b6e",
+        "name": "Medium Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "1dc7a02c-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow"
+      },
+      {
+        "id": "c6acc59e-ccb8-4fd6-8dd4-ae376d4e61ea",
+        "name": "Mass Flow Air"
+      },
+      {
+        "id": "48fedf78-0837-4233-bf93-3f10e59e3ee3",
+        "name": "Mass Flow Internal"
+      },
+      {
+        "id": "95583ac0-1b60-4a44-b1bc-396379bb5b78",
+        "name": "Rate of Rotation"
+      },
+      {
+        "id": "bd728aaa-a9ab-4528-989a-fb9a42ac6d6b",
+        "name": "Set Signal Valve"
+      },
+      {
+        "id": "f110c289-5c21-40e4-b16f-c3815993c5a8",
+        "name": "Set Signal Valve (Written)"
+      },
+      {
+        "id": "cb34d8cd-8b7b-439d-940a-dd699cba0974",
+        "name": "Set Temperature Out Air"
+      },
+      {
+        "id": "03a02020-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In"
+      },
+      {
+        "id": "5b2f992e-d550-4f61-bef8-7af8b30c1245",
+        "name": "Temperature In Air"
+      },
+      {
+        "id": "48e956b0-9c8f-4397-b60b-fa686441d3a6",
+        "name": "Temperature Mixed"
+      },
+      {
+        "id": "0bf647d6-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out"
+      },
+      {
+        "id": "f1a066d8-47a5-497e-b77d-e5bdff86e441",
+        "name": "Temperature Out Air"
+      },
+      {
+        "id": "9fc45b1c-c905-43f7-b2ee-87b2e9745bfa",
+        "name": "Volume Flow"
+      },
+      {
+        "id": "0c2c6cf7-fba2-40c6-addd-a96c65283dc5",
+        "name": "Volume Flow Air"
+      },
+      {
+        "id": "4a3dd869-a74e-4778-8c10-deb48b08121e",
+        "name": "Volume Flow Internal"
+      }
+    ]
+  },
+  {
+    "id": "07d34c4c-29c7-4d7c-843d-5eebfe57e356",
+    "name": "Three Way Valve",
+    "description": "Type representing three way valves.Continuous Valve: If the Set Signal is 0%, then all of the volume flow is taken from the cold port. If the Set Signal is 100% then all of the volume flow is taken from the hot port. Binary Valve: If the unit can only switch one way or the other: ON/OFF = false means volume flow is taken from the cold port. ON/OFF = true means volume flow is taken from the hot port.",
+    "parent": null,
+    "ports": [
+      {
+        "id": "3bf6e435-dc83-42ce-916c-68b0a5c07324",
+        "name": "Cold In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "40e6499e-5344-4af5-aa21-8497765086c6",
+        "name": "Hot In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "3b16e24c-7348-4045-8a73-aeed094b0b6e",
+        "name": "Medium Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "31cd7e84-d6c1-4936-8ecb-16ba5b9ece5b",
+        "name": "Mass Flow Cold"
+      },
+      {
+        "id": "9812449f-2e3b-4b73-b593-d5158314b263",
+        "name": "Mass Flow Hot"
+      },
+      {
+        "id": "7a160606-d12b-11ec-9d64-0242ac120002",
+        "name": "Mass Flow Out"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "41d7aaac-d5b9-42b7-8574-bd5d0ba9de09",
+        "name": "Set Signal"
+      },
+      {
+        "id": "ad0ec563-9682-494c-9721-43f753f7ad7f",
+        "name": "Set Signal (Written)"
+      },
+      {
+        "id": "fc921f79-3c1b-4420-9b37-fc8a96b5e7b2",
+        "name": "Temperature In Cold"
+      },
+      {
+        "id": "e0267702-890a-4cdc-92e8-183a6ada3a63",
+        "name": "Temperature In Hot"
+      },
+      {
+        "id": "0bf647d6-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out"
+      },
+      {
+        "id": "c38cb718-8768-48ee-ba07-c9bc7ac7cc83",
+        "name": "Volume Flow Cold"
+      },
+      {
+        "id": "914d8dd6-ee02-4cf2-9c44-82bfe83314e9",
+        "name": "Volume Flow Hot"
+      },
+      {
+        "id": "8870f63f-4ef0-4fba-999e-5caa76dc724a",
+        "name": "Volume Flow Out"
+      }
+    ]
+  },
+  {
+    "id": "2c2caeb2-cbaa-11ec-9d64-0242ac120002",
+    "name": "Valve",
+    "description": "Type representing generic valves.",
+    "parent": null,
+    "ports": [
+      {
+        "id": "5ee7e228-dd13-40d2-ad81-9e65aec981c5",
+        "name": "Medium In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "3b16e24c-7348-4045-8a73-aeed094b0b6e",
+        "name": "Medium Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "1dc7a02c-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow"
+      },
+      {
+        "id": "41d7aaac-d5b9-42b7-8574-bd5d0ba9de09",
+        "name": "Set Signal"
+      },
+      {
+        "id": "ad0ec563-9682-494c-9721-43f753f7ad7f",
+        "name": "Set Signal (Written)"
+      },
+      {
+        "id": "03a02020-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In"
+      },
+      {
+        "id": "0bf647d6-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out"
+      },
+      {
+        "id": "9fc45b1c-c905-43f7-b2ee-87b2e9745bfa",
+        "name": "Volume Flow"
+      }
+    ]
+  },
+  {
+    "id": "f2f0180a-0121-4ad3-a3ce-f772ae92be6f",
+    "name": "Ventilator",
+    "description": "Type representing generic ventilators.",
+    "parent": "Abstract Element Medium",
+    "ports": [
+      {
+        "id": "43970782-7150-49fe-9a84-516ac4119166",
+        "name": "Electrical",
+        "connection_type": "Electric"
+      },
+      {
+        "id": "5ee7e228-dd13-40d2-ad81-9e65aec981c5",
+        "name": "Medium In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "3b16e24c-7348-4045-8a73-aeed094b0b6e",
+        "name": "Medium Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "e1cc5fdc-5101-4ac8-a522-b67972fa0992",
+        "name": "Density"
+      },
+      {
+        "id": "c549035a-39f7-4a90-b8a0-c99f59844c94",
+        "name": "Electrical Current"
+      },
+      {
+        "id": "4e846d4f-f5a3-4de0-a65e-4c34a594c5ab",
+        "name": "Electrical Power"
+      },
+      {
+        "id": "d47c4f8d-f663-478c-a7eb-abc563d37cc7",
+        "name": "Electrical Power Maximum"
+      },
+      {
+        "id": "90e4ce99-f28f-482b-bd41-c10b2bf32ba7",
+        "name": "Machine Failure"
+      },
+      {
+        "id": "8ebe7175-ee32-4d56-9e38-2a37e459ff9f",
+        "name": "Manual Operation"
+      },
+      {
+        "id": "1dc7a02c-cba8-11ec-9d64-0242ac120002",
+        "name": "Mass Flow"
+      },
+      {
+        "id": "1c6df3c3-c34e-4131-8586-4eb2f772e8a2",
+        "name": "ON / OFF"
+      },
+      {
+        "id": "48e3cf70-d7b9-4db6-b746-37b054486291",
+        "name": "ON / OFF (Written)"
+      },
+      {
+        "id": "f4c553b7-8135-4146-83a3-5b48c4794e04",
+        "name": "Pressure Difference"
+      },
+      {
+        "id": "c6f8be5f-70f5-4b1e-8313-2cc56740ce45",
+        "name": "Pressure In"
+      },
+      {
+        "id": "589da515-5af6-4765-ac3c-6f1471dcfcf7",
+        "name": "Pressure Out"
+      },
+      {
+        "id": "95583ac0-1b60-4a44-b1bc-396379bb5b78",
+        "name": "Rate of Rotation"
+      },
+      {
+        "id": "ae492f63-a115-41fd-9f4b-e6d7c28b57db",
+        "name": "Rate of Rotation (Written)"
+      },
+      {
+        "id": "41d7aaac-d5b9-42b7-8574-bd5d0ba9de09",
+        "name": "Set Signal"
+      },
+      {
+        "id": "ad0ec563-9682-494c-9721-43f753f7ad7f",
+        "name": "Set Signal (Written)"
+      },
+      {
+        "id": "b0e10a09-ab05-4f4b-b188-6a708b4db0fb",
+        "name": "Set Signal Maximum"
+      },
+      {
+        "id": "1b17d626-c576-4a18-8ba3-74a732ebd6c8",
+        "name": "Set Signal Minimum"
+      },
+      {
+        "id": "03a02020-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In"
+      },
+      {
+        "id": "0bf647d6-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out"
+      },
+      {
+        "id": "30ac5c94-d3c9-46fc-a9e7-4e1289514a10",
+        "name": "Thermal Capacity"
+      },
+      {
+        "id": "9fc45b1c-c905-43f7-b2ee-87b2e9745bfa",
+        "name": "Volume Flow"
+      }
+    ]
+  },
+  {
+    "id": "6423245e-66a9-4320-bcae-abe6ea444621",
+    "name": "Water Basin",
+    "description": "Type representing generic water basins.",
+    "parent": null,
+    "ports": [
+      {
+        "id": "5ee7e228-dd13-40d2-ad81-9e65aec981c5",
+        "name": "Medium In",
+        "connection_type": "Thermal Medium"
+      },
+      {
+        "id": "3b16e24c-7348-4045-8a73-aeed094b0b6e",
+        "name": "Medium Out",
+        "connection_type": "Thermal Medium"
+      }
+    ],
+    "features": [
+      {
+        "id": "2a793487-c81c-4bb1-a234-13d6053ee6ea",
+        "name": "Fill Level"
+      },
+      {
+        "id": "5e24ff66-d12a-11ec-9d64-0242ac120002",
+        "name": "Mass"
+      },
+      {
+        "id": "6bd3ea2c-d12b-11ec-9d64-0242ac120002",
+        "name": "Mass Flow In"
+      },
+      {
+        "id": "7a160606-d12b-11ec-9d64-0242ac120002",
+        "name": "Mass Flow Out"
+      },
+      {
+        "id": "f3d9904a-cba7-11ec-9d64-0242ac120002",
+        "name": "Temperature"
+      },
+      {
+        "id": "03a02020-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature In"
+      },
+      {
+        "id": "0bf647d6-cba8-11ec-9d64-0242ac120002",
+        "name": "Temperature Out"
+      },
+      {
+        "id": "9434d24f-e264-4029-a424-aab2140cbed9",
+        "name": "Volume Flow In"
+      },
+      {
+        "id": "8870f63f-4ef0-4fba-999e-5caa76dc724a",
+        "name": "Volume Flow Out"
+      }
+    ]
+  }
+]

@@ -1,0 +1,316 @@
+{
+  "connectors": [
+    {
+      "name": "Hauptzulauf_zu_K1",
+      "from_converter_ports": [
+        {
+          "unit_name": "Feed_Quelle",
+          "port": "Out"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "K1",
+          "port": "Feed_Einlass_Boden_13"
+        }
+      ]
+    },
+    {
+      "name": "Reflux_von_P1_P2_zu_K1",
+      "from_converter_ports": [
+        {
+          "unit_name": "P1_P2",
+          "port": "Auslass"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "K1",
+          "port": "Reflux_Einlass_Boden_24"
+        }
+      ]
+    },
+    {
+      "name": "Aufkocher_Ruecklauf_von_W1_zu_K1",
+      "from_converter_ports": [
+        {
+          "unit_name": "W1",
+          "port": "Prozess_Auslass_Dampf"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "K1",
+          "port": "Aufkocher_Einlass_Boden_1"
+        }
+      ]
+    },
+    {
+      "name": "K1_Kopfdampf_zu_W2",
+      "from_converter_ports": [
+        {
+          "unit_name": "K1",
+          "port": "Kopfdampf_Auslass"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "W2",
+          "port": "Prozess_Einlass"
+        }
+      ]
+    },
+    {
+      "name": "K1_Sumpf_zu_Aufkocher_W1",
+      "from_converter_ports": [
+        {
+          "unit_name": "K1",
+          "port": "Sumpf_Auslass_zu_W1"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "W1",
+          "port": "Prozess_Einlass_Fluessig"
+        }
+      ]
+    },
+    {
+      "name": "K1_Sumpfprodukt_zu_P3_P4",
+      "from_converter_ports": [
+        {
+          "unit_name": "K1",
+          "port": "Sumpfprodukt_Auslass"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "P3_P4",
+          "port": "Einlass"
+        }
+      ]
+    },
+    {
+      "name": "W2_Inertgas_zu_W3",
+      "from_converter_ports": [
+        {
+          "unit_name": "W2",
+          "port": "Vent_Auslass"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "W3",
+          "port": "Prozess_Einlass"
+        }
+      ]
+    },
+    {
+      "name": "W3_Abgas_zu_Vakuum",
+      "from_converter_ports": [
+        {
+          "unit_name": "W3",
+          "port": "Vent_Auslass"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "Vakuum_Station",
+          "port": "In"
+        }
+      ]
+    },
+    {
+      "name": "W2_Kondensat_Teilung",
+      "from_converter_ports": [
+        {
+          "unit_name": "W2",
+          "port": "Kondensat_Auslass"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "B1",
+          "port": "Einlass"
+        },
+        {
+          "unit_name": "W4",
+          "port": "Prozess_Einlass"
+        }
+      ]
+    },
+    {
+      "name": "B1_zu_P1_P2",
+      "from_converter_ports": [
+        {
+          "unit_name": "B1",
+          "port": "Auslass"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "P1_P2",
+          "port": "Einlass"
+        }
+      ]
+    },
+    {
+      "name": "Kopfprodukt_von_W4_zu_B3_B4",
+      "from_converter_ports": [
+        {
+          "unit_name": "W4",
+          "port": "Prozess_Auslass"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "B3_B4",
+          "port": "Einlass_Kopfprodukt"
+        }
+      ]
+    },
+    {
+      "name": "P3_P4_zu_W5",
+      "from_converter_ports": [
+        {
+          "unit_name": "P3_P4",
+          "port": "Auslass"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "W5",
+          "port": "Prozess_Einlass"
+        }
+      ]
+    },
+    {
+      "name": "W5_zu_B2",
+      "from_converter_ports": [
+        {
+          "unit_name": "W5",
+          "port": "Prozess_Auslass"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "B2",
+          "port": "Einlass"
+        }
+      ]
+    },
+    {
+      "name": "B2_Ablass_zu_Fass",
+      "from_converter_ports": [
+        {
+          "unit_name": "B2",
+          "port": "Ablass"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "Fass_Senke",
+          "port": "In"
+        }
+      ]
+    },
+    {
+      "name": "B3_B4_zu_P5_P6",
+      "from_converter_ports": [
+        {
+          "unit_name": "B3_B4",
+          "port": "Auslass_zum_Tanklager"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "P5_P6",
+          "port": "Einlass"
+        }
+      ]
+    },
+    {
+      "name": "P5_P6_zu_Tanklager",
+      "from_converter_ports": [
+        {
+          "unit_name": "P5_P6",
+          "port": "Auslass"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "Tanklager_Senke",
+          "port": "In"
+        }
+      ]
+    },
+    {
+      "name": "Endprodukt_von_B3_B4",
+      "from_converter_ports": [
+        {
+          "unit_name": "B3_B4",
+          "port": "Auslass_Endprodukt"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "Endprodukt_Senke",
+          "port": "In"
+        }
+      ]
+    },
+    {
+      "name": "Heizdampf_zu_W1",
+      "from_converter_ports": [
+        {
+          "unit_name": "Dampf_Quelle",
+          "port": "Out"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "W1",
+          "port": "Hilfsmedium_Einlass"
+        }
+      ]
+    },
+    {
+      "name": "Kuehlwasser_zu_Kuehlern",
+      "from_converter_ports": [
+        {
+          "unit_name": "Kuehlwasser_Quelle",
+          "port": "Out"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "W2",
+          "port": "Hilfsmedium_Einlass"
+        },
+        {
+          "unit_name": "W4",
+          "port": "Hilfsmedium_Einlass"
+        },
+        {
+          "unit_name": "W5",
+          "port": "Hilfsmedium_Einlass"
+        }
+      ]
+    },
+    {
+      "name": "Sole_zu_W3",
+      "from_converter_ports": [
+        {
+          "unit_name": "Sole_Quelle",
+          "port": "Out"
+        }
+      ],
+      "to_converter_ports": [
+        {
+          "unit_name": "W3",
+          "port": "Hilfsmedium_Einlass"
+        }
+      ]
+    }
+  ]
+}
