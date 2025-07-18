@@ -23,7 +23,7 @@ import utils
 from utils import GraphSynthesizer, BBox, Element
 from llm_handler import LLM_Handler
 from knowledge_bases import KnowledgeManager
-from utils import Connection, Element, BBox, TileResult, SynthesizerConfig # Korrektes Importieren der TypedDicts/Dataclasses
+from utils import Connection, Element, BBox, TileResult, SynthesizerConfig, _normalize_bbox_from_pixels # Korrektes Importieren der TypedDicts/Dataclasses und der Hilfsfunktion
 
 # Configure module-level logger
 logger = logging.getLogger(__name__)
@@ -116,7 +116,7 @@ class Core_Processor:
                 if self.progress_callback: self.progress_callback.update_status_label(text=f"Extrahiere Symbole... ({i+1}/{len(all_image_paths)})")
                 try:
                     symbols = future.result()
-                    all_extracted_symbols.extend([(label, img, image_path.name) for label, img in symbols])
+                    all_extracted_symbols.extend([(label, img, image_path.name) for label, img, bbox in symbols])
                 except Exception as exc:
                     logging.error(f"'{image_path.name}' hat eine Ausnahme während der Extraktion erzeugt: {exc}")
         
@@ -129,7 +129,7 @@ class Core_Processor:
         return report
     
 
-    def _process_image_with_ai(self, image_path: Path, model_info: Dict[str, Any]) -> List[Tuple[str, Image.Image]]:
+    def _process_image_with_ai(self, image_path: Path, model_info: Dict[str, Any]) -> List[Tuple[str, Image.Image, BBox]]: # <- Ändere den Rückgabetyp
             """
             Nimmt EIN Bild (oder eine Kachel), schickt es an die KI mit dem symbol_detection_user_prompt,
             und gibt die ausgeschnittenen Symbole mit ihren Labels zurück.
@@ -147,7 +147,7 @@ class Core_Processor:
                 expected_json_keys=["symbols"] 
             )
             
-            extracted_symbols: List[Tuple[str, Image.Image]] = []
+            extracted_symbols: List[Tuple[str, Image.Image, BBox]] = [] # <- Ändere den Typ hier
             symbol_data_list: List[Dict[str, Any]] = []
 
             if response is None:
@@ -307,59 +307,58 @@ class Core_Processor:
                             continue
 
                         cropped_img = img.crop((x1_px, y1_px, x2_px, y2_px))
-                        extracted_symbols.append((label, cropped_img))
+                        # NEU: Speichere die normalisierte Original-BBox zusammen mit dem zugeschnittenen Bild
+                        normalized_original_bbox = _normalize_bbox_from_pixels(x1_px, y1_px, x2_px, y2_px, img.size)
+                        extracted_symbols.append((label, cropped_img, cast(BBox, normalized_original_bbox)))
 
                     # Post-Processing: Symbol-Text-Paare zusammenführen
-                    merged_symbols: List[Tuple[str, Image.Image]] = []
+                    merged_symbols: List[Tuple[str, Image.Image, BBox]] = []
                     processed_labels: Set[str] = set()
 
-                    for i, (label1, img1) in enumerate(extracted_symbols):
+                    for i, (label1, img1, bbox1_orig) in enumerate(extracted_symbols):
                         if label1 in processed_labels:
                             continue
 
                         found_match = False
-                        for j, (label2, img2) in enumerate(extracted_symbols):
+                        for j, (label2, img2, bbox2_orig) in enumerate(extracted_symbols):
                             if i == j or label2 in processed_labels:
                                 continue
                             
-                            bbox1 = utils._normalize_bbox_from_pixels(0, 0, img1.width, img1.height, img.size)
-                            bbox2 = utils._normalize_bbox_from_pixels(0, 0, img2.width, img2.height, img.size)
-
-                            if (utils.string_similarity_ratio(label1.lower(), label2.lower()) > 0.7 or
-                                label1.lower() in label2.lower() or label2.lower() in label1.lower()):
+                            # Verwende die originalen normalisierten BBoxes für die Distanzberechnung
+                            distance = ((bbox1_orig['x'] + bbox1_orig['width']/2 - (bbox2_orig['x'] + bbox2_orig['width']/2))**2 +
+                                        (bbox1_orig['y'] + bbox1_orig['height']/2 - (bbox2_orig['y'] + bbox2_orig['height']/2))**2)**0.5
                                 
-                                distance = ((bbox1['x'] + bbox1['width']/2 - (bbox2['x'] + bbox2['width']/2))**2 +
-                                            (bbox1['y'] + bbox1['height']/2 - (bbox2['y'] + bbox2['height']/2))**2)**0.5
-                                
-                                if distance < 0.1: # Schwellenwert für Distanz (anpassen)
-                                    merged_x1 = min(bbox1['x'], bbox2['x'])
-                                    merged_y1 = min(bbox1['y'], bbox2['y'])
-                                    merged_x2 = max(bbox1['x'] + bbox1['width'], bbox2['x'] + bbox2['width'])
-                                    merged_y2 = max(bbox1['y'] + bbox1['height'], bbox2['y'] + bbox2['height'])
+                            if distance < 0.1: # Schwellenwert für Distanz (anpassen)
+                                merged_x1 = min(bbox1_orig['x'], bbox2_orig['x']) # <- Geändert
+                                merged_y1 = min(bbox1_orig['y'], bbox2_orig['y']) # <- Geändert
+                                merged_x2 = max(bbox1_orig['x'] + bbox1_orig['width'], bbox2_orig['x'] + bbox2_orig['width']) # <- Geändert
+                                merged_y2 = max(bbox1_orig['y'] + bbox1_orig['height'], bbox2_orig['y'] + bbox2_orig['height']) # <- Geändert
 
-                                    final_label = label2 if len(label2) > len(label1) else label1
+                                final_label = label2 if len(label2) > len(label1) else label1
+                                if final_label in ["symbols", "text"]:
+                                    final_label = label1 if label1 not in ["symbols", "text"] else label2
                                     if final_label in ["symbols", "text"]:
-                                        final_label = label1 if label1 not in ["symbols", "text"] else label2
-                                        if final_label in ["symbols", "text"]:
-                                            final_label = "Unbekanntes Symbol"
+                                        final_label = "Unbekanntes Symbol"
 
-                                    merged_x1_px = int(merged_x1 * img_width)
-                                    merged_y1_px = int(merged_y1 * img_height)
-                                    merged_x2_px = int(merged_x2 * img_width)
-                                    merged_y2_px = int(merged_y2 * img_height)
+                                merged_x1_px = int(merged_x1 * img_width)
+                                merged_y1_px = int(merged_y1 * img_height)
+                                merged_x2_px = int(merged_x2 * img_width)
+                                merged_y2_px = int(merged_y2 * img_height)
 
-                                    final_cropped_img = img.crop((merged_x1_px, merged_y1_px, merged_x2_px, merged_y2_px))
-                                    
-                                    merged_symbols.append((final_label, final_cropped_img))
-                                    processed_labels.add(label1)
-                                    processed_labels.add(label2)
-                                    found_match = True
-                                    logging.info(f"Merged BBoxes for '{label1}' and '{label2}' into '{final_label}'.")
-                                    break # Nur eine Paarung pro Symbol suchen
+                                final_cropped_img = img.crop((merged_x1_px, merged_y1_px, merged_x2_px, merged_y2_px))
+                                
+                                # Speichere die gemergte normalisierte BBox
+                                merged_bbox_normalized = BBox(x=merged_x1, y=merged_y1, width=merged_x2-merged_x1, height=merged_y2-merged_y1)
+                                merged_symbols.append((final_label, final_cropped_img, merged_bbox_normalized))
+                                processed_labels.add(label1)
+                                processed_labels.add(label2)
+                                found_match = True
+                                logging.info(f"Merged BBoxes for '{label1}' and '{label2}' into '{final_label}'.")
+                                break # Nur eine Paarung pro Symbol suchen
 
                         if not found_match and label1 not in processed_labels:
                             # Wenn kein Merge-Partner gefunden wurde, das Symbol einfach hinzufügen
-                            merged_symbols.append((label1, img1))
+                            merged_symbols.append((label1, img1, bbox1_orig)) # <- Hinzugefügt
                             processed_labels.add(label1)
                     
                     extracted_symbols = merged_symbols # Ersetze die Liste der Symbole mit den gemergten
@@ -370,10 +369,10 @@ class Core_Processor:
             
             return extracted_symbols
         
-    def _extract_symbols_from_image(self, image_path: Path, model_info: Dict[str, Any]) -> List[Tuple[str, Image.Image]]:
+    def _extract_symbols_from_image(self, image_path: Path, model_info: Dict[str, Any]) -> List[Tuple[str, Image.Image, BBox]]:
         """Manager: Prüft Bildgröße und delegiert an den Helfer."""
         logging.info(f"Verarbeite Bild zur Symbol-Extraktion: {image_path.name}")
-        all_extracted_symbols: List[Tuple[str, Image.Image]] = []
+        all_extracted_symbols: List[Tuple[str, Image.Image, BBox]] = []
         try:
             with Image.open(image_path) as img:
                 img_width, img_height = img.size
